@@ -1,0 +1,119 @@
+.product {
+    margin-top: 30px;
+    border-bottom: solid 2px rgba(155, 155, 155, .5);
+}
+
+#logo-image {
+    vertical-align: center;
+    width: 220px;
+    height: 120px;
+    margin-top: 15px;
+    margin-left: -50px;
+}
+
+#captain-console {
+    display: inline-block;
+    margin-left: -50px;
+    vertical-align: -webkit-baseline-middle;
+    font-size: -webkit-xxx-large;
+}
+.header-button {
+    margin-right: 10px;
+    width: 150px;
+    text-align: left;
+    border-color: white;
+    background-color: rgb(13,70,129);
+    border-radius: 7px;
+    font-size: 18px;
+}
+
+.header-button:hover {
+    background-color: black;
+    border-color: white;
+}
+
+.bg-light {
+    height: 60px;
+    background-color: rgb(46,114,183)!important;
+    border: solid 1px rgb(168, 208,230);
+    border-radius: 5px;
+}
+
+.btn-outline-success {
+    color: white!important;
+}
+
+#header {
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+#head-logo-wrap {
+    height: 140px;
+}
+
+#right-header {
+    float: right;
+    display:inline-block;
+    margin-top: 30px;
+}
+
+#left-header {
+    display: inline-block;
+}
+
+.classic-button {
+    background-color: black;
+    color: white;
+    padding: 8px 14px;
+    font-size: 20px;
+    line-height: 1;
+    border: 1px solid;
+    border-radius: 7px;
+    margin-left: 7px;
+}
+
+#cart-image {
+    height: 40px;
+    width: 45px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+.nav-btn-text {
+    display: inline-block;
+    width: 10px;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 100px!important;
+}
+
+#footer {
+    font-size: 18px;
+    background-color: #A8D0E6;
+    border: solid 1px #2E72B7;
+    border-radius: 5px;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+
+#left-footer {
+    margin: 20px;
+    display: inline-block;
+}
+
+#right-footer {
+    margin: 20px;
+    float: right;
+    text-align: right;
+    display: inline-block;
+}
+
+
