@@ -121,4 +121,6 @@
     display: inline-block;
 }
 
-
+.login {
+    text-align: center;
+}
