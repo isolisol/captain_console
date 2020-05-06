@@ -1,5 +1,16 @@
+.main-frame {
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.container {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
 .product {
-    margin-top: 30px;
+    margin-bottom: 30px;
     border-bottom: solid 2px rgba(155, 155, 155, .5);
 }
 
@@ -44,9 +55,7 @@
 }
 
 #header {
-    width: 90%;
-    margin-right: 5%;
-    margin-left: 5%;
+
 }
 
 #head-logo-wrap {
@@ -96,12 +105,8 @@
     background-color: #A8D0E6;
     border: solid 1px #2E72B7;
     border-radius: 5px;
-    width: 90%;
-    margin-right: 5%;
-    margin-left: 5%;
-    position: absolute;
-    bottom: 0;
     margin-bottom: 10px;
+    bottom: 0;
 }
 
 #left-footer {
