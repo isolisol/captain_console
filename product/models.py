@@ -5,6 +5,9 @@ class Brand(models.Model):
     name = models.CharField(max_length=255)
     logo = models.CharField(max_length=999, blank=True)
 
+    def get_image(self):
+        return self.logo
+
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
@@ -13,6 +16,9 @@ class Product(models.Model):
     release_date = models.DateField()
     image = models.CharField(max_length=999, blank=True)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         abstract = True
