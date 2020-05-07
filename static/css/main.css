@@ -25,9 +25,8 @@
 #captain-console {
     display: inline-block;
     margin-left: -50px;
-    vertical-align: -webkit-baseline-middle;
-    font-size: -webkit-xxx-large;
 }
+
 .header-button {
     margin-right: 10px;
     width: 150px;
@@ -70,6 +69,7 @@
 
 #left-header {
     display: inline-block;
+    vertical-align: bottom;
 }
 
 .classic-button {
