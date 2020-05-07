@@ -46,6 +46,8 @@ class Accessory(Product):
 
 
 class ConsoleHasAccessory(models.Model):
+    console = models.ForeignKey(Console, on_delete=models.CASCADE) #TODO: Skoða ondelete betur
+    accessory = models.ForeignKey(Accessory, on_delete=models.CASCADE) #TODO: Skoða ondelete betur
 
 
 #class ProductImage(models.Model):
