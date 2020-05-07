@@ -37,11 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'brand',
-    'videogame',
-    'console',
-    'accessory',
-    'homepage'
+    'brand.apps.BrandConfig',
+    'videogame.apps.VideogameConfig',
+    'console.apps.ConsoleConfig',
+    'accessory.apps.AccessoryConfig',
+    'homepage.apps.HomepageConfig',
+    'user.apps.UserConfig'
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+LOGIN_URL = '/user/login'
+LOGIN_REDIRECT_URL = '/'
