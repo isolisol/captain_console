@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0002_auto_20200505_1851'),
+        ('videogame', '0002_auto_20200505_1851'),
         ('brand', '0001_initial'),
     ]
 

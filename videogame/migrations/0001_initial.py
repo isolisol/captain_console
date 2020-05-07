@@ -37,8 +37,8 @@ class Migration(migrations.Migration):
                 ('ageLimit', models.IntegerField(blank=True)),
                 ('description', models.CharField(blank=True, max_length=999)),
                 ('brand', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='brand.Brand')),
-                ('genre', models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to='product.Genre')),
-                ('type', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='product.Type')),
+                ('genre', models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to='videogame.Genre')),
+                ('type', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='videogame.Type')),
             ],
         ),
     ]
