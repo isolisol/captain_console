@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0001_initial'),
+        ('videogame', '0001_initial'),
     ]
 
     operations = [
@@ -40,7 +40,7 @@ class Migration(migrations.Migration):
                 ('price', models.FloatField()),
                 ('description', models.CharField(max_length=999)),
                 ('release_date', models.DateField()),
-                ('brand', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='product.Brand')),
+                ('brand', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='videogame.Brand')),
             ],
             options={
                 'abstract': False,
@@ -55,8 +55,8 @@ class Migration(migrations.Migration):
                 ('description', models.CharField(max_length=999)),
                 ('release_date', models.DateField()),
                 ('ageLimit', models.IntegerField()),
-                ('brand', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='product.Brand')),
-                ('console', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='product.Console')),
+                ('brand', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='videogame.Brand')),
+                ('console', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='videogame.Console')),
             ],
             options={
                 'abstract': False,
@@ -71,6 +71,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='accessory',
             name='brand',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='product.Brand'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='videogame.Brand'),
         ),
     ]
