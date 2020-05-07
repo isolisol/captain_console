@@ -2,7 +2,8 @@
     <form class="form-inline">
         <div class="dropdown">
             <button class="btn btn-outline-success header-button" type="button">
-                <div class="nav-btn-text"><a href="{% url "videogame-index" %}">Video Games</a></div></button>
+                <a href="{% url "videogame-index" %}">
+                <div class="nav-btn-text">Video Games</div></a></button>
                     <div class="dropdown-content">
                         <a href="#">Playstation 1 Games</a>
                         <a href="#">Xbox Games</a>
@@ -12,7 +13,8 @@
 
         <div class="dropdown">
             <button class="btn btn-outline-success header-button" type="button">
-                <div class="nav-btn-text"><a href="{% url "consoles-index" %}">Game Consoles</a></div></button>
+                <a href="{% url "consoles-index" %}">
+                <div class="nav-btn-text">Game Consoles</div></a></button>
                     <div class="dropdown-content">
                         <a href="#">Playstation 1</a>
                         <a href="#">Xbox</a>
@@ -22,7 +24,8 @@
 
         <div class="dropdown">
             <button class="btn btn-outline-success header-button" type="button">
-                <div class="nav-btn-text"><a href="{% url "accessories-index" %}">Accessories</a></div></button>
+                <a href="{% url "accessories-index" %}">
+                <div class="nav-btn-text">Accessories</div></a></button>
                     <div class="dropdown-content">
                         <a href="#">Playstation 1 Games</a>
                         <a href="#">Xbox Games</a>
@@ -32,7 +35,7 @@
     </form>
 
 <!-- The form -->
-    <form class="example" action="action_page.php">
+    <form class="searchbar" action="action_page.php">
         <input type="text" placeholder="Search.." name="search">
         <button type="submit"><i class="fa fa-search"></i></button>
     </form>
