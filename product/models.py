@@ -46,6 +46,7 @@ class Accessory(Product):
 
 
 class ConsoleHasAccessory(models.Model):
+    pass
 
 
 #class ProductImage(models.Model):
