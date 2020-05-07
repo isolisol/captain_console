@@ -7,6 +7,12 @@ class City(models.Model):
     name = models.CharField(max_length=255)
     postal_code = models.IntegerField()
 
+    class Meta:
+        ordering = ['postal_code']
+
+    def __str__(self):
+        return '{}  {}'.format(self.postal_code, self.name)
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

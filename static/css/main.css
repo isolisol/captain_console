@@ -84,12 +84,7 @@
     font-family: 'Geo', sans-serif;
 }
 
-.classic-button a{
-    color: white;
-    text-decoration: none;
-}
-
-#cart-image {
+.icon {
     height: 40px;
     width: 45px;
     margin-left: 15px;
