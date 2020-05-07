@@ -11,7 +11,6 @@ class VideoGame(models.Model):
     name = models.CharField(max_length=255)
     price = models.FloatField()
     description = models.CharField(max_length=999)
-    release_date = models.DateField()
     brand = models.ForeignKey(Brand, on_delete=models.SET_NULL, null=True)
     age_limit = models.IntegerField()
     image = models.CharField(max_length=999)

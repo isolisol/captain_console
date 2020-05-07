@@ -1,12 +1,9 @@
+
 .main-frame {
     width: 90%;
     margin-right: 5%;
     margin-left: 5%;
-}
 
-.container {
-    padding-top: 15px;
-    padding-bottom: 30px;
 }
 
 .product {
@@ -24,37 +21,39 @@
 
 #captain-console {
     display: inline-block;
-    margin-left: -50px;
+    margin-left: -60px;
+    margin-bottom: 35px;
+    font-family: 'Geo', sans-serif;
+    font-size: 50px;
+}
+#captain-console a{
+    color:black;
+    text-decoration: none;
 }
 
 .header-button {
     margin-right: 10px;
     width: 150px;
     text-align: left;
-    border-color: white;
-    background-color: rgb(13,70,129);
+    border: solid 2px #ff29f8;
+    background-color: black!important;
     border-radius: 7px;
-    font-size: 15px;
 }
 
 .header-button:hover {
-    background-color: black;
-    border-color: white;
+    background-color: #ff29f8!important;
+    border-color: black;
 }
 
 .bg-light {
-    height: 60px;
-    background-color: rgb(46,114,183)!important;
-    border: solid 1px rgb(168, 208,230);
+    height: 80px;
+    background-color: black!important;
+    border: solid 2px #ff29f8;
     border-radius: 5px;
 }
 
 .btn-outline-success {
     color: white!important;
-}
-
-#header {
-
 }
 
 #head-logo-wrap {
@@ -65,6 +64,7 @@
     float: right;
     display:inline-block;
     margin-top: 30px;
+    justify-content: normal;
 }
 
 #left-header {
@@ -76,23 +76,43 @@
     background-color: black;
     color: white;
     padding: 8px 14px;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1;
-    border: 1px solid;
+    border: solid 2px #ff29f8;
     border-radius: 7px;
     margin-left: 7px;
+    font-family: 'Geo', sans-serif;
 }
 
-#cart-image {
+.icon {
     height: 40px;
     width: 45px;
     margin-left: 15px;
-    margin-bottom: 5px;
 }
 
 .nav-btn-text {
     display: inline-block;
     width: 150px;
+    color: white;
+    font-family: 'Geo', sans-serif;
+    font-size: 20px;
+}
+
+.searchbar {
+    font-family: 'Geo', sans-serif;
+}
+
+.searchbar input {
+    border: solid 2px #ff29f8;
+}
+
+.searchbar button {
+    background-color: #ff29f8;
+    border: solid 2px #ff29f8;
+}
+
+.nav-btn-text a {
+    text-decoration: none;
 }
 
 .dropdown-toggle::after {
@@ -100,35 +120,114 @@
     margin-left: 110px!important;
 }
 
+.container {
+    margin-bottom: 80px;
+    margin-top: 80px;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    display: flex;
+}
+
+#image_left {
+    margin: 20px;
+    text-align: left;
+    display: inline-block;
+    width:33%;
+}
+
+#image_middle {
+    margin: 20px;
+    text-align: center;
+    display: inline-block;
+    width:33%;
+}
+
+#image_right {
+    margin: 20px;
+    text-align: right;
+    display: inline-block;
+    width:33%;
+}
+
 #footer {
-    font-size: 18px;
-    background-color: #A8D0E6;
-    border: solid 1px #2E72B7;
+    border: solid 2px #ff29f8;
     border-radius: 5px;
     margin-bottom: 10px;
     bottom: 0;
-}
-
-#left-footer {
-    margin: 20px;
-    display: inline-block;
+    display: flex;
+    background-color:black;
 }
 
 #right-footer {
     margin: 20px;
+    display: inline-block;
     float: right;
     text-align: right;
-    display: inline-block;
+    width: 50%;
+    color: white;
 }
+
+#right-footer a{
+    font-size: medium;
+    text-decoration-line: underline;
+    color: white;
+}
+
+#right-footer p{
+    font-size: medium;
+    margin: 0px;
+    color: white;
+}
+
+#right-footer h4{
+    margin-bottom: 15px;
+    color: #ff29f8
+;
+}
+
+#left-footer {
+    margin: 20px;
+    text-align: left;
+    display: inline-block;
+    width: 50%;
+    color: white;
+}
+
+#left-footer p{
+    font-size: medium;
+    color: white;
+}
+
+#left-footer h4{
+    margin-bottom: 15px;
+    color: #ff29f8
+;
+
+}
+
+#left-footer a {
+    color:black;
+    text-decoration-line: underline;
+    font-size: medium;
+    color: white;
+}
+
+#left-footer a:hover {
+    color: #E4FC5C;
+}
+
+#right-footer a:hover {
+    color: #E4FC5C;
+}
+
 
 img {
     vertical-align: inherit;
 }
 
+
 .image-container {
-    width: 200px;
-    height: 200px;
-    display: inline-block;
     display: inline-flex;
 }
 
@@ -170,7 +269,7 @@ img {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    background-color: #3C3C3C;
+    background-color: black;
 }
 
 .opening-hours-right {
