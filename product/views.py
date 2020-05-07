@@ -1,13 +1,8 @@
 from django.shortcuts import render
-#from .models import VideoGame
+from product.models import VideoGame
 
-videoGames = [
-    {'name': 'GTA', 'price': 20},
-    {'name': 'Gran Turismo', 'price': 30}
-]
 
 # Create your views here.
 def index(request):
-    return render(request, 'product/index.html', context={
-        'videoGames': videoGames
-    })
+    context = {'video_games': VideoGame.objects.all().order_by('name')}
+    return render(request, 'product/index.html', context)

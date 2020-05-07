@@ -1,10 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="product">
-        <h1>Hello from inside product app!</h1>
-        {% for game in videoGames %}
-            <h4>{{ game.name }}</h4>
-            <p>{{ game.price }}</p>
+        {% for game in video_games %}
+            {% include 'product/single_product.html' with game=game %}
         {% endfor %}
     </div>
 {% endblock %}
