@@ -7,3 +7,6 @@ def index(request):
 
 def opening_hours(request):
     return render(request, 'homepage/opening_hours.html')
+
+def about_us(request):
+    return render(request, 'homepage/about_us.html')
