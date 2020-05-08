@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="info-field">
-        <table id="info-table" style="width: 100%">
+        <table id="info-table">
             <tr>
                 <th>First name:</th>
                 <th>{{ user.first_name }}</th>
@@ -31,13 +31,14 @@
                 <th>{{ profile.phone_number }}</th>
             </tr>
         </table>
+        <div id="edit-info-btn">
+        <a href="{% url 'editprofile' %}">
+            <input type="submit" class="classic-button" value="Edit information">
+        </a>
+        </div>
     </div>
     <div id="profile-image-container">
         <img class="profile-img" src="{{ profile.image }}">
     </div>
-    <div id="edit-info-btn">
-        <a href="{% url 'editprofile' %}">
-            <input type="submit" class="classic-button" value="Edit information">
-        </a>
-    </div>
+
 {% endblock %}

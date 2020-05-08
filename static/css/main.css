@@ -365,8 +365,9 @@ img {
 
 .info-field {
     text-align: left;
-    width: 100%;
-
+    justify-content: center;
+    font-family: normal;
+    width: 50%
 }
 
 tr {
@@ -375,17 +376,11 @@ tr {
     width: 40px;
 }
 
-th {
-    width: 200px;
-}
 
 #edit-info-btn {
-    height: 100%;
+    margin-top: 20px;
 }
 
-#profile-image-container {
-    position: center;
-}
 
 #info-table {
     width: 50%;
@@ -393,4 +388,9 @@ th {
 
 .profile-img {
     height: 300px;
+}
+
+#profile-image-container {
+    float: left;
+    width: 50%;
 }
