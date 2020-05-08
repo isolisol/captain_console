@@ -89,6 +89,10 @@ body{
     margin-left: 7px;
 }
 
+a {
+    color: white;
+}
+
 .icon {
     height: 40px;
     width: 45px;
@@ -390,7 +394,6 @@ tr {
     height: 300px;
 }
 
-#profile-image-container {
-    float: left;
-    width: 50%;
+.form-horizontal {
+    width: 400px;
 }
