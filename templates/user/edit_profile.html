@@ -5,10 +5,13 @@
         {% csrf_token %}
         {{ form2 }}
         {{ form1 }}
-        <a href="{% url 'profile' %}">
-            <button class="classic-button" type="button">Back</button>
-        </a>
-        <input type="submit" class="classic-button" value="Update">
+        <div class="edit-profile-buttons">
+            <a href="{% url 'profile' %}">
+                <button class="classic-button" type="button">Back</button>
+            </a>
+            <input type="submit" class="classic-button" value="Update">
+        </div>
     </form>
+
 
 {% endblock %}

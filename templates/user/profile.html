@@ -43,6 +43,12 @@
     </div>
     <div id="profile-image-container">
         <img class="profile-img" src="{{ profile.image }}">
+        <div id="edit-photo-btn">
+            <a href="{% url 'editprofile' %}">
+                <input type="submit" class="classic-button" value="Edit Photo">
+            </a>
+        </div>
     </div>
+
 
 {% endblock %}
