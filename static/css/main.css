@@ -25,6 +25,7 @@
     margin-bottom: 35px;
     font-family: 'Geo', sans-serif;
     font-size: 50px;
+    color: black;
 }
 #captain-console a{
     color:black;
@@ -72,6 +73,10 @@
     vertical-align: bottom;
 }
 
+#about_us_image {
+    width: 350px;
+    height: 350px;
+}
 .classic-button {
     background-color: black;
     color: white;
@@ -299,4 +304,24 @@ img {
     height: 220px;
     width: 220px;
     font-size: 18px;
+}
+
+.about-us-left {
+    text-align: left;
+    display: inline-block;
+    width: 50%;
+    color: black;
+    font-family: 'Geo', sans-serif;
+}
+
+.about-us-left p {
+    font-size: large;
+}
+.about-us-right {
+    display: inline-block;
+    float: right;
+    text-align: right;
+    width: 50%;
+    color: black;
+    font-family: 'Geo', sans-serif;
 }
