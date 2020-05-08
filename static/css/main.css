@@ -394,3 +394,7 @@ th {
 .profile-img {
     height: 300px;
 }
+
+.form-horizontal {
+    width: 400px;
+}
