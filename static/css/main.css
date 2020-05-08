@@ -284,3 +284,19 @@ img {
     border-spacing: 10px;
     margin-right: 200px;
 }
+
+.single-product {
+    height: 300px;
+    width: 300px;
+    display: inline-block;
+    margin-bottom: 4px;
+    padding: 5px;
+    background-color: lightgrey;
+    border: solid 1px darkgrey;
+}
+
+.product-img {
+    height: 220px;
+    width: 220px;
+    font-size: 18px;
+}
