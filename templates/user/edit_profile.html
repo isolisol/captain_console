@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <form class="form form-horizontal" method="post">
+        {% csrf_token %}
+        {{ form2 }}
+        {{ form1 }}
+        <input type="submit" class="classic-button" value="Update">
+    </form>
+
+{% endblock %}

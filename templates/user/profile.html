@@ -1,10 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
-
-    <form class="form form-horizontal" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" class="classic-button" value="Update">
-    </form>
-
+    <div class="info-field">
+        <table id="info-table" style="width: 100%">
+            <tr>
+                <th>First name:</th>
+                <th>{{ user.first_name }}</th>
+            </tr>
+            <tr>
+                <th>Last name:</th>
+                <th>{{ user.last_name }}</th>
+            </tr>
+            <tr>
+                <th>Email address:</th>
+                <th>{{ user.email }}</th>
+            </tr>
+            <tr>
+                <th>Address:</th>
+                <th>{{ profile.address }}</th>
+            </tr>
+            <tr>
+                <th>House number:</th>
+                <th>{{ profile.house_number }}</th>
+            </tr>
+            <tr>
+                <th>City:</th>
+                <th>{{ profile.city }}</th>
+            </tr>
+            <tr>
+                <th>Phone number:</th>
+                <th>{{ profile.phone_number }}</th>
+            </tr>
+        </table>
+    </div>
+    <div id="profile-image-container">
+        <img class="profile-img" src="{{ profile.image }}">
+    </div>
+    <div id="edit-info-btn">
+        <a href="{% url 'editprofile' %}">
+            <input type="submit" class="classic-button" value="Edit information">
+        </a>
+    </div>
 {% endblock %}

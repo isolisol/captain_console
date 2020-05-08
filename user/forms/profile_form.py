@@ -3,14 +3,18 @@ from user.models import Profile
 from django.contrib.auth.models import User
 
 
-class ProfileForm(ModelForm):
+class UserForm(ModelForm):
     class Meta:
         model = User
-        exclude = ['id', 'is_superuser', 'is_staff', 'is_active']
+        fields = ['first_name', 'last_name', 'email']
         widgets = {
-            'username': widgets.TextInput(attrs={'class': 'form-control'})
+            'first_name': widgets.TextInput(attrs={'class': 'form-control'}),
+            'last_name': widgets.TextInput(attrs={'class': 'form-control'}),
+            'email': widgets.TextInput(attrs={'class': 'form-control'})
         }
 
+
+class ProfileForm(ModelForm):
     class Meta:
         model = Profile
         exclude = ['id', 'user']

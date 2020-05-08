@@ -1,13 +1,13 @@
 {% load static %}
 <div id="head-logo-wrap">
     <div id="left-header">
-        <a href="#">
+        <a href="{% url 'homepage' %}">
             <img src="{% static "images/logo.png" %}" alt="logo" id="logo-image">
             <h1 id="captain-console">Captain Console</h1>
         </a>
     </div>
     <div id="right-header">
-        <button class="classic-button">About Us</button>
+        <button class="classic-button"><a href='aboutus'>About Us<a/></button>
         {% if user.is_authenticated %}
             <div class="dropdown">
                 <img class="icon" src="{% static "images/user_icon.png" %}"/>
