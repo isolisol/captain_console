@@ -3,7 +3,6 @@
     width: 90%;
     margin-right: 5%;
     margin-left: 5%;
-
 }
 
 .product {
@@ -20,12 +19,15 @@
 }
 
 #captain-console {
+    color: black;
     display: inline-block;
     margin-left: -60px;
     margin-bottom: 35px;
     font-family: 'Geo', sans-serif;
     font-size: 50px;
+    vertical-align: bottom;
 }
+
 #captain-console a{
     color:black;
     text-decoration: none;
@@ -201,9 +203,7 @@
 
 #left-footer h4{
     margin-bottom: 15px;
-    color: #ff29f8
-;
-
+    color: #ff29f8;
 }
 
 #left-footer a {
@@ -272,6 +272,11 @@ img {
     background-color: black;
 }
 
+#opening-hours {
+    height: 100px;
+    width: 300px;
+}
+
 .opening-hours-right {
     display: inline-block;
     height: 250px;
@@ -281,6 +286,7 @@ img {
 .opening-hours-left {
     display: inline-block;
     height: 250px;
+    width: 400px;
     border-spacing: 10px;
     margin-right: 200px;
 }
@@ -291,7 +297,6 @@ img {
     display: inline-block;
     margin-bottom: 4px;
     padding: 5px;
-    background-color: lightgrey;
     border: solid 1px darkgrey;
 }
 
