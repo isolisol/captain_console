@@ -382,6 +382,10 @@ img {
     float: top;
 }
 
+.product-details-info button{
+    float: right;
+}
+
 .product-img {
     height: 220px;
     width: 220px;
