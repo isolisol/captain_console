@@ -329,3 +329,36 @@ img {
     color: black;
     font-family: 'Geo', sans-serif;
 }
+
+
+.info-field {
+    text-align: left;
+    width: 100%;
+
+}
+
+tr {
+    border-bottom: solid 1px;
+    height: 40px;
+    width: 40px;
+}
+
+th {
+    width: 200px;
+}
+
+#edit-info-btn {
+    height: 100%;
+}
+
+#profile-image-container {
+    position: center;
+}
+
+#info-table {
+    width: 50%;
+}
+
+.profile-img {
+    height: 300px;
+}
