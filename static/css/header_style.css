@@ -79,6 +79,7 @@
     width: 100px;
     text-align: center;
     float: right;
+    color: white;
 }
 
 .clearfix li {
@@ -103,10 +104,6 @@
     font-weight: bold;
     margin: 0;
     font-size: large;
-}
-
-.shopping-cart a {
-    float: right;
 }
 
 .lighter-text {
