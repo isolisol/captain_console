@@ -1,6 +1,6 @@
 from django.shortcuts import render
+#from videogame.models import Brand
 
-
-
-def check_out(request):
-    return render(request, 'homepage/checkout.html')
+# Create your views here.
+def index(request):
+    return render(request, 'checkout/index.html')
