@@ -362,12 +362,13 @@ img {
     margin: 20px;
     padding: 5px;
     border: solid 1px darkgrey;
-
 }
 .single-product p {
     margin: 10px;
     color: black;
 }
+
+
 
 .product-details-info {
     display: inline-block;
@@ -387,11 +388,26 @@ img {
 }
 
 .product-img {
-    height: 220px;
-    width: 220px;
+    height: 300px;
+    width: 300px;
     font-size: 18px;
     justify-content: center;
+    float: left;
+    padding: 30px;
 }
+
+#product-description {
+    font-family: normal!important;
+}
+
+#product-description {
+    font-family: normal!important;
+}
+
+#product-price {
+    font-size: 25px;
+}
+
 
 .about-us {
     display: inline-block;
@@ -484,3 +500,4 @@ tr {
 .edit-profile-buttons {
     margin-top: 20px;
 }
+
