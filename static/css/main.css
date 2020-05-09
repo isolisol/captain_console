@@ -111,6 +111,10 @@ body{
     height: 40px;
 }
 
+.classic-button:hover {
+    background-color: #ff29f8;
+}
+
 #about-us {
     color: white;
 }
@@ -165,7 +169,7 @@ a {
 
 #image-left {
     margin: 20px;
-    text-align: center;
+    text-align: left;
     display: inline-block;
     width:33%;
 }
@@ -279,6 +283,10 @@ img {
     min-width: 160px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
+}
+
+.dropdown-content.cart {
+    right: 0;
 }
 
 /* Links inside the dropdown */
@@ -408,6 +416,14 @@ img {
     font-size: 25px;
 }
 
+#shopping-cart-dropdown {
+  left: 0;
+}
+
+.dropdown-content {
+    right: 0;
+}
+
 
 .about-us {
     display: inline-block;
@@ -418,9 +434,10 @@ img {
     font-size: large;
 }
 
-#about-us-btn :hover{
+#about-us:hover{
     color: white;
     text-decoration: none;
+    background-color: #ff29f8;
 }
 
 #about-us-btn{
@@ -480,13 +497,6 @@ tr {
     text-align: left;
 }
 
-.log-in-form {
-    width: 300px;
-    justify-content: center;
-    border: 2px solid black;
-    padding: 20px;
-    border-radius: 5px;
-}
 
 .log-in-form input{
     margin-top: 40px;
@@ -500,4 +510,41 @@ tr {
 .edit-profile-buttons {
     margin-top: 20px;
 }
+
+.helptext li{
+    list-style: none;
+    justify-content: flex-end;
+    text-align: left;
+}
+
+.helptext {
+    display: none;
+}
+
+.form.form-horizontal {
+    text-align: left;
+    border-radius: 5px;
+    padding: 50px;
+    border: 3px solid #ff29f8;
+    background-color: black;
+}
+
+form.form-horizontal h1 {
+    text-align: center;
+    color: #ff29f8;
+}
+
+.form.form-horizontal label{
+    margin-right: 50px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.form.form-horizontal input{
+    float: right;
+    border: 2px solid #ff29f8;
+}
+
+
+
 

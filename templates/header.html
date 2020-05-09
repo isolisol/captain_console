@@ -7,7 +7,7 @@
         </a>
     </div> <!-- end left-header -->
     <div id="right-header">
-        <button class="classic-button"><a id="about-us" href={% url 'aboutus' %}>About Us</a></button>
+        <button class="classic-button "><a id="about-us" href={% url 'aboutus' %}>About Us</a></button>
         {% if user.is_authenticated %}
         <div class="dropdown">
             <img class="icon" src="{% static "images/user_icon.png" %}"/>
@@ -30,7 +30,7 @@
         {% endif %}
         <div class="dropdown">
             <img src="{% static "images/shopping_cart.png" %}" alt="cart" class="icon">
-            <div class="dropdown-content">
+            <div class="dropdown-content cart">
                 <div class="container">
                     <div class="shopping-cart">
                         <div class="shopping-cart-header">
