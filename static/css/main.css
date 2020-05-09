@@ -2,7 +2,6 @@ body{
     font-family: 'Geo', sans-serif;
 }
 
-
 .main-frame {
     width: 90%;
     margin-right: 5%;
@@ -87,7 +86,6 @@ body{
 
 }
 
-
 #right-header button :hover{
     color: white;
     text-decoration: none;
@@ -97,7 +95,6 @@ body{
     display: inline-block;
     vertical-align: bottom;
 }
-
 
 .classic-button {
     background-color: black;
@@ -254,11 +251,9 @@ a {
     color: #E4FC5C;
 }
 
-
 img {
     vertical-align: inherit;
 }
-
 
 .image-container {
     display: inline-flex;
@@ -354,7 +349,6 @@ img {
     font-size: 40px;
 }
 
-
 .single-product {
     height: 310px;
     width: 310px;
@@ -363,12 +357,11 @@ img {
     padding: 5px;
     border: solid 1px darkgrey;
 }
+
 .single-product p {
     margin: 10px;
     color: black;
 }
-
-
 
 .product-details-info {
     display: inline-block;
@@ -408,7 +401,6 @@ img {
     font-size: 25px;
 }
 
-
 .about-us {
     display: inline-block;
     color: black;
@@ -431,6 +423,7 @@ img {
 .about-us-left p {
     font-size: large;
 }
+
 .about-us-right {
     display: inline-block;
     float: right;
@@ -439,7 +432,6 @@ img {
     color: black;
     font-family: 'Geo', sans-serif;
 }
-
 
 .info-field {
     text-align: left;
@@ -454,7 +446,6 @@ tr {
     width: 40px;
 }
 
-
 #edit-info-btn {
     margin-top: 20px;
     font-family: 'Geo', sans-serif;
@@ -463,7 +454,6 @@ tr {
 #edit-photo-btn {
     margin-top: 20px;
 }
-
 
 #info-table {
     width: 80%;
@@ -492,7 +482,6 @@ tr {
     margin-top: 40px;
 }
 
-
 .log-in-form label {
     margin-right: 10px;
 }
@@ -500,4 +489,3 @@ tr {
 .edit-profile-buttons {
     margin-top: 20px;
 }
-

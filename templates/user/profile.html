@@ -50,13 +50,13 @@
                     {% endif %}
                 </th>
             </tr>
-        </table>
+        </table> <!-- end info-table -->
         <div id="edit-info-btn">
         <a href="{% url 'editprofile' %}">
             <input type="submit" class="classic-button" value="Edit information">
         </a>
-        </div>
-    </div>
+        </div> <!-- end edit-info-btn -->
+    </div> <!-- end info-field -->
     <div id="profile-image-container">
         {% if profile.image %}
             <img class="profile-img" src="{{ profile.image }}">
@@ -65,15 +65,15 @@
                 <a href="{% url 'editimage' %}">
                     <input type="submit" class="classic-button" value="Edit Photo">
                 </a>
-            </div>
+            </div> <!-- end edit-photo-btn -->
         {% else %}
             <div id="edit-photo-btn">
                 <a href="{% url 'editimage' %}">
                     <input type="submit" class="classic-button" value="Add Photo">
                 </a>
-            </div>
+            </div> <!-- end edit-photo-btn -->
         {% endif %}
-    </div>
+    </div> <!-- end profile-image-container -->
 
 
 {% endblock %}
