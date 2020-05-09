@@ -59,6 +59,10 @@ body{
     border-radius: 7px;
 }
 
+button:focus {
+    outline: none!important;
+}
+
 .header-button:hover {
     background-color: #ff29f8!important;
     border-color: black;
@@ -110,6 +114,7 @@ body{
 
 .classic-button:hover {
     background-color: #ff29f8;
+    border: 2px solid black;
 }
 
 #about-us {
@@ -134,7 +139,8 @@ a {
 }
 
 .clearfix {
-    width: 400px!important;
+    width: 399px!important;
+    border-bottom: 1px solid lightgray;
 }
 
 .searchbar input {
@@ -158,7 +164,6 @@ a {
 .container {
     margin-bottom: 80px;
     margin-top: 50px;
-    width: 100%;
     text-align: center;
     bottom: 0;
     display: flex;
@@ -166,21 +171,24 @@ a {
 }
 
 #image-left {
-    margin: 20px;
-    text-align: left;
+    margin: 30px;
+    justify-content: center;
+    text-align: center;
     display: inline-block;
     width:33%;
 }
 
 #image-middle {
-    margin: 20px;
+    margin: 30px;
+    justify-content: center;
     text-align: center;
     display: inline-block;
     width:33%;
 }
 
 #image-right {
-    margin: 20px;
+    margin: 30px;
+    justify-content: center;
     text-align: center;
     display: inline-block;
     width:33%;
@@ -279,11 +287,14 @@ img {
     min-width: 160px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
+    border: 1px solid #ff29f8;
 }
 
 .dropdown-content.cart {
     right: 0;
-    width: 400px;
+    width: 403px;
+    padding-bottom: 20px;
+    border: 1px solid #ff29f8;
 }
 
 /* Links inside the dropdown */
@@ -403,10 +414,6 @@ img {
     font-family: normal!important;
 }
 
-#product-description {
-    font-family: normal!important;
-}
-
 #product-price {
     font-size: 25px;
 }
@@ -417,6 +424,13 @@ img {
 
 .shopping-cart-items {
     padding: 0;
+}
+
+#checkout-btn {
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+    float: right;
 }
 
 .clearfix li{
@@ -433,16 +447,19 @@ img {
     width: 400px;
     text-align: right;
     padding-right: 20px;
+    font-weight: bold;
+    margin: 0;
+    font-size: large;
 }
+
 
 .shopping-cart a{
     float: right;
 }
 
-.dropdown-content {
-    right: 0;
+.lighter-text {
+    margin: 0;
 }
-
 
 .about-us {
     display: inline-block;
