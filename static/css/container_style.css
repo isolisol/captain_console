@@ -1,0 +1,117 @@
+/* Homepage images */
+
+#image-left {
+    margin: 30px;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    width:33%;
+}
+
+#image-middle {
+    margin: 30px;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    width:33%;
+}
+
+#image-right {
+    margin: 30px;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    width:33%;
+}
+
+#image-right p {
+    color:black;
+    text-decoration: none;
+}
+
+#image-middle p {
+    color:black;
+    text-decoration: none;
+}
+
+#image-left p {
+    color:black;
+    text-decoration: none;
+}
+
+
+/* Location of store and opening hours page */
+
+.hours-location-container{
+    height: 700px;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.hours-location-container h1{
+    padding-bottom: 100px;
+    font-size: 70px;
+}
+
+.opening-hours-right {
+    display: inline-block;
+    height: 300px;
+    border-spacing: 10px;
+    float: right;
+    border: 3px solid #ff29f8;
+    padding: 40px;
+    padding-bottom: 550px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: x-large;
+}
+
+.opening-hours-right h4{
+    color: #ff29f8;
+    font-size: 40px;
+}
+
+.opening-hours-left {
+    display: inline-block;
+    height: 300px;
+    border-spacing: 10px;
+    float: left;
+    border: 3px solid #ff29f8;
+    padding: 40px;
+    padding-bottom: 550px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: x-large;
+}
+
+.opening-hours-left h4{
+    color: #ff29f8;
+    font-size: 40px;
+}
+
+
+/* About Us page */
+
+.about-us {
+    display: inline-block;
+    color: black;
+    margin-top: 20px;
+    text-align: center;
+    width: 500px;
+    font-size: large;
+}
+
+.about-us-left p {
+    font-size: large;
+}
+
+.about-us-right {
+    display: inline-block;
+    float: right;
+    text-align: right;
+    width: 50%;
+    color: black;
+    font-family: 'Geo', sans-serif;
+}
