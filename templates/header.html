@@ -7,7 +7,7 @@
         </a>
     </div> <!-- end left-header -->
     <div id="right-header">
-        <button class="classic-button "><a id="about-us" href={% url 'aboutus' %}>About Us</a></button>
+        <button class="classic-button"><a id="about-us" href={% url 'aboutus' %}>About Us</a></button>
         {% if user.is_authenticated %}
             <div class="dropdown">
                 <img class="icon" src="{% static "images/user_icon.png" %}"/>
@@ -31,43 +31,38 @@
         <div class="dropdown">
             <img src="{% static "images/shopping_cart.png" %}" alt="cart" class="icon">
             <div class="dropdown-content cart">
-                <div class="container">
-                    <div class="shopping-cart">
-                        <div class="shopping-cart-header">
-                            <div class="shopping-cart-total">
-                                <span class="lighter-text">Total:</span>
-                                <span class="main-color-text">$2,229.97</span>
-                            </div>
-                        </div> <!--end shopping-cart-header -->
+                <div class="shopping-cart">
+                    <ul class="shopping-cart-items">
+                        <a class="clearfix">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1" />
+                            <li class="item-name">Sony DSC-RX100M III</li><br>
+                            <li class="item-price">$849.99</li><br>
+                            <li class="item-quantity">Quantity: 01</li>
+                        </a> <!-- end clearfix -->
 
-                            <ul class="shopping-cart-items">
-                                <li class="clearfix">
-                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1" />
-                                    <span class="item-name">Sony DSC-RX100M III</span>
-                                    <span class="item-price">$849.99</span>
-                                    <span class="item-quantity">Quantity: 01</span>
-                                </li> <!-- end clearfix -->
+                        <a class="clearfix">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
+                            <li class="item-name">KS Automatic Mechanic...</li><br>
+                            <li class="item-price">$1,249.99</li><br>
+                            <li class="item-quantity">Quantity: 01</li>
+                        </a> <!-- end clearfix -->
 
-                                <li class="clearfix">
-                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
-                                    <span class="item-name">KS Automatic Mechanic...</span>
-                                    <span class="item-price">$1,249.99</span>
-                                    <span class="item-quantity">Quantity: 01</span>
-                                </li> <!-- end clearfix -->
-
-                                <li class="clearfix">
-                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1" />
-                                    <span class="item-name">Kindle, 6" Glare-Free To...</span>
-                                    <span class="item-price">$129.99</span>
-                                    <span class="item-quantity">Quantity: 01</span>
-                                </li> <!-- end clearfix -->
-                            </ul>
-
-                            <a href="#" class="btn btn-outline-success header-button nav-btn-text">Checkout</a>
-                        </div> <!--end shopping-cart -->
-                    </div> <!--end container -->
-                </div> <!-- end dropdown-content -->
-            </div> <!-- end dropdown -->
+                        <a class="clearfix">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1" />
+                            <li class="item-name">Kindle, 6" Glare-Free To...</li><br>
+                            <li class="item-price">$129.99</li><br>
+                            <li class="item-quantity">Quantity: 01</li>
+                        </a> <!-- end clearfix -->
+                    </ul>
+                    <div class="shopping-cart-total">
+                        <p class="lighter-text">Total:</p>
+                        <p class="main-color-text">$2,229.97</p>
+                    </div>
+                    
+                    <a href="#" class="btn btn-outline-success header-button nav-btn-text">Checkout</a>
+                </div> <!--end shopping-cart -->
+            </div> <!-- end dropdown-content -->
+        </div> <!-- end dropdown -->
     </div> <!-- end right-header -->
 </div> <!-- end head-logo-wrap -->
 
