@@ -28,41 +28,7 @@
             </div> <!-- end dropdown -->
 
         {% endif %}
-        <div class="dropdown">
-            <img src="{% static "images/shopping_cart.png" %}" alt="cart" class="icon">
-            <div class="dropdown-content cart">
-                <div class="shopping-cart">
-                    <ul class="shopping-cart-items">
-                        <a class="clearfix">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1" />
-                            <li class="item-name">Sony DSC-RX100M III</li><br>
-                            <li class="item-price">$849.99</li><br>
-                            <li class="item-quantity">Quantity: 01</li>
-                        </a> <!-- end clearfix -->
-
-                        <a class="clearfix">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
-                            <li class="item-name">KS Automatic Mechanic...</li><br>
-                            <li class="item-price">$1,249.99</li><br>
-                            <li class="item-quantity">Quantity: 01</li>
-                        </a> <!-- end clearfix -->
-
-                        <a class="clearfix">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1" />
-                            <li class="item-name">Kindle, 6" Glare-Free To...</li><br>
-                            <li class="item-price">$129.99</li><br>
-                            <li class="item-quantity">Quantity: 01</li>
-                        </a> <!-- end clearfix -->
-                    </ul>
-                    <div class="shopping-cart-total">
-                        <p class="lighter-text">Total:</p>
-                        <p class="main-color-text">$2,229.97</p>
-                    </div>
-                    
-                    <a href="#" class="btn btn-outline-success header-button nav-btn-text">Checkout</a>
-                </div> <!--end shopping-cart -->
-            </div> <!-- end dropdown-content -->
-        </div> <!-- end dropdown -->
+            {% include 'cart_items.html' %}
     </div> <!-- end right-header -->
 </div> <!-- end head-logo-wrap -->
 
