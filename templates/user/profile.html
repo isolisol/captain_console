@@ -20,19 +20,35 @@
             </tr>
             <tr>
                 <th>Address:</th>
-                <th>{{ profile.address }}</th>
+                <th>
+                    {% if profile.address %}
+                        {{ profile.address }}
+                    {% endif %}
+                </th>
             </tr>
             <tr>
                 <th>House number:</th>
-                <th>{{ profile.house_number }}</th>
+                <th>
+                    {% if profile.house_number %}
+                        {{ profile.house_number }}
+                    {% endif %}
+                </th>
             </tr>
             <tr>
                 <th>City:</th>
-                <th>{{ profile.city }}</th>
+                <th>
+                    {% if profile.city %}
+                        {{ profile.city }}
+                    {% endif %}
+                </th>
             </tr>
             <tr>
                 <th>Phone number:</th>
-                <th>{{ profile.phone_number }}</th>
+                <th>
+                    {% if profile.phone_number %}
+                        {{ profile.phone_number }}
+                    {% endif %}
+                </th>
             </tr>
         </table>
         <div id="edit-info-btn">
@@ -42,12 +58,21 @@
         </div>
     </div>
     <div id="profile-image-container">
-        <img class="profile-img" src="{{ profile.image }}">
-        <div id="edit-photo-btn">
-            <a href="{% url 'editprofile' %}">
-                <input type="submit" class="classic-button" value="Edit Photo">
-            </a>
-        </div>
+        {% if profile.image %}
+            <img class="profile-img" src="{{ profile.image }}">
+
+            <div id="edit-photo-btn">
+                <a href="{% url 'editimage' %}">
+                    <input type="submit" class="classic-button" value="Edit Photo">
+                </a>
+            </div>
+        {% else %}
+            <div id="edit-photo-btn">
+                <a href="{% url 'editimage' %}">
+                    <input type="submit" class="classic-button" value="Add Photo">
+                </a>
+            </div>
+        {% endif %}
     </div>
 
 
