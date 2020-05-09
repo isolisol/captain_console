@@ -42,8 +42,7 @@ INSTALLED_APPS = [
     'console.apps.ConsoleConfig',
     'accessory.apps.AccessoryConfig',
     'homepage.apps.HomepageConfig',
-    'user.apps.UserConfig',
-    'product.apps.ProductConfig'
+    'user.apps.UserConfig'
 ]
 
 MIDDLEWARE = [
