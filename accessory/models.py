@@ -3,12 +3,12 @@ from brand.models import Brand
 # Create your models here.
 
 
-class Type(models.Model):
+class ProductType(models.Model):
     name = models.CharField(max_length=255)
 
 
 class Product(models.Model):
-    type = models.ForeignKey(Type, on_delete=models.CASCADE)
+    type = models.ForeignKey(ProductType, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     price = models.FloatField()
     description = models.CharField(max_length=999)

@@ -4,7 +4,7 @@ from accessory.models import Product
 
 # Create your views here.
 def index(request):
-    consoles = {'consoles': Product.objects.all().order_by('name')}
+    consoles = {'consoles': Product.objects.filter(type_id=1).order_by('name')}
     return render(request, 'console/index.html', context=consoles)
 
 

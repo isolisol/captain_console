@@ -4,7 +4,7 @@ from accessory.models import Product
 
 # Create your views here.
 def index(request):
-    videogames = {'videogames': Product.objects.all().order_by('name')}
+    videogames = {'videogames': Product.objects.filter(type_id=2).order_by('name')}
     return render(request, 'videogame/index.html', context=videogames)
 
 

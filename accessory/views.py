@@ -4,7 +4,7 @@ from accessory.models import Product
 
 # Create your views here.
 def index(request):
-    accessories = {'accessories': Product.objects.all().order_by('name')}
+    accessories = {'accessories': Product.objects.filter(type_id=3).order_by('name')}
     return render(request, 'accessory/index.html', context=accessories)
 
 
