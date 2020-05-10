@@ -3,7 +3,11 @@
     <div class="product">
     <h1>Accessories</h1>
         {% for accessory in accessories %}
-            {% include 'accessory/single_product.html' with accessory=accessory %}
+                <a href="/accessories/{{ accessory.id }}">
+                    <img class="product-img" src="{{ accessory.image }}">
+                    <p class="product-name">{{ accessory.name }}</p>
+                    <p class="product-price">{{ accessory.price }}$</p>
+                </a>
         {% endfor %}
     </div> <!-- end product -->
 {% endblock %}
