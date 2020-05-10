@@ -27,6 +27,7 @@ tr {
 .profile-img {
     height: 300px;
     margin-top: 16px;
+    margin-bottom: 5px;
 }
 
 #profile-image-container {
@@ -39,6 +40,7 @@ tr {
 .edit-profile-buttons {
     margin-top: 20px;
 }
+
 
 .helptext li {
     list-style: none;
@@ -76,4 +78,84 @@ form.form-horizontal h1 {
 
 #log-in-container {
     width: 400px!important;
+}
+
+
+/* Edit user information page */
+
+.edit-info {
+    width: 500px!important;
+    border-radius: 5px;
+    padding: 40px;
+    padding-bottom: 20px;
+    font-family: normal!important;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+
+.edit-info h1 {
+    margin-bottom: 50px;
+    font-family: 'Geo', sans-serif;
+}
+
+.edit-info label {
+    width: 40%;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.edit-info input {
+    float: right;
+    width: 60%;
+    padding: 10px;
+}
+
+.edit-info select {
+    width: 60%;
+    float: right;
+    padding: 10px;
+}
+
+.edit-profile-buttons {
+    margin-top: 30px;
+    font-family: 'Geo', sans-serif;
+}
+
+.classic-button.update-btn {
+    width: 140px;
+    float: right;
+}
+
+.classic-button.back-btn {
+    width: 140px;
+    float: left;
+}
+
+.edit-img {
+    width: 500px!important;
+    border-radius: 5px;
+    padding: 40px;
+    padding-bottom: 20px;
+    font-family: normal!important;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+
+.edit-img h1 {
+    margin-bottom: 50px;
+    font-family: 'Geo', sans-serif;
+}
+
+.edit-img label {
+    width: 20%;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.edit-img input {
+    float: right;
+    width: 80%;
+    padding: 10px;
 }

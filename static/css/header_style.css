@@ -82,6 +82,16 @@
     color: white;
 }
 
+#view-cart-btn {
+    padding: 5px;
+    width: 100px;
+    margin-left: 10px;
+    text-align: center;
+    float: left;
+    color: white;
+}
+
+
 .clearfix li {
     float: right;
     list-style: none;
