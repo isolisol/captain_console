@@ -2,8 +2,8 @@
 {% block content %}
     <div class="product">
     <h1>Videogames</h1>
-        {% for game in videogames %}
-            {% include 'videogame/single_product.html' with game=game %}
-        {% endfor %}
+            {% for game in videogames %}
+                {% include 'videogame/single_product.html' with game=game %}
+            {% endfor %}
     </div> <!-- end product -->
 {% endblock %}

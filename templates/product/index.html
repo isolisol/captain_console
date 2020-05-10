@@ -1,8 +1,0 @@
-{% extends 'base.html' %}
-{% block content %}
-    <div class="product">
-        {% for game in video_games %}
-            {% include 'product/single_product.html' with game=game %}
-        {% endfor %}
-    </div> <!-- end product -->
-{% endblock %}
