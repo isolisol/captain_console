@@ -1,0 +1,129 @@
+/* Header */
+
+#head-logo-wrap {
+    height: 140px;
+}
+
+#right-header {
+    float: right;
+    display: flex;
+    margin-top: 30px;
+}
+
+#left-header {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+#captain-console a {
+    color:black;
+    text-decoration: none;
+}
+
+.icon {
+    height: 40px;
+    width: 45px;
+    margin-left: 15px;
+}
+
+#logo-image {
+    vertical-align: center;
+    width: 220px;
+    height: 120px;
+    margin-top: 15px;
+    margin-left: -50px;
+}
+
+
+/* Navigation Bar */
+
+.bg-light {
+    height: 80px;
+    background-color: black!important;
+    border: solid 2px #ff29f8;
+    border-radius: 5px;
+}
+
+.nav-btn-text {
+    display: inline-block;
+    width: 150px;
+    color: white;
+    font-size: 20px;
+}
+
+
+/* Searchbar on nav-bar */
+
+.searchbar input {
+    border: solid 2px #ff29f8;
+}
+
+.searchbar button {
+    background-color: #ff29f8;
+    border: solid 2px #ff29f8;
+}
+
+
+/* Cart button on header and checkout button in cart */
+
+#shopping-cart-dropdown {
+  left: 0;
+}
+
+.shopping-cart-items {
+    padding: 0;
+}
+
+#checkout-btn {
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+    float: right;
+    color: white;
+}
+
+.clearfix li {
+    float: right;
+    list-style: none;
+    text-align: left;
+}
+
+.clearfix {
+    width: 399px!important;
+    border-bottom: 1px solid lightgray;
+}
+
+.clearfix img {
+    float: left;
+}
+
+.shopping-cart-total {
+    width: 400px;
+    text-align: right;
+    padding-right: 20px;
+    font-weight: bold;
+    margin: 0;
+    font-size: large;
+}
+
+.lighter-text {
+    margin: 0;
+}
+
+
+/* About Us button on header */
+
+#about-us {
+    color: white;
+}
+
+#about-us:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #ff29f8;
+}
+
+#about-us-btn {
+    float: top;
+    height: 40px;
+}
