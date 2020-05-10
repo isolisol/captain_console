@@ -9,10 +9,10 @@
                 </a>
             </button>
                     <div class="dropdown-content">
-                        <a href="#">Playstation</a>
-                        <a href="#">Xbox</a>
-                        <a href="#">Nintendo</a>
-                        <a href="#">SEGA</a>
+                        <a href="{% url 'playstation_games' %}">PlayStation</a>
+                        <a href="{% url 'xbox_games' %}">Xbox</a>
+                        <a href="{% url 'nintendo_games' %}">Nintendo</a>
+                        <a href="{% url 'gameboy_games' %}">GameBoy</a>
                     </div> <!-- end dropdown-content-->
         </div> <!-- end dropdown-->
 
@@ -21,10 +21,10 @@
                 <a href="{% url "consoles-index" %}">
                 <div class="nav-btn-text">Game Consoles</div></a></button>
                     <div class="dropdown-content">
-                        <a href="#">Playstation</a>
-                        <a href="#">Xbox</a>
-                        <a href="#">Nintendo</a>
-                        <a href="#">SEGA</a>
+                        <a href="{% url 'playstation_consoles' %}">PlayStation</a>
+                        <a href="{% url 'xbox_consoles' %}">Xbox</a>
+                        <a href="{% url 'nintendo_consoles' %}">Nintendo</a>
+                        <a href="{% url 'gameboy_consoles' %}">Gameboy</a>
                     </div> <!-- end dropdown-content-->
         </div> <!-- end dropdown-->
 
@@ -33,10 +33,10 @@
                 <a href="{% url "accessories-index" %}">
                 <div class="nav-btn-text">Accessories</div></a></button>
                     <div class="dropdown-content">
-                        <a href="#">Playstation</a>
-                        <a href="#">Xbox</a>
-                        <a href="#">Nintendo</a>
-                        <a href="#">SEGA</a>
+                        <a href="{% url 'playstation_accessories' %}">PlayStation</a>
+                        <a href="{% url 'xbox_accessories' %}">Xbox</a>
+                        <a href="{% url 'nintendo_accessories' %}">Nintendo</a>
+                        <a href="{% url 'gameboy_accessories' %}">GameBoy</a>
                         <a href="#">Other</a>
                     </div> <!-- end dropdown-content-->
         </div> <!-- end dropdown-->

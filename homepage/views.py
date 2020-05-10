@@ -11,3 +11,4 @@ def opening_hours(request):
 
 def about_us(request):
     return render(request, 'homepage/about_us.html')
+
