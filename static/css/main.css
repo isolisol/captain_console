@@ -1,6 +1,6 @@
 body{
     font-family: 'Geo', sans-serif;
-    /*background-image: url("https://i.pinimg.com/564x/78/4d/9f/784d9f29704e15007af7acda4d0ecb2d.jpg");*/
+    background-image: url("https://i.pinimg.com/564x/78/4d/9f/784d9f29704e15007af7acda4d0ecb2d.jpg");
 }
 
 .main-frame {
@@ -10,11 +10,11 @@ body{
 }
 
 #captain-console {
-    color: black;
+    color: white;
     display: inline-block;
     margin-left: -60px;
-    margin-bottom: 35px;
-    font-size: 50px;
+    margin-bottom: 20px;
+    font-size: 60px;
     vertical-align: bottom;
 }
 
