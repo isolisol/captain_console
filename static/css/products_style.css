@@ -12,6 +12,7 @@
     border: solid 1px darkgrey;
 }
 
+
 .single-product p {
     margin: 10px;
     color: black;
@@ -41,6 +42,7 @@
     justify-content: center;
     float: left;
     padding: 30px;
+    background-color: white;
 }
 
 #product-description {
