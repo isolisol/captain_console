@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-
-    <form class="form form-horizontal" method="post">
+    <form class="edit-info" method="post">
+        <h1>Edit information</h1>
         {% csrf_token %}
         {{ form2 }}
         {{ form1 }}
         <div class="edit-profile-buttons">
             <a href="{% url 'profile' %}">
-                <button class="classic-button" type="button">Back</button>
+                <button class="classic-button back-btn" type="button" >Back</button>
             </a>
-            <input type="submit" class="classic-button" value="Update">
+            <input type="submit" class="classic-button update-btn" value="Update" >
         </div> <!-- end edit-profile-buttons -->
     </form> <!-- end form form-horizontal -->
 
