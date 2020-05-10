@@ -10,7 +10,7 @@
         <button class="classic-button"><a id="about-us" href={% url 'aboutus' %}>About Us</a></button>
         {% if user.is_authenticated %}
             <div class="dropdown">
-                <img class="icon" src="{% static "images/icons8-account-64.png" %}"/>
+                <img class="icon" src="{% static "images/nyprofile.png" %}"/>
                 <div class="dropdown-content">
                     <a href="{% url 'profile' %}">My Account</a>
                     <a href="#">My Orders</a>
