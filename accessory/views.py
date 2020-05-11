@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from accessory.models import Product
-from helperServices.helpers import build_context
+from helper_services.helpers import build_context
 
 
 # Create your views here.
@@ -41,7 +41,9 @@ def get_nintendo_accessories(request):
     user = request.user
     nintendo_nes = Product.objects.filter(type_id=3, console_id=2)
     nintendo64 = Product.objects.filter(type_id=3, console_id=3)
-    accessories = nintendo_nes.union(nintendo64)
+    gameboy_color = Product.objects.filter(type_id=3, console_id=4)
+    gameboy_advance = Product.objects.filter(type_id=3, console_id=5)
+    accessories = nintendo_nes.union(nintendo64, gameboy_color, gameboy_advance)
     if user.is_authenticated:
         context = build_context(user)
         context['accessories'] = accessories
@@ -57,19 +59,6 @@ def get_xbox_accessories(request):
         context['accessories'] = Product.objects.filter(type_id=3, console_id=8)
     else:
         context = {'accessories': Product.objects.filter(type_id=3, console_id=8)}
-    return render(request, 'accessory/index.html', context=context)
-
-
-def get_gameboy_accessories(request):
-    user = request.user
-    gameboycolor = Product.objects.filter(type_id=3, console_id=4)
-    gameboyadvance = Product.objects.filter(type_id=3, console_id=5)
-    accessories = gameboycolor.union(gameboyadvance)
-    if user.is_authenticated:
-        context = build_context(user)
-        context['accessories'] = accessories
-    else:
-        context = accessories
     return render(request, 'accessory/index.html', context=context)
 
 
