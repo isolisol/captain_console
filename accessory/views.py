@@ -36,6 +36,7 @@ def get_playstation_accessories(request):
         context = {'accessories': accessories}
     return render(request, 'accessory/index.html', context=context)
 
+
 def get_nintendo_accessories(request):
     user = request.user
     nintendo_nes = Product.objects.filter(type_id=3, console_id=2)
@@ -48,6 +49,7 @@ def get_nintendo_accessories(request):
         context = {'acessories': accessories}
     return render(request, 'accessory/index.html', context=context)
 
+
 def get_xbox_accessories(request):
     user = request.user
     if user.is_authenticated:
@@ -56,6 +58,7 @@ def get_xbox_accessories(request):
     else:
         context = {'accessories': Product.objects.filter(type_id=3, console_id=8)}
     return render(request, 'accessory/index.html', context=context)
+
 
 def get_gameboy_accessories(request):
     user = request.user
@@ -69,6 +72,7 @@ def get_gameboy_accessories(request):
         context = accessories
     return render(request, 'accessory/index.html', context=context)
 
+
 def get_ps1_accessories(request):
     user = request.user
     if user.is_authenticated:
@@ -77,6 +81,7 @@ def get_ps1_accessories(request):
     else:
         context = {'accessories': Product.objects.filter(type_id=3, console_id=6)}
     return render(request, 'accessory/index.html', context=context)
+
 
 def get_ps2_accessories(request):
     user = request.user
@@ -87,6 +92,7 @@ def get_ps2_accessories(request):
         context = {'accessories': Product.objects.filter(type_id=3, console_id=7)}
     return render(request, 'accessory/index.html', context=context)
 
+
 def get_nintendo_nes_accessories(request):
     user = request.user
     if user.is_authenticated:
@@ -95,6 +101,7 @@ def get_nintendo_nes_accessories(request):
     else:
         context = {'accessories': Product.objects.filter(type_id=3, console_id=2)}
     return render(request, 'accessory/index.html', context=context)
+
 
 def get_nintendo_64_accessories(request):
     user = request.user
@@ -105,6 +112,7 @@ def get_nintendo_64_accessories(request):
         context = {'accessories': Product.objects.filter(type_id=3, console_id=3)}
     return render(request, 'accessory/index.html', context=context)
 
+
 def get_gameboy_advance_accessories(request):
     user = request.user
     if user.is_authenticated:
@@ -114,6 +122,7 @@ def get_gameboy_advance_accessories(request):
         context = {'accessories': Product.objects.filter(type_id=3, console_id=5)}
     return render(request, 'accessory/index.html', context=context)
 
+
 def get_gameboy_color_accessories(request):
     user = request.user
     if user.is_authenticated:
@@ -122,6 +131,7 @@ def get_gameboy_color_accessories(request):
     else:
         context = {'accessories': Product.objects.filter(type_id=3, console_id=4)}
     return render(request, 'accessory/index.html', context=context)
+
 
 def get_other_accessories(request):
     user = request.user
