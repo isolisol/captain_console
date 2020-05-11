@@ -77,11 +77,39 @@
         <a href="{% url "accessories-index" %}">
         <div class="nav-btn-text">Accessories</div></a></button>
             <div class="dropdown-content">
-                <a href="{% url 'playstation_accessories' %}">PlayStation</a>
-                <a href="{% url 'xbox_accessories' %}">Xbox</a>
-                <a href="{% url 'nintendo_accessories' %}">Nintendo</a>
-                <a href="{% url 'gameboy_accessories' %}">GameBoy</a>
-                <a href="#">Other</a>
+                <li>
+                <a href="{% url 'playstation_accessories' %}" class="dropdown-nav-title">PlayStation</a>
+                </li>
+                <li>
+                <a href="{% url 'ps1_accessories' %}" class="sub-title">PlayStation 1</a>
+                </li>
+                <li>
+                <a href="{% url 'ps2_accessories' %}" class="sub-title">PlayStation 2</a>
+                </li>
+                <li>
+                <a href="{% url 'nintendo_accessories' %}" class="dropdown-nav-title">Nintendo</a>
+                </li>
+                <li>
+                <a href="{% url 'nintendo_nes_accessories' %}" class="sub-title">Nintendo NES</a>
+                </li>
+                <li>
+                <a href="{% url 'nintendo_64_accessories' %}" class="sub-title">Nintendo 64</a>
+                </li>
+                <li>
+                <a href="{% url 'gameboy_color_accessories' %}" class="sub-title">Gameboy Color</a>
+                </li>
+                <li>
+                <a href="{% url 'gameboy_advance_accessories' %}" class="sub-title">Gameboy Advance</a>
+                </li>
+                <li>
+                <a href="{% url 'gameboy_accessories' %}" class="dropdown-nav-title">GameBoy</a>
+                </li>
+                <li>
+                <a href="{% url 'xbox_accessories' %}" class="dropdown-nav-title">Xbox</a>
+                </li>
+                <li>
+                <a href="{% url 'other_accessories' %}" class="dropdown-nav-title">Other</a>
+                </li>
             </div> <!-- end dropdown-content-->
 </div> <!-- end dropdown-->
 
