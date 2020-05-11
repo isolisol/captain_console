@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>My Orders</h1>
+    {% for order in orders %}
+        <h1>{{ order.date }}</h1>
+    {% endfor %}
+
+{% endblock %}

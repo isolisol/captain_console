@@ -38,19 +38,25 @@
 
 }
 
+.img-container {
+    background-color: white;
+    border: 2px solid #ff29f8;
+}
+
 .single-product {
-    height: 310px;
+    height: 380px;
     width: 310px;
     display: inline-block;
     margin: 20px;
     padding: 5px;
-    border: solid 1px #ff29f8;
+    border: solid 2px #ff29f8;
+    background-color: white;
 }
 
 
 .single-product p {
     margin: 10px;
-    color: white;
+    color: black;
 }
 
 .product-details {
@@ -86,7 +92,11 @@
     justify-content: center;
     float: left;
     padding: 30px;
-    background-color: white;
+}
+
+.product-img.homepage {
+    background-color: black;
+    border: 2px solid #ff29f8;
 }
 
 #product-description {

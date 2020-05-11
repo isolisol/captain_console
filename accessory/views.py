@@ -36,6 +36,6 @@ def get_gameboy_accessories(request):
     accessories = {'accessories': gameboycolor.union(gameboyadvance)}
     return render(request, 'accessory/index.html', accessories)
 
-#def get_other_accessories(request):
-#    accessories = {'accessories': Product.objects.filter(console_id=null, type_id=3)}
-#    return render(request, 'accessory/index.html', accessories)
+def get_other_accessories(request):
+    accessories = {'accessories': Product.objects.filter(console_id=None, type_id=3)}
+    return render(request, 'accessory/index.html', accessories)

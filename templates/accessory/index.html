@@ -3,11 +3,13 @@
     <div class="product">
     <h1>Accessories</h1>
         {% for accessory in accessories %}
+            <div class="img-container single-product">
                 <a href="/accessories/{{ accessory.id }}">
                     <img class="product-img" src="{{ accessory.image }}">
                     <p class="product-name">{{ accessory.name }}</p>
                     <p class="product-price">{{ accessory.price }}$</p>
                 </a>
+            </div>
         {% endfor %}
     </div> <!-- end product -->
 {% endblock %}
