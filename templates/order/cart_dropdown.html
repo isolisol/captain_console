@@ -1,11 +1,13 @@
-{% extends 'base.html' %}
-{% block content %}
-    <div class="cart-details">
-        <h1>Shopping cart</h1>
+<div class="dropdown">
+    {% load static %}
+    <img src="{% static "images/cart-button-clipart-4.jpg" %}" alt="cart" class="icon">
+    <div class="dropdown-content cart">
+        <div class="shopping-cart">
             <div class="container mb-4">
                 <div class="row">
                     <div class="col-12">
                         <div class="table-responsive">
+                            <h2 class="text-center">Cart</h2>
                             <table class="table table-striped">
                                 <!-- header for shopping cart -->
                                 <thead>
@@ -18,7 +20,7 @@
                                     </tr>
                                 </thead>
                                 {% for product in cart_items %}
-                                    {% include 'order/single_cart_item.html' with product=product %}
+                                    {% include 'order/single_cart_item_drop.html' with product=product %}
                                 {% endfor %}
                                 <tr>
                                     <td></td>
@@ -31,14 +33,14 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td>Shipping price</td>
+                                    <td>Shipping price:</td>
                                     <td>10$</td>
                                 </tr>
                                 <tr>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td>Total</td>
+                                    <td>Total:</td>
                                     <td>{{ total_price }}</td>
                                 </tr>
                             </table> <!-- end table table-responsive -->
@@ -47,9 +49,11 @@
                 </div> <!-- end row -->
             </div> <!-- end container mb-4 -->
 
+
         <div class="review-cart-buttons">
             <a href="{% url 'checkout_index' %}" class="btn btn-outline-success header-button nav-btn-text" id="checkout-btn">Checkout</a>
-            <a href="{% url 'homepage' %}" class="btn btn-outline-success header-button nav-btn-text" id="continue-shopping">Continue Shopping</a>
+            <a href="{% url 'cart_details' %}" class="btn btn-outline-success header-button nav-btn-text" id="continue-shopping">View cart</a>
         </div>
-    </div>
-{% endblock %}
+        </div> <!--end shopping-cart -->
+    </div> <!-- end dropdown-content -->
+</div> <!-- end dropdown -->

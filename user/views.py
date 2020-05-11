@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from user.models import Profile
 from user.forms.profile_form import ProfileForm, UserForm, ProfileImageForm
+from helper_services.helpers import build_context
 
 
 # Create your views here.
@@ -23,11 +24,14 @@ def register(request):
 def profile(request):
     user = request.user # User.objects.filter(id=profile.id).first()
     profile = Profile.objects.filter(user=user).first()
+    context = build_context(user)
+    context['profile'] = profile
+    context['user'] = user
     user_profile = {
         'profile': profile,
         'user': user
     }
-    return render(request, 'user/profile.html', context=user_profile)
+    return render(request, 'user/profile.html', context=context)
 
 
 def edit_profile(request):

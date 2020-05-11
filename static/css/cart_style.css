@@ -1,0 +1,25 @@
+.cart-product-img {
+    width: 100px;
+    height: 100px;
+}
+
+.count {
+    width: 60px!important;
+}
+
+.table-responsive {
+    margin-top: -35px;
+}
+
+.cart-details h1 {
+    color: black;
+}
+
+.dropdown-content.cart {
+    width: 500px;
+}
+
+#continue-shopping {
+    width: 100px;
+    margin-left: 10px;
+}

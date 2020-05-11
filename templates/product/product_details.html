@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="product-details">
-        <img src="{{ accessory.image }}" class="product-img"/>
+        <img src="{{ product.image }}" class="product-img"/>
         <div class="product-details-info">
-            <h1>{{ accessory.name }}</h1><br>
-            <p id="product-description">{{ accessory.description }}</p>
-            <p id="product-price">{{ accessory.price }}$</p><br>
+            <h1>{{ product.name }}</h1><br>
+            <p id="product-description">{{ product.description }}</p>
+            <p id="product-price">{{ product.price }}$</p><br>
             <button type="button" class="classic-button" >Add to Cart</button>
         </div> <!-- end product-details-info -->
     </div> <!-- end product-details -->

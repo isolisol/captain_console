@@ -1,0 +1,15 @@
+<div class="single-product">
+    {% if product.type_id == 1 %}
+        <a href="/consoles/{{ product.id }}">
+    {% endif %}
+    {% if product.type_id == 2%}
+        <a href="/videogames/{{ product.id }}">
+    {% endif %}
+    {% if product.type_id == 3 %}
+        <a href="/accessories/{{ product.id }}">
+    {% endif %}
+        <img class="product-img" src="{{ product.image }}">
+        <p class="product-name">{{ product.name }}</p>
+        <p class="product-price">{{ product.price }}$</p>
+    </a>
+</div> <!-- end single-details -->

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{% static 'css/profile_style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/checkout_style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/review_cart.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/cart_style.css' %}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap" rel="stylesheet">
@@ -25,7 +26,7 @@
 <body>
     <div class="main-frame">
         <div id="header">
-            {% include 'header.html' %}
+            {% include 'header.html' with cart_info=cart_info%}
             {% include 'navigation.html' %}
         </div> <!-- end header -->
         <div class="container">
