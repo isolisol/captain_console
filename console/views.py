@@ -34,3 +34,27 @@ def get_gameboy_consoles(request):
     gameboyadvance = Product.objects.filter(id=5)
     consoles = {'consoles': gameboycolor.union(gameboyadvance)}
     return render(request, 'console/index.html', consoles)
+
+def get_ps1_consoles(request):
+    consoles = {'consoles': Product.objects.filter(id=6)}
+    return render(request, 'console/index.html', consoles)
+
+def get_ps2_consoles(request):
+    consoles = {'consoles': Product.objects.filter(id=7)}
+    return render(request, 'console/index.html', consoles)
+
+def get_nintendo_nes_consoles(request):
+    consoles = {'consoles': Product.objects.filter(id=2)}
+    return render(request, 'console/index.html', consoles)
+
+def get_nintendo_64_consoles(request):
+    consoles = {'consoles': Product.objects.filter(id=3)}
+    return render(request, 'console/index.html', consoles)
+
+def get_gameboy_color_consoles(request):
+    consoles = {'consoles': Product.objects.filter(id=4)}
+    return render(request, 'console/index.html', consoles)
+
+def get_gameboy_advance_consoles(request):
+    consoles = {'consoles': Product.objects.filter(id=5)}
+    return render(request, 'console/index.html', consoles)

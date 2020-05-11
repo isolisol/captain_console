@@ -1,13 +1,20 @@
 .product {
     padding: 15px;
     margin-bottom: 30px;
-    border-bottom: solid 2px #ff29f8;
     justify-content: center;
+    width: 75%;
+    padding-bottom: 20px;
+    float: right;
 }
 
-.product h1 {
+.product-container {
+    border-bottom: 2px solid #ff29f8;
+    width: 100%;
+    padding-bottom: 35px;
+}
+
+.product-container h1 {
     padding: 10px;
-    margin-bottom: 30px;
     border-bottom: 2px solid #ff29f8;
     text-align: center;
     color: white;
@@ -107,12 +114,14 @@
 /* Sidebar */
 
 .checkbox-container {
+    margin-top: 35px;
     border: 2px solid #ff29f8;
     background-color: white;
     justify-content: left;
-    margin-top: 150px;
-    width: 200px;
+    width: 20%;
+    float: left;
 }
+
 
 .checkbox-container h3 {
     border-bottom: 1px solid #ff29f8;
@@ -127,7 +136,6 @@
 
 .checkbox-container input {
     margin-right: 5px;
-
 }
 
 

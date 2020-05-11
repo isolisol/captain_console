@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% include 'console/console_sidebar.html' %}
-    <div class="product">
+    <div class="product-container">
         <h1>Consoles</h1>
-        {% for console in consoles %}
-            {% include 'console/single_product.html' with console=console %}
-        {% endfor %}
-    </div> <!-- end product -->
+        {% include 'console/console_sidebar.html' %}
+        <div class="product">
+            {% for console in consoles %}
+                {% include 'console/single_product.html' with console=console %}
+            {% endfor %}
+        </div> <!-- end product -->
+    </div>
 {% endblock %}
