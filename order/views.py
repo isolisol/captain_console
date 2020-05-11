@@ -1,18 +1,20 @@
 from django.shortcuts import render
 from order.models import Order, Cart
-from helperServices.build_context import build_context
+from helperServices.helpers import build_context
 
 
 # Create your views here.
-def cart_details(request):
-    user = request.user
-    cart_items = build_context(user) #{'cart_items': Cart.objects.get(user_id=user.id, complete=False).product.all()}
-    return render(request, 'order/cart_details.html', cart_items)
-
 def cart_dropdown(request):
     user = request.user
-    cart_items = {'cart_items': Cart.objects.get(user_id=user.id, complete=False).product.all()}
-    return render(request, 'base.html', cart_items)
+    cart_info = build_context(user)
+    #return render(request, 'order/cart_dropdown.html', context=cart_info)
+    return render(request, 'base.html', context=cart_info)
+
+
+def cart_details(request):
+    user = request.user
+    cart_info = build_context(user)
+    return render(request, 'order/cart_details.html', context=cart_info)
 
 def past_orders(request):
     user = request.user

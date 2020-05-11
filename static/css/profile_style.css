@@ -22,6 +22,8 @@ tr {
 
 #info-table {
     width: 80%;
+    background-color: black;
+    color: white;
 }
 
 .profile-img {
@@ -133,13 +135,15 @@ form.form-horizontal h1 {
 }
 
 .edit-img {
-    width: 500px!important;
+    width: 500px !important;
     border-radius: 5px;
     padding: 40px;
     padding-bottom: 20px;
-    font-family: normal!important;
+    font-family: normal !important;
     border: 2px solid lightgray;
     border-radius: 5px;
+    background-color: black;
+    border: 1px solid #ff29f8;
 }
 
 .edit-img h1 {
