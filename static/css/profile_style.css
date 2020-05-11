@@ -1,8 +1,14 @@
 .info-field {
     text-align: left;
+    color: white;
     justify-content: center;
-    width: 40%;
+    width: 60%;
     font-family: normal;
+    background-color: #000000ad;
+    padding: 30px;
+    border-top: 2px solid #ff29f8;
+    border-left: 2px solid #ff29f8;
+    border-bottom: 2px solid #ff29f8;
 }
 
 tr {
@@ -31,9 +37,13 @@ tr {
 }
 
 #profile-image-container {
-    width: 60%;
     float: left;
     text-align: left;
+    background-color: #000000ad;
+    padding: 30px;
+    border-top: 2px solid #ff29f8;
+    border-right: 2px solid #ff29f8;
+    border-bottom: 2px solid #ff29f8;
 }
 
 
@@ -85,12 +95,13 @@ form.form-horizontal h1 {
 
 .edit-info {
     width: 500px!important;
-    border-radius: 5px;
     padding: 40px;
     padding-bottom: 20px;
     font-family: normal!important;
-    border: 2px solid lightgray;
+    border: 2px solid #ff28f9;
     border-radius: 5px;
+    color: white;
+    background-color: #000000ad;
 }
 
 .edit-info h1 {
@@ -134,12 +145,13 @@ form.form-horizontal h1 {
 
 .edit-img {
     width: 500px!important;
-    border-radius: 5px;
     padding: 40px;
     padding-bottom: 20px;
     font-family: normal!important;
-    border: 2px solid lightgray;
+    border: 2px solid #ff29f8;
     border-radius: 5px;
+    color: white;
+    background-color: #000000ad;
 }
 
 .edit-img h1 {

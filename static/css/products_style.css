@@ -124,8 +124,8 @@
 
 .checkbox-container {
     margin-top: 35px;
-    border: 2px solid #ff29f8;
-    background-color: white;
+    color: white;
+    background-color: #000000ad;
     justify-content: left;
     width: 20%;
     float: left;
@@ -134,8 +134,10 @@
 
 .checkbox-container h3 {
     border-bottom: 1px solid #ff29f8;
+    border-top: 1px solid #ff29f8;
     padding: 5px;
     margin-bottom: 15px;
+    background-color: black;
 }
 
 .checkbox-container label {
