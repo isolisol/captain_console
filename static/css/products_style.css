@@ -39,18 +39,19 @@
 }
 
 .single-product {
-    height: 310px;
+    height: 380px;
     width: 310px;
     display: inline-block;
     margin: 20px;
     padding: 5px;
     border: solid 1px #ff29f8;
+    background-color: white;
 }
 
 
 .single-product p {
     margin: 10px;
-    color: white;
+    color: black;
 }
 
 .product-details {
@@ -106,7 +107,7 @@
 /* Sidebar */
 
 .checkbox-container {
-    border: 2px solid white;
+    border: 2px solid #ff29f8;
     background-color: white;
     justify-content: left;
     margin-top: 150px;
