@@ -8,20 +8,20 @@ def index(request):
     user = request.user
     if user.is_authenticated:
         context = build_context(user)
-        context['accessories'] = Product.objects.filter(type_id=3).order_by('name')
+        context['products'] = Product.objects.filter(type_id=3).order_by('name')
     else:
-        context = {'accessories': Product.objects.filter(type_id=3).order_by('name')}
-    return render(request, 'accessory/index.html', context=context)
+        context = {'products': Product.objects.filter(type_id=3).order_by('name')}
+    return render(request, 'product/index.html', context=context)
 
 
 def get_accessory_by_id(request,id):
     user = request.user
     if user.is_authenticated:
         context = build_context(user)
-        context['accessory'] = get_object_or_404(Product, pk=id)
+        context['product'] = get_object_or_404(Product, pk=id)
     else:
-        context = {'accessory': get_object_or_404(Product, pk=id)}
-    return render(request, 'accessory/accessory_detail.html', context=context)
+        context = {'product': get_object_or_404(Product, pk=id)}
+    return render(request, 'product/product_details.html', context=context)
 
 
 def get_playstation_accessories(request):
@@ -31,10 +31,10 @@ def get_playstation_accessories(request):
     accessories = playstation1.union(playstation2)
     if user.is_authenticated:
         context = build_context(user)
-        context['accessories'] = accessories
+        context['products'] = accessories
     else:
-        context = {'accessories': accessories}
-    return render(request, 'accessory/index.html', context=context)
+        context = {'products': accessories}
+    return render(request, 'product/index.html', context=context)
 
 
 def get_nintendo_accessories(request):
@@ -46,87 +46,87 @@ def get_nintendo_accessories(request):
     accessories = nintendo_nes.union(nintendo64, gameboy_color, gameboy_advance)
     if user.is_authenticated:
         context = build_context(user)
-        context['accessories'] = accessories
+        context['products'] = accessories
     else:
-        context = {'acessories': accessories}
-    return render(request, 'accessory/index.html', context=context)
+        context = {'products': accessories}
+    return render(request, 'product/index.html', context=context)
 
 
 def get_xbox_accessories(request):
     user = request.user
     if user.is_authenticated:
         context = build_context(user)
-        context['accessories'] = Product.objects.filter(type_id=3, console_id=8)
+        context['products'] = Product.objects.filter(type_id=3, console_id=8)
     else:
-        context = {'accessories': Product.objects.filter(type_id=3, console_id=8)}
-    return render(request, 'accessory/index.html', context=context)
+        context = {'products': Product.objects.filter(type_id=3, console_id=8)}
+    return render(request, 'product/index.html', context=context)
 
 
 def get_ps1_accessories(request):
     user = request.user
     if user.is_authenticated:
         context = build_context(user)
-        context['accessories'] = Product.objects.filter(type_id=3, console_id=6)
+        context['products'] = Product.objects.filter(type_id=3, console_id=6)
     else:
-        context = {'accessories': Product.objects.filter(type_id=3, console_id=6)}
-    return render(request, 'accessory/index.html', context=context)
+        context = {'products': Product.objects.filter(type_id=3, console_id=6)}
+    return render(request, 'product/index.html', context=context)
 
 
 def get_ps2_accessories(request):
     user = request.user
     if user.is_authenticated:
         context = build_context(user)
-        context['accessories'] = Product.objects.filter(type_id=3, console_id=7)
+        context['products'] = Product.objects.filter(type_id=3, console_id=7)
     else:
-        context = {'accessories': Product.objects.filter(type_id=3, console_id=7)}
-    return render(request, 'accessory/index.html', context=context)
+        context = {'products': Product.objects.filter(type_id=3, console_id=7)}
+    return render(request, 'product/index.html', context=context)
 
 
 def get_nintendo_nes_accessories(request):
     user = request.user
     if user.is_authenticated:
         context = build_context(user)
-        context['accessories'] = Product.objects.filter(type_id=3, console_id=2)
+        context['products'] = Product.objects.filter(type_id=3, console_id=2)
     else:
-        context = {'accessories': Product.objects.filter(type_id=3, console_id=2)}
-    return render(request, 'accessory/index.html', context=context)
+        context = {'products': Product.objects.filter(type_id=3, console_id=2)}
+    return render(request, 'product/index.html', context=context)
 
 
 def get_nintendo_64_accessories(request):
     user = request.user
     if user.is_authenticated:
         context = build_context(user)
-        context['accessories'] = Product.objects.filter(type_id=3, console_id=3)
+        context['products'] = Product.objects.filter(type_id=3, console_id=3)
     else:
-        context = {'accessories': Product.objects.filter(type_id=3, console_id=3)}
-    return render(request, 'accessory/index.html', context=context)
+        context = {'products': Product.objects.filter(type_id=3, console_id=3)}
+    return render(request, 'product/index.html', context=context)
 
 
 def get_gameboy_advance_accessories(request):
     user = request.user
     if user.is_authenticated:
         context = build_context(user)
-        context['accessories'] = Product.objects.filter(type_id=3, console_id=5)
+        context['products'] = Product.objects.filter(type_id=3, console_id=5)
     else:
-        context = {'accessories': Product.objects.filter(type_id=3, console_id=5)}
-    return render(request, 'accessory/index.html', context=context)
+        context = {'products': Product.objects.filter(type_id=3, console_id=5)}
+    return render(request, 'product/index.html', context=context)
 
 
 def get_gameboy_color_accessories(request):
     user = request.user
     if user.is_authenticated:
         context = build_context(user)
-        context['accessories'] = Product.objects.filter(type_id=3, console_id=4)
+        context['products'] = Product.objects.filter(type_id=3, console_id=4)
     else:
-        context = {'accessories': Product.objects.filter(type_id=3, console_id=4)}
-    return render(request, 'accessory/index.html', context=context)
+        context = {'products': Product.objects.filter(type_id=3, console_id=4)}
+    return render(request, 'product/index.html', context=context)
 
 
 def get_other_accessories(request):
     user = request.user
     if user.is_authenticated:
         context = build_context(user)
-        context['accessories'] = Product.objects.filter(type_id=3, console_id=None)
+        context['products'] = Product.objects.filter(type_id=3, console_id=None)
     else:
-        context = {'accessories': Product.objects.filter(type_id=3, console_id=None)}
-    return render(request, 'accessory/index.html', context=context)
+        context = {'products': Product.objects.filter(type_id=3, console_id=None)}
+    return render(request, 'product/index.html', context=context)

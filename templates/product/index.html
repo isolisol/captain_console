@@ -2,10 +2,10 @@
 {% block content %}
     <div class="product-container">
         <h1>Consoles</h1>
-        {% include 'console/console_sidebar.html' %}
+        {% include 'product/product_sidebar.html' with product_type_id=product_type_id %}
         <div class="product">
-            {% for console in consoles %}
-                {% include 'console/single_product.html' with console=console %}
+            {% for product in products %}
+                {% include 'product/single_product.html' with product=product %}
             {% endfor %}
         </div> <!-- end product -->
     </div>

@@ -1,0 +1,76 @@
+<div class="sidebar">
+    <div class="checkbox-container">
+
+        <h3>Sort By</h3>
+        <label class="container">
+              <input type="radio" name="sort-by" value="sort-by-price-h-to-l">
+              <label for="sort-by-price-h-to-l">Price (High-Low)</label><br>
+        </label>
+        <label class="container">
+              <input type="radio" name="sort-by" value="sort-by-price-l-to-h">
+              <label for="sort-by-price-l-to-h">Price (Low-High)</label><br>
+        </label>
+        <label class="container">
+              <input type="radio" name="sort-by" value="sort-by-name">
+              <label for="sort-by-name">Name</label><br>
+        </label>
+        {% if product_type_id == 2 %}
+            <h3>Genre</h3>
+            <label class="container">
+                  <input type="checkbox">
+                  <span class="checkmark">Action</span>
+            </label>
+            <label class="container">
+                  <input type="checkbox">
+                  <span class="checkmark">Adventure</span>
+            </label>
+            <label class="container">
+                  <input type="checkbox">
+                  <span class="checkmark">Adventure</span>
+            </label>
+            <label class="container">
+                  <input type="checkbox">
+                  <span class="checkmark">Puzzle</span>
+            </label>
+            <label class="container">
+                  <input type="checkbox">
+                  <span class="checkmark">Sport</span>
+            </label>
+            <label class="container">
+                  <input type="checkbox">
+                  <span class="checkmark">Tactical shooter</span>
+            </label>
+            <label class="container">
+                  <input type="checkbox">
+                  <span class="checkmark">Role-playing</span>
+            </label><br>
+
+            <h3>Age Limit</h3>
+            <label class="container">
+                  <input type="checkbox">
+                  <span class="checkmark">3+</span>
+            </label>
+            <label class="container">
+                  <input type="checkbox">
+                  <span class="checkmark">7+</span>
+            </label>
+            <label class="container">
+                  <input type="checkbox">
+                  <span class="checkmark">12+</span>
+            </label>
+            <label class="container">
+                  <input type="checkbox">
+                  <span class="checkmark">16+</span>
+            </label>
+            <label class="container">
+                  <input type="checkbox">
+                  <span class="checkmark">17+</span>
+            </label>
+            <label class="container">
+                  <input type="checkbox">
+                  <span class="checkmark">18+</span>
+            </label>
+        {% endif %}
+    </div>
+</div>
+
