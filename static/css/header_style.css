@@ -211,3 +211,9 @@
     float: top;
     height: 40px;
 }
+
+/* Sort By test*/
+
+#sort-test:hover {
+    padding: 0;
+}
