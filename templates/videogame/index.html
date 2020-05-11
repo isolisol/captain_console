@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="product">
-    <h1>Videogames</h1>
+    <div class="product-container">
+        <h1>Videogames</h1>
+        {% include 'videogame/videogame_sidebar.html' %}
+        <div class="product">
             {% for game in videogames %}
                 {% include 'videogame/single_product.html' with game=game %}
             {% endfor %}
-    </div> <!-- end product -->
+        </div> <!-- end product -->
+    </div>
 {% endblock %}

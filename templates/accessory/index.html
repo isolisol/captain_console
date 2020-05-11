@@ -1,15 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="product">
-    <h1>Accessories</h1>
-        {% for accessory in accessories %}
-            <div class="img-container single-product">
-                <a href="/accessories/{{ accessory.id }}">
-                    <img class="product-img" src="{{ accessory.image }}">
-                    <p class="product-name">{{ accessory.name }}</p>
-                    <p class="product-price">{{ accessory.price }}$</p>
-                </a>
-            </div>
-        {% endfor %}
-    </div> <!-- end product -->
+    <div class="product-container">
+        <h1>Accessories</h1>
+            {% include 'accessory/accessory_sidebar.html' %}
+        <div class="product">
+            {% for accessory in accessories %}
+                {% include 'accessory/single_product.html' with accessory=accessory %}
+            {% endfor %}
+        </div> <!-- end product -->
+    </div>
 {% endblock %}

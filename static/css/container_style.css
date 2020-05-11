@@ -1,11 +1,22 @@
 /* Homepage images */
 
+.homepage-img {
+    height: 300px;
+    width: 300px;
+    font-size: 18px;
+    justify-content: center;
+    float: left;
+    padding: 30px;
+}
+
 #image-left {
     margin: 30px;
     justify-content: center;
     text-align: center;
     display: inline-block;
     width:33%;
+    background-color: #000000ad;
+    border: 2px solid #ff29f8;
 }
 
 #image-middle {
@@ -14,6 +25,8 @@
     text-align: center;
     display: inline-block;
     width:33%;
+    background-color: #000000ad;
+    border: 2px solid #ff29f8;
 }
 
 #image-right {
@@ -22,6 +35,8 @@
     text-align: center;
     display: inline-block;
     width:33%;
+    background-color: #000000ad;
+    border: 2px solid #ff29f8;
 }
 
 #image-right p {
@@ -120,3 +135,4 @@
     color: white;
     font-family: 'Geo', sans-serif;
 }
+

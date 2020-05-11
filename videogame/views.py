@@ -38,3 +38,27 @@ def get_videogames_by_gameboy(request):
     gameboyadvance = Product.objects.filter(type_id=2, console_id=4)
     videogames = {'videogames': gameboycolor.union(gameboyadvance)}
     return render(request, 'videogame/index.html', videogames)
+
+def get_ps1_games(request):
+    videogames = {'videogames': Product.objects.filter(type_id=2, console_id=6)}
+    return render(request, 'videogame/index.html', videogames)
+
+def get_ps2_games(request):
+    videogames = {'videogames': Product.objects.filter(type_id=2, console_id=7)}
+    return render(request, 'videogame/index.html', videogames)
+
+def get_nintendo_nes_games(request):
+    videogames = {'videogames': Product.objects.filter(type_id=2, console_id=2)}
+    return render(request, 'videogame/index.html', videogames)
+
+def get_nintendo_64_games(request):
+    videogames = {'videogames': Product.objects.filter(type_id=2, console_id=3)}
+    return render(request, 'videogame/index.html', videogames)
+
+def get_gameboy_advance_games(request):
+    videogames = {'videogames': Product.objects.filter(type_id=2, console_id=5)}
+    return render(request, 'videogame/index.html', videogames)
+
+def get_gameboy_color_games(request):
+    videogames = {'videogames': Product.objects.filter(type_id=2, console_id=4)}
+    return render(request, 'videogame/index.html', videogames)
