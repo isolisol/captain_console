@@ -6,7 +6,6 @@ urlpatterns = [
     path('<int:id>', views.get_console_by_id, name="console_detail"),
     path('playstation_consoles', views.get_playstation_consoles, name='playstation_consoles'),
     path('nintendo_consoles', views.get_nintendo_consoles, name='nintendo_consoles'),
-    path('gameboy_consoles', views.get_gameboy_consoles, name='gameboy_consoles'),
     path('ps1_consoles', views.get_ps1_consoles, name='ps1_consoles'),
     path('ps2_consoles', views.get_ps2_consoles, name='ps2_consoles'),
     path('nintendo_nes_consoles', views.get_nintendo_nes_consoles, name='nintendo_nes_consoles'),

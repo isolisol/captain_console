@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from order.models import Order, Cart
-from helperServices.helpers import build_context
+from helper_services.helpers import build_context
 
 
 # Create your views here.

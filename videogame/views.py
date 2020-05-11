@@ -1,9 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from accessory.models import Product
-from helperServices.helpers import build_context
+from helper_services.helpers import build_context
 
 
-# Create your views here.
 def index(request):
     user = request.user
     if user.is_authenticated:
@@ -16,14 +15,16 @@ def index(request):
 
 def get_videogame_by_id(request, id):
     user = request.user
+    videogame = get_object_or_404(Product, pk=id)
     if user.is_authenticated:
         context = build_context(user)
-        context['videogame'] = get_object_or_404(Product, pk=id)
+        context['videogame'] = videogame
     else:
-        context = {'videogame': get_object_or_404(Product, pk=id)}
+        context = {'videogame': videogame}
     return render(request, 'videogame/videogame_detail.html', context=context)
 
 
+# Get video games for specific consoles
 def get_videogames_by_playstation(request):
     user = request.user
     playstation1 = Product.objects.filter(type_id=2, console_id=6)
@@ -41,7 +42,9 @@ def get_videogames_by_nintendo(request):
     user = request.user
     nintendo_nes = Product.objects.filter(type_id=2, console_id=2)
     nintendo64 = Product.objects.filter(type_id=2, console_id=3)
-    videogames = nintendo_nes.union(nintendo64)
+    gameboy_color = Product.objects.filter(type_id=2, console_id=4)
+    gameboy_advanced = Product.objects.filter(type_id=2, console_id=5)
+    videogames = nintendo_nes.union(nintendo64, gameboy_color, gameboy_advanced)
     if user.is_authenticated:
         context = build_context(user)
         context['videogames'] = videogames
@@ -60,18 +63,6 @@ def get_videogames_by_xbox(request):
     return render(request, 'videogame/index.html', context=context)
 
 
-def get_videogames_by_gameboy(request):
-    user = request.user
-    gameboycolor = Product.objects.filter(type_id=2, console_id=5)
-    gameboyadvance = Product.objects.filter(type_id=2, console_id=4)
-    videogames = gameboycolor.union(gameboyadvance)
-    if user.is_authenticated:
-        context = build_context(user)
-        context['videogames'] = videogames
-    else:
-        context = {'videogames': videogames}
-    return render(request, 'videogame/index.html', context=context)
-
 def get_ps1_games(request):
     user = request.user
     videogames = Product.objects.filter(type_id=2, console_id=6)
@@ -81,6 +72,7 @@ def get_ps1_games(request):
     else:
         context = {'videogames': videogames}
     return render(request, 'videogame/index.html', context=context)
+
 
 def get_ps2_games(request):
     user = request.user
@@ -92,6 +84,7 @@ def get_ps2_games(request):
         context = {'videogames': videogames}
     return render(request, 'videogame/index.html', context=context)
 
+
 def get_nintendo_nes_games(request):
     user = request.user
     videogames = Product.objects.filter(type_id=2, console_id=2)
@@ -100,16 +93,37 @@ def get_nintendo_nes_games(request):
         context['videogames'] = videogames
     else:
         context = {'videogame': videogames}
-    return render(request, 'videogame/index.html', videogames)
+    return render(request, 'videogame/index.html', context=context)
+
 
 def get_nintendo_64_games(request):
-    videogames = {'videogames': Product.objects.filter(type_id=2, console_id=3)}
-    return render(request, 'videogame/index.html', videogames)
+    user = request.user
+    videogames = Product.objects.filter(type_id=2, console_id=3)
+    if user.is_authenticated:
+        context = build_context(user)
+        context['videogames'] = videogames
+    else:
+        context = {'videogames': videogames}
+    return render(request, 'videogame/index.html', context=context)
+
 
 def get_gameboy_advance_games(request):
-    videogames = {'videogames': Product.objects.filter(type_id=2, console_id=5)}
-    return render(request, 'videogame/index.html', videogames)
+    user = request.user
+    videogames = Product.objects.filter(type_id=2, console_id=5)
+    if user.is_authenticated:
+        context = build_context(user)
+        context['videogames'] = videogames
+    else:
+        context = {'videogames': videogames}
+    return render(request, 'videogame/index.html', context=context)
+
 
 def get_gameboy_color_games(request):
-    videogames = {'videogames': Product.objects.filter(type_id=2, console_id=4)}
-    return render(request, 'videogame/index.html', videogames)
+    user = request.user
+    videogames = Product.objects.filter(type_id=2, console_id=4)
+    if user.is_authenticated:
+        context = build_context(user)
+        context['videogames'] =videogames
+    else:
+        context = {'videogames': videogames}
+    return render(request, 'videogame/index.html', context=context)
