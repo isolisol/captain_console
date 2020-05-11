@@ -16,6 +16,7 @@ def cart_details(request):
     cart_info = build_context(user)
     return render(request, 'order/cart_details.html', context=cart_info)
 
+
 def past_orders(request):
     user = request.user
     cart_ids = []
@@ -28,5 +29,4 @@ def past_orders(request):
         order = Order.objects.filter(cart_id=id)
         orders_temp.union(order)
     orders = {'orders': orders_temp}
-
     return render(request, 'order/past_orders.html', orders)
