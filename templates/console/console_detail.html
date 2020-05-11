@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="product-details">
+        <img src="{{ console.image }}" class="product-img"/>
+        <div class="product-details-info">
+            <h1>{{ console.name }}</h1><br>
+            <p id="product-description">{{ console.description }}</p>
+            <p id="product-price">{{ console.price }}$</p><br>
+            <button type="button" class="classic-button">Add to Cart</button>
+        </div> <!-- end product-details-info -->
+    </div> <!-- end product-details -->
+{% endblock %}

@@ -17,11 +17,19 @@ class UserForm(ModelForm):
 class ProfileForm(ModelForm):
     class Meta:
         model = Profile
-        exclude = ['id', 'user']
+        exclude = ['id', 'user', 'image']
         widgets = {
             'address': widgets.TextInput(attrs={'class': 'form-control'}),
             'house_number': widgets.TextInput(attrs={'class': 'form-control'}),
             'city': widgets.Select(attrs={'class': 'form-control'}),
-            'phone_number': widgets.TextInput(attrs={'class': 'form-control'}),
+            'phone_number': widgets.TextInput(attrs={'class': 'form-control'})
+        }
+
+
+class ProfileImageForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['image']
+        widgets = {
             'image': widgets.TextInput(attrs={'class': 'form-control'})
         }

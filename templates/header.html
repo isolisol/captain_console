@@ -5,18 +5,18 @@
             <img src="{% static "images/logo.png" %}" alt="logo" id="logo-image">
             <h1 id="captain-console">Captain Console</h1>
         </a>
-    </div>
+    </div> <!-- end left-header -->
     <div id="right-header">
         <button class="classic-button"><a id="about-us" href={% url 'aboutus' %}>About Us</a></button>
         {% if user.is_authenticated %}
-        <div class="dropdown">
-            <img class="icon" src="{% static "images/user_icon.png" %}"/>
-            <div class="dropdown-content">
-                <a href="{% url 'profile' %}">My Account</a>
-                <a href="#">My Orders</a>
-                <a href="{% url 'logout' %}">Logout</a>
-            </div>
-        </div>
+            <div class="dropdown">
+                <img class="icon" src="{% static "images/nyprofile.png" %}"/>
+                <div class="dropdown-content">
+                    <a href="{% url 'profile' %}">My Account</a>
+                    <a href="#">My Orders</a>
+                    <a href="{% url 'logout' %}">Logout</a>
+                </div> <!-- end dropdown-content -->
+            </div> <!-- end dropdown -->
 
         {% else %}
             <div class="dropdown">
@@ -24,18 +24,13 @@
                 <div class="dropdown-content">
                     <a href="{% url 'login' %}">Log In</a>
                     <a href="{% url 'register' %}">Sign Up</a>
-                </div>
-            </div>
+                </div> <!-- end dropdown-content -->
+            </div> <!-- end dropdown -->
 
         {% endif %}
-        <div class="dropdown">
-            <img src="{% static "images/shopping_cart.png" %}" alt="cart" class="icon">
-            <div class="dropdown-content">
-                <!--Cart items here -->
-            </div>
-        </div>
-    </div>
-</div>
+            {% include 'cart_items.html' %}
+    </div> <!-- end right-header -->
+</div> <!-- end head-logo-wrap -->
 
 
 

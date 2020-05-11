@@ -3,13 +3,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Captain Console</title>
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header_style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/container_style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer-style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/location_hours_style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/products_style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/profile_style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/checkout_style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/review_cart.css' %}" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap" rel="stylesheet">
 </head>
@@ -18,16 +27,16 @@
         <div id="header">
             {% include 'header.html' %}
             {% include 'navigation.html' %}
-        </div>
+        </div> <!-- end header -->
         <div class="container">
             {% block content %}
 
             {% endblock %}
-        </div>
+        </div> <!-- end container -->
         <div id="footer">
             {% include 'footer.html' %}
-        </div>
-    </div>
+        </div> <!-- end footer -->
+    </div> <!-- end main-frame -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
             crossorigin="anonymous"></script>

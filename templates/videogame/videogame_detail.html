@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-    <img src="{{ videogame.image }}" class="product-img"/>
-    <p>{{ videogame.name }}</p>
-    <p>{{ videogame.description }}</p>
-    <p>{{ videogame.price }}</p>
+    <div class="product-details">
+        <img src="{{ videogame.image }}" class="product-img"/>
+        <div class="product-details-info">
+            <h1>{{ videogame.name }}</h1><br>
+            <p id="product-description">{{ videogame.description }}</p>
+            <p id="product-price">{{ videogame.price }}</p><br>
+            <button type="button" class="classic-button">Add to Cart</button>
+        </div> <!-- end product-details-info -->
+    </div> <!-- end product-details -->
 {% endblock %}

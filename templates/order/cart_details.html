@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="cart-details">
+        <h1>Shopping cart</h1>
+        <div class="review-cart-buttons">
+            <a href="{% url 'checkout_index' %}" class="btn btn-outline-success header-button nav-btn-text" id="checkout-btn">Checkout</a>
+            <a href="{% url 'homepage' %}" class="btn btn-outline-success header-button nav-btn-text" id="continue-shopping">Continue Shopping</a>
+        </div>
+    </div>
+{% endblock %}
