@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render
-from helperServices.helpers import build_context
+from helper_services.helpers import build_context
 
 # Create your views here.
 
@@ -15,9 +15,19 @@ def index(request):
     return render(request, 'homepage/index.html', context=context)
 
 def opening_hours(request):
-    return render(request, 'homepage/opening_hours.html')
+    user = request.user
+    if user.is_authenticated:
+        context = build_context(user)
+    else:
+        context = None
+    return render(request, 'homepage/opening_hours.html', context=context)
 
 
 def about_us(request):
-    return render(request, 'homepage/about_us.html')
+    user = request.user
+    if user.is_authenticated:
+        context = build_context(user)
+    else:
+        context = None
+    return render(request, 'homepage/about_us.html', context=context)
 
