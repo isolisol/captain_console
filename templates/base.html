@@ -26,7 +26,8 @@
 <body>
     <div class="main-frame">
         <div id="header">
-            {% include 'header.html' with cart_items=cart_items %}
+            <h1>user: {{ context }}</h1>
+            {% include 'header.html' with cart_info=cart_info%}
             {% include 'navigation.html' %}
         </div> <!-- end header -->
         <div class="container">

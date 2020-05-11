@@ -1,17 +1,27 @@
 from django.shortcuts import render, get_object_or_404
 from accessory.models import Product
+from helperServices.helpers import build_context
 
 
 # Create your views here.
 def index(request):
-    videogames = {'videogames': Product.objects.filter(type_id=2).order_by('name')}
-    return render(request, 'videogame/index.html', context=videogames)
+    user = request.user
+    if user.is_authenticated:
+        context = build_context(user)
+        context['videogames'] = Product.objects.filter(type_id=2).order_by('name')
+    else:
+        context = {'videogames': Product.objects.filter(type_id=2).order_by('name')}
+    return render(request, 'videogame/index.html', context=context)
 
 
 def get_videogame_by_id(request, id):
-    return render(request, 'videogame/videogame_detail.html', context={
-        'videogame': get_object_or_404(Product, pk=id)
-    })
+    user = request.user
+    if user.is_authenticated:
+        context = build_context(user)
+        context['videogame']: get_object_or_404(Product, pk=id)
+    else:
+        context = {'videogame': get_object_or_404(Product, pk=id)}
+    return render(request, 'videogame/videogame_detail.html', context=context)
 
 
 def get_videogames_by_playstation(request):
