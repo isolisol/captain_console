@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from accessory.models import Product
-from helperServices.helpers import build_context
+from helper_services.helpers import build_context
 
 
 # Create your views here.
