@@ -3,7 +3,7 @@
     <div class="brand">
     <h1>Brands</h1>
         {% for brand in brands %}
-            <a href="">
+            <a href="{{ brand.website }}">
                 <img src="{{ brand.logo }}">
             </a>
         {% endfor %}
