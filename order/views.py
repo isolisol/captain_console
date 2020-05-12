@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse
-from .models import Order, Cart, ContactInformation
+from .models import Order, Cart, ContactInformation, Payment
 from helper_services.helpers import build_context
 from django.contrib.auth.decorators import login_required
 from order.forms.contact_info_form import ContactInfoForm
@@ -74,5 +74,7 @@ def review(request, order_id):
     context = build_context(user)
     order = Order.objects.get(id=order_id)
     contact_info = ContactInformation.objects.get(id=order.contact_info.id)
+    payment_info = Payment.objects.get(id=order.payment.id)
     context['contact_info'] = contact_info
+    context['payment_info'] = payment_info
     return render(request, 'checkout/review_info.html', context)

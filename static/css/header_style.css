@@ -137,6 +137,9 @@
     border: solid 2px #ff29f8;
 }
 
+.search-form {
+    height: 20px;
+}
 
 /* Cart button on header and checkout button in cart */
 
@@ -217,3 +220,5 @@
 #sort-test:hover {
     padding: 0;
 }
+
+

@@ -25,3 +25,24 @@
     display: inline-block;
 }
 
+.review-info {
+    font-family: normal;
+    display: inline-block;
+    margin: 40px;
+    text-align: left;
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.review-info p{
+    color: black;
+}
+
+.review-info h2{
+    color: black;
+}
+
+.review-info-billing {
+    padding-top: 30px;
+}
