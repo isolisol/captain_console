@@ -2,19 +2,19 @@
     <div class="checkbox-container">
 
         <h3>Sort By</h3>
-        <form action="" method="post">
-            <label for="sort-by-price-h-to-l">
-                  <input type="radio" name="display-type" id="sort-by-price-h-to-l" value="sort-by-price-h-to-l">
-                  Price (High-Low)
-            </label>
-            <label for="sort-by-price-l-to-h">
-                  <input type="radio" name="display-type" id="sort-by-price-l-to-h" value="sort-by-price-l-to-h">Price (Low-High)
-            </label>
-            <label for="sort-by-name">
-                  <input type="radio" name="display-type" id="sort-by-name" value="sort-by-name">Name
-            </label><br>
-        </form>
-        {% if product_type_id ==  2 %}
+        <label class="container">
+              <input type="radio" name="sort-by" value="sort-by-price-h-to-l">
+              <label for="sort-by-price-h-to-l">Price (High-Low)</label><br>
+        </label>
+        <label class="container">
+              <input type="radio" name="sort-by" value="sort-by-price-l-to-h">
+              <label for="sort-by-price-l-to-h">Price (Low-High)</label><br>
+        </label>
+        <label class="container">
+              <input type="radio" name="sort-by" value="sort-by-name">
+              <label for="sort-by-name">Name</label><br>
+        </label>
+        {% if product_type_id == 2 %}
             <h3>Genre</h3>
             <label class="container">
                   <input type="checkbox" id="action" value="Click" onclick="checkbox_filter()">

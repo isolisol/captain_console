@@ -1,9 +1,20 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from accessory.models import Product
+from order.models import Cart, ProductInCart
 from helper_services.helpers import build_context
 
 
-# Create your views here.
+def a_add_to_cart(request, product_id):
+    user = request.user
+    product = get_object_or_404(Product, pk=product_id)
+    cart, created = Cart.objects.get_or_create(user_id=user.id, complete=False)
+    cart_add, created = ProductInCart.objects.get_or_create(product_id=product.id, cart_id=cart.id)
+    if not created:
+        cart_add.quantity += 1
+        cart_add.save()
+    return redirect('cart_details')
+
+
 def index(request):
     user = request.user
     if user.is_authenticated:

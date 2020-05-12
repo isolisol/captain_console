@@ -12,5 +12,6 @@ urlpatterns = [
     path('nintendo_64_consoles', views.get_nintendo_64_consoles, name='nintendo_64_consoles'),
     path('gameboy_color_consoles', views.get_gameboy_color_consoles, name='gameboy_color_consoles'),
     path('gameboy_advance_consoles', views.get_gameboy_advance_consoles, name='gameboy_advance_consoles'),
-    path('xbox_consoles_consoles', views.get_xbox_consoles, name='xbox_consoles')
+    path('xbox_consoles_consoles', views.get_xbox_consoles, name='xbox_consoles'),
+    path('add_to_cart/<int:product_id>', views.c_add_to_cart, name="c_add_to_cart")
 ]

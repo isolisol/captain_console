@@ -1,7 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from accessory.models import Product
-from order.models import Order, Cart
+from .models import Order, Cart
 from helper_services.helpers import build_context
+from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
+
+#@login_required
+#def add_to_cart(request, product_id):
+#    messages.success(request, "Cart updated")
+#    return redirect('cart_details')
 
 
 def cart_dropdown(request):
