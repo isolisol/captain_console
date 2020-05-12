@@ -1,4 +1,4 @@
-from order.models import Cart
+from order.models import Cart, ContactInformation
 
 
 def build_context(user):

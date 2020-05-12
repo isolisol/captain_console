@@ -26,6 +26,7 @@ def index(request):
     return render(request, 'product/index.html', context=context)
 
 
+# Get specific product
 def get_videogame_by_id(request, id):
     user = request.user
     videogame = get_object_or_404(Product, pk=id)
@@ -49,6 +50,7 @@ def get_videogames_by_playstation(request):
     else:
         context = {'products': videogames}
     context['product_type_id'] = 2
+    context['header_text'] = str('Playstation ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -65,6 +67,7 @@ def get_videogames_by_nintendo(request):
     else:
         context = {'products': videogames}
     context['product_type_id'] = 2
+    context['header_text'] = str('Nintendo ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -76,6 +79,7 @@ def get_videogames_by_xbox(request):
     else:
         context = {'products': Product.objects.filter(type_id=2, console_id=8)}
     context['product_type_id'] = 2
+    context['header_text'] = str('Xbox ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -88,6 +92,7 @@ def get_ps1_games(request):
     else:
         context = {'products': videogames}
     context['product_type_id'] = 2
+    context['header_text'] = str('Playstation 1 ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -100,6 +105,7 @@ def get_ps2_games(request):
     else:
         context = {'products': videogames}
     context['product_type_id'] = 2
+    context['header_text'] = str('Playstation 2 ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -112,6 +118,7 @@ def get_nintendo_nes_games(request):
     else:
         context = {'products': videogames}
     context['product_type_id'] = 2
+    context['header_text'] = str('Nintendo NES ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -124,6 +131,7 @@ def get_nintendo_64_games(request):
     else:
         context = {'products': videogames}
     context['product_type_id'] = 2
+    context['header_text'] = str('Nintendo 64 ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -136,6 +144,7 @@ def get_gameboy_advance_games(request):
     else:
         context = {'products': videogames}
     context['product_type_id'] = 2
+    context['header_text'] = str('GameBoy Advance ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -148,4 +157,176 @@ def get_gameboy_color_games(request):
     else:
         context = {'products': videogames}
     context['product_type_id'] = 2
+    context['header_text'] = str('GameBoy Color ')
+    return render(request, 'product/index.html', context=context)
+
+
+# Get videogames filtered by genre
+def get_action_videogames(request):
+    user = request.user
+    videogames = Product.objects.filter(videogamehasgenre__genre_id=1)
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 2
+    context['header_text'] = str('Action ')
+    return render(request, 'product/index.html', context=context)
+
+def get_adventure_videogames(request):
+    user = request.user
+    videogames = Product.objects.filter(videogamehasgenre__genre_id=2)
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 2
+    context['header_text'] = str('Adventure ')
+    return render(request, 'product/index.html', context=context)
+
+
+def get_puzzle_videogames(request):
+    user = request.user
+    videogames = Product.objects.filter(videogamehasgenre__genre_id=4)
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 2
+    context['header_text'] = str('Puzzle ')
+    return render(request, 'product/index.html', context=context)
+
+def get_sport_videogaems(request):
+    user = request.user
+    videogames = Product.objects.filter(videogamehasgenre__genre_id=5)
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 2
+    context['header_text'] = str('Sport ')
+    return render(request, 'product/index.html', context=context)
+
+
+def get_tacticalshooter_videogames(request):
+    user = request.user
+    videogames = Product.objects.filter(videogamehasgenre__genre_id=6)
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 2
+    context['header_text'] = str('Tactical shooter ')
+    return render(request, 'product/index.html', context=context)
+
+
+def get_roleplaying_videogames(request):
+    user = request.user
+    videogames = Product.objects.filter(videogamehasgenre__genre_id=7)
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 2
+    context['header_text'] = str('Roleplaying ')
+    return render(request, 'product/index.html', context=context)
+
+
+def get_racing_videogames(request):
+    user = request.user
+    videogames = Product.objects.filter(videogamehasgenre__genre_id=3)
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 2
+    context['header_text'] = str('Racing ')
+    return render(request, 'product/index.html', context=context)
+
+
+def get_platforming_videogames(request):
+    user = request.user
+    videogames = Product.objects.filter(videogamehasgenre__genre_id=8)
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 2
+    context['header_text'] = str('Platforming ')
+    return render(request, 'product/index.html', context=context)
+
+
+def get_fighting_videogames(request):
+    user = request.user
+    videogames = Product.objects.filter(videogamehasgenre__genre_id=9)
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 2
+    context['header_text'] = str('Fighting ')
+    return render(request, 'product/index.html', context=context)
+
+
+# Get all videgames sorted by price and name
+def get_videogames_price_sorted_asc(request):
+    user = request.user
+    videogames = Product.objects.filter(type_id=2).order_by('price')
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 2
+    return render(request, 'product/index.html', context=context)
+
+
+def get_videogames_price_sorted_desc(request):
+    user = request.user
+    videogames = Product.objects.filter(type_id=2).order_by('-price')
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 2
+    return render(request, 'product/index.html', context=context)
+
+
+def get_videogames_sorted_by_name(request):
+    user = request.user
+    videogames = Product.objects.filter(type_id=2).order_by('name')
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 2
+    return render(request, 'product/index.html', context=context)
+
+
+# Get videogame category sorted by price and name
+
+def get_vg_by_playstation_sorted_by_price_acs(request):
+    user = request.user
+    playstation1 = Product.objects.filter(type_id=2, console_id=6)
+    playstation2 = Product.objects.filter(type_id=2, console_id=7)
+    videogames = playstation1.union(playstation2).order_by('price')
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 2
+    context['header_text'] = str('Playstation ')
+    context['orderby'] = str('playstation')
     return render(request, 'product/index.html', context=context)

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="review-info">
+        <div class="info-field">
+            <div class="review-info">
+                <h2>Contact and shipping information</h2>
+                <table id="info-table">
+                    <tr>
+                        <th>First name:</th>
+                        <th>{{ contact_info.first_name }}</th>
+                    </tr>
+                    <tr>
+                        <th>Last name:</th>
+                        <th>{{ contact_info.last_name }}</th>
+                    </tr>
+                    <tr>
+                        <th>Address:</th>
+                        <th>{{ contact_info.address }}</th>
+                    </tr>
+                    <tr>
+                        <th>House number:</th>
+                        <th>{{ contact_info.house_number }}</th>
+                    </tr>
+                    <tr>
+                        <th>Country:</th>
+                        <th>{{ contact_info.country.name }}</th>
+                    </tr>
+                    <tr>
+                        <th>City:</th>
+                        <th>{{ contact_info.city }}</th>
+                    </tr>
+                    <tr>
+                        <th>Postal code:</th>
+                        <th>{{ contact_info.postal_code }}</th>
+                    </tr>
+                </table> <!-- end info-table -->
+            </div>
+            <div class="review-info">
+                <h2>Billing information</h2>
+                <table id="info-table">
+                    <tr>
+                        <th>Cardholder name:</th>
+                        <th>{{ payment_info.cardholder_name }}</th>
+                    </tr>
+                    <tr>
+                        <th>Billing address:</th>
+                        <th>{{ payment_info.address }} {{ payment_info.house_number }}, {{ payment_info.postal_code }} {{ payment_info.city }}</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

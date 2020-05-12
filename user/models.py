@@ -20,7 +20,8 @@ class Profile(models.Model):
     country = CountryField()
     address = models.CharField(max_length=255, null=True)
     house_number = models.CharField(max_length=255, null=True)
-    city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True)
+    city = models.CharField(max_length=255, null=True)
+    postal_code = models.CharField(max_length=10, null=True)
     image = models.CharField(max_length=999, null=True)
     phone_number = models.IntegerField(null=True)
 

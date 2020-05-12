@@ -1,74 +1,136 @@
 <div class="sidebar">
     <div class="checkbox-container">
-
         <h3>Sort By</h3>
-        <label class="container">
-              <input type="radio" name="sort-by" value="sort-by-price-h-to-l">
-              <label for="sort-by-price-h-to-l">Price (High-Low)</label><br>
-        </label>
-        <label class="container">
-              <input type="radio" name="sort-by" value="sort-by-price-l-to-h">
-              <label for="sort-by-price-l-to-h">Price (Low-High)</label><br>
-        </label>
-        <label class="container">
-              <input type="radio" name="sort-by" value="sort-by-name">
-              <label for="sort-by-name">Name</label><br>
-        </label>
+
+        <!-- if product type is videogames -->
         {% if product_type_id == 2 %}
+            <label class="container sortby">
+                <a href="{% url 'v_sort_price_desc' %}">
+                    <li>Price (High-Low)</li>
+                </a>
+            </label>
+
+            <label class="container sortby">
+                <a href="{% url 'v_sort_price_asc' %}">
+                    <li>Price (Low-High)</li>
+                </a>
+            </label>
+
+            <label class="container sortby">
+                <a href="{% url 'v_sort_by_name' %}">
+                    <li>Name</li>
+                </a>
+            </label>
+
             <h3>Genre</h3>
-            <label class="container">
-                  <input type="checkbox" id="action" value="Click" onclick="checkbox_filter()">
-                  <span class="checkmark">Action</span>
+            <label class="container sortby">
+                <a href="{% url 'action_videogames' %}">
+                    <li>Action</li>
+                </a>
             </label>
-            <label class="container">
-                  <input type="checkbox">
-                  <span class="checkmark">Adventure</span>
+
+            <label class="container sortby">
+                <a href="{% url 'adventure_videogames' %}">
+                    <li>Adventure</li>
+                </a>
             </label>
-            <label class="container">
-                  <input type="checkbox">
-                  <span class="checkmark">Adventure</span>
+
+            <label class="container sortby">
+                <a href="{% url 'fighting_videogames' %}">
+                     <li>Fighting</li>
+                </a>
             </label>
-            <label class="container">
-                  <input type="checkbox">
-                  <span class="checkmark">Puzzle</span>
+
+            <label class="container sortby">
+                <a href="{% url 'platforming_videogames' %}">
+                    <li>Platforming</li>
+                </a>
             </label>
-            <label class="container">
-                  <input type="checkbox">
-                  <span class="checkmark">Sport</span>
+
+            <label class="container sortby">
+                <a href="{% url 'puzzle_videogames' %}">
+                    <li>Puzzle</li>
+                </a>
             </label>
-            <label class="container">
-                  <input type="checkbox">
-                  <span class="checkmark">Tactical shooter</span>
+
+            <label class="container sortby">
+                <a href="{% url 'roleplaying_videogames' %}">
+                    <li>Role-playing</li>
+                </a>
             </label>
-            <label class="container">
-                  <input type="checkbox">
-                  <span class="checkmark">Role-playing</span>
+
+            <label class="container sortby">
+                <a href="{% url 'sports_videogames' %}">
+                    <li>Sport</li>
+                </a>
+            </label>
+
+            <label class="container sortby">
+                <a href="{% url 'tacticalshooter_videogames' %}">
+                    <li>Tactical shooter</li>
+                </a>
             </label><br>
 
             <h3>Age Limit</h3>
-            <label class="container">
-                  <input type="checkbox">
-                  <span class="checkmark">3+</span>
+            <label class="container sortby">
+                  <li class="checkmark">3+</li>
             </label>
-            <label class="container">
-                  <input type="checkbox">
-                  <span class="checkmark">7+</span>
+            <label class="container sortby">
+                  <li class="checkmark">7+</li>
             </label>
-            <label class="container">
-                  <input type="checkbox">
-                  <span class="checkmark">12+</span>
+            <label class="container sortby">
+                  <li class="checkmark">12+</li>
             </label>
-            <label class="container">
-                  <input type="checkbox">
-                  <span class="checkmark">16+</span>
+            <label class="container sortby">
+                  <li class="checkmark">16+</li>
             </label>
-            <label class="container">
-                  <input type="checkbox">
-                  <span class="checkmark">17+</span>
+            <label class="container sortby">
+                  <li class="checkmark">17+</li>
             </label>
-            <label class="container">
-                  <input type="checkbox">
-                  <span class="checkmark">18+</span>
+            <label class="container sortby">
+                  <li class="checkmark">18+</li>
+            </label>
+        {% endif %}
+
+
+        <!-- if product type is consoles -->
+        {% if product_type_id == 1 %}
+            <label class="container sortby">
+                <a href="{% url 'c_sort_price_desc' %}">
+                    Price (High-Low)
+                </a>
+            </label>
+
+            <label class="container sortby">
+                <a href="{% url 'c_sort_price_asc' %}">
+                    Price (Low-High)
+                </a>
+            </label>
+
+            <label class="container sortby">
+                <a href="{% url 'c_sort_by_name' %}">
+                    Name
+                </a>
+            </label>
+        {% endif %}
+
+        <!-- if product type is accessories -->
+        {% if product_type_id == 3 %}
+            <label class="container sortby">
+                <a href="{% url 'a_sort_price_desc' %}">Price (High-Low)
+                </a>
+            </label>
+
+            <label class="container sortby">
+                <a href="{% url 'a_sort_price_asc' %}">
+                    Price (Low-High)
+                </a>
+            </label>
+
+            <label class="container sortby">
+                <a href="{% url 'a_sort_by_name' %}">
+                    Name
+                </a>
             </label>
         {% endif %}
     </div>
