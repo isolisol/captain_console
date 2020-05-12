@@ -55,7 +55,7 @@ def get_playstation_consoles(request):
     else:
         context = {'products': consoles}
     context['product_type_id'] = 1
-    context['header_text'] = 'Playstation'
+    context['header_text'] = str('Playstation ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -72,6 +72,7 @@ def get_nintendo_consoles(request):
     else:
         context = {'products': consoles}
     context['product_type_id'] = 1
+    context['header_text'] = str('Nintendo ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -84,6 +85,7 @@ def get_xbox_consoles(request):
     else:
         context = {'products': consoles}
     context['product_type_id'] = 1
+    context['header_text'] = str('Xbox ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -96,6 +98,7 @@ def get_ps1_consoles(request):
     else:
         context = {'products': consoles}
     context['product_type_id'] = 1
+    context['header_text'] = str('Playstation 1 ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -108,6 +111,7 @@ def get_ps2_consoles(request):
     else:
         context = {'products': consoles}
     context['product_type_id'] = 1
+    context['header_text'] = str('Playstation 2 ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -120,6 +124,7 @@ def get_nintendo_nes_consoles(request):
     else:
         context = {'products': consoles}
     context['product_type_id'] = 1
+    context['header_text'] = str('Nintendo NES ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -132,6 +137,7 @@ def get_nintendo_64_consoles(request):
     else:
         context = {'products': consoles}
     context['product_type_id'] = 1
+    context['header_text'] = str('Nintendo 64 ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -144,6 +150,7 @@ def get_gameboy_color_consoles(request):
     else:
         context = {'products': consoles}
     context['product_type_id'] = 1
+    context['header_text'] = str('GameBoy Color ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -156,6 +163,7 @@ def get_gameboy_advance_consoles(request):
     else:
         context = {'products': consoles}
     context['product_type_id'] = 1
+    context['header_text'] = str('GameBoy Advance ')
     return render(request, 'product/index.html', context=context)
 
 

@@ -31,3 +31,8 @@ def about_us(request):
         context = None
     return render(request, 'homepage/about_us.html', context=context)
 
+
+def search_products(request):
+    pass
+    #search_str = request.GET.get("search")
+
