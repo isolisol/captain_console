@@ -37,14 +37,14 @@
     margin-bottom: 20px;
 }
 
-.review-info {
-    font-family: normal;
-    display: inline-block;
-    margin: 40px;
-    text-align: left;
+.review-info-container {
+    border: 2px solid #ff29f8;
     background-color: white;
     padding: 30px;
-    border-radius: 5px;
+}
+
+.review-info {
+    display: inline-grid;
 }
 
 .review-info p{
@@ -53,6 +53,7 @@
 
 .review-info h2{
     color: black;
+    margin-bottom: 20px;
 }
 
 .review-info-billing {

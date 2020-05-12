@@ -17,6 +17,7 @@ urlpatterns = [
     path('xbox_games', views.get_videogames_by_xbox, name="xbox_games"),
 
     path('add_to_cart/<int:product_id>', views.v_add_to_cart, name="v_add_to_cart"),
+    path('remove_from_cart/<int:product_id>', o_views.remove_from_cart, name="v_remove_from_cart"),
 
     path('action', views.get_action_videogames, name='action_videogames'),
     path('adventure', views.get_adventure_videogames, name='adventure_videogames'),

@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="review-info">
+    <div class="review-info-container">
         <button class="classic-button back-btn" type="button" >Back</button>
             <div class="info-field">
                 <div class="review-info">
-                    <h2>Contact and shipping information</h2>
+                    <h2>Contact & Shipping Information</h2>
                     <table id="info-table">
                         <tr>
                             <th>First name:</th>
@@ -37,7 +37,7 @@
                     </table> <!-- end info-table -->
                 </div>
                 <div class="review-info">
-                    <h2>Billing information</h2>
+                    <h2>Billing Information</h2>
                     <table id="info-table">
                         <tr>
                             <th>Cardholder name:</th>
@@ -50,7 +50,9 @@
                     </table>
                 </div>
             </div>
-        <input type="submit" class="classic-button update-btn" value="Submit Order">
-        <button class="classic-button back-btn" type="button">Cancel Order</button>
+        <div class="review-info-btn-container">
+            <input type="submit" class="classic-button update-btn" value="Submit Order">
+            <button class="classic-button back-btn" type="button">Cancel Order</button>
+        </div>
     </div>
 {% endblock %}
