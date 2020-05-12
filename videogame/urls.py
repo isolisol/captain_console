@@ -30,5 +30,8 @@ urlpatterns = [
 
     path('sort_videogames_price_asc', views.get_videogames_price_sorted_asc, name='v_sort_price_asc'),
     path('sort_videogames_price_desc', views.get_videogames_price_sorted_desc, name='v_sort_price_desc'),
-    path('sort_videogames_by_name', views.get_videogames_sorted_by_name, name='v_sort_by_name')
+    path('sort_videogames_by_name', views.get_videogames_sorted_by_name, name='v_sort_by_name'),
+
+    path('sort_videogames_playstation_price_acs', views.get_vg_by_playstation_sorted_by_price_acs,
+         name='v_sort_playstation_price_asc')
 ]

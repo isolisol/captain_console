@@ -47,6 +47,7 @@ def get_playstation_accessories(request):
     else:
         context = {'products': accessories}
     context['product_type_id'] = 3
+    context['header_text'] = str('Playstation ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -63,6 +64,7 @@ def get_nintendo_accessories(request):
     else:
         context = {'products': accessories}
     context['product_type_id'] = 3
+    context['header_text'] = str('Nintendo ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -74,6 +76,7 @@ def get_xbox_accessories(request):
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=8)}
     context['product_type_id'] = 3
+    context['header_text'] = str('Xbox ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -85,6 +88,7 @@ def get_ps1_accessories(request):
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=6)}
     context['product_type_id'] = 3
+    context['header_text'] = str('Playstation 1 ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -96,6 +100,7 @@ def get_ps2_accessories(request):
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=7)}
     context['product_type_id'] = 3
+    context['header_text'] = str('Playstation 2 ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -107,6 +112,7 @@ def get_nintendo_nes_accessories(request):
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=2)}
     context['product_type_id'] = 3
+    context['header_text'] = str('Nintendo NES ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -118,6 +124,7 @@ def get_nintendo_64_accessories(request):
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=3)}
     context['product_type_id'] = 3
+    context['header_text'] = str('Nintendo 64 ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -129,6 +136,7 @@ def get_gameboy_advance_accessories(request):
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=5)}
     context['product_type_id'] = 3
+    context['header_text'] = str('GameBoy Advance ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -140,6 +148,7 @@ def get_gameboy_color_accessories(request):
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=4)}
     context['product_type_id'] = 3
+    context['header_text'] = str('GameBoy Color ')
     return render(request, 'product/index.html', context=context)
 
 
@@ -151,6 +160,7 @@ def get_other_accessories(request):
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=None)}
     context['product_type_id'] = 3
+    context['header_text'] = str('Other ')
     return render(request, 'product/index.html', context=context)
 
 
