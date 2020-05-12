@@ -13,5 +13,6 @@ urlpatterns = [
     path('nintendo_nes_accessories', views.get_nintendo_nes_accessories, name="nintendo_nes_accessories"),
     path('nintendo_64_accessories', views.get_nintendo_64_accessories, name="nintendo_64_accessories"),
     path('gameboy_color_accessories', views.get_gameboy_color_accessories, name="gameboy_color_accessories"),
-    path('gameboy_advance_accessories', views.get_gameboy_advance_accessories, name="gameboy_advance_accessories")
+    path('gameboy_advance_accessories', views.get_gameboy_advance_accessories, name="gameboy_advance_accessories"),
+    path('add_to_cart/<int:product_id>', views.a_add_to_cart, name="a_add_to_cart")
 ]

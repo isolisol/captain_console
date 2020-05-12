@@ -1,3 +1,4 @@
+{% if user.is_authenticated %}
 <div class="dropdown">
     {% load static %}
     <img src="{% static "images/cart-button-clipart-4.jpg" %}" alt="cart" class="icon">
@@ -57,3 +58,4 @@
         </div> <!--end shopping-cart -->
     </div> <!-- end dropdown-content -->
 </div> <!-- end dropdown -->
+{% endif %}

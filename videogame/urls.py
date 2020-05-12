@@ -14,4 +14,5 @@ urlpatterns = [
     path('gameboy_color_games', views.get_gameboy_color_games, name="gameboy_color_games"),
     path('gameboy_advance_games', views.get_gameboy_advance_games, name="gameboy_advance_games"),
     path('xbox_games', views.get_videogames_by_xbox, name="xbox_games"),
+    path('add_to_cart/<int:product_id>', views.v_add_to_cart, name="v_add_to_cart")
 ]

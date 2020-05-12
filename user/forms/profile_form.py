@@ -22,7 +22,8 @@ class ProfileForm(ModelForm):
             'address': widgets.TextInput(attrs={'class': 'form-control'}),
             'house_number': widgets.TextInput(attrs={'class': 'form-control'}),
             'city': widgets.Select(attrs={'class': 'form-control'}),
-            'phone_number': widgets.TextInput(attrs={'class': 'form-control'})
+            'phone_number': widgets.TextInput(attrs={'class': 'form-control'}),
+            'country': widgets.Select(attrs={'class': 'form-control'})
         }
 
 
