@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from accessory.models import Product
 from helper_services.helpers import build_context
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -14,7 +15,7 @@ def index(request):
     return render(request, 'product/index.html', context=context)
 
 
-def get_console_by_id(request,id):
+def get_console_by_id(request, id):
     user = request.user
     console = get_object_or_404(Product, pk=id)
     if user.is_authenticated:

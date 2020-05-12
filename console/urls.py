@@ -13,6 +13,4 @@ urlpatterns = [
     path('gameboy_color_consoles', views.get_gameboy_color_consoles, name='gameboy_color_consoles'),
     path('gameboy_advance_consoles', views.get_gameboy_advance_consoles, name='gameboy_advance_consoles'),
     path('xbox_consoles_consoles', views.get_xbox_consoles, name='xbox_consoles')
-
-
 ]
