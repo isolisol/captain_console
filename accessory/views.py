@@ -165,37 +165,28 @@ def get_other_accessories(request):
 
 
 # Get videgames sorted by price
-def get_accessories_price_sorted_asc(request):
+def get_accessories_sorted(request, orderby):
     user = request.user
-    videogames = Product.objects.filter(type_id=3).order_by('price')
+    consoles = Product.objects.filter(type_id=3).order_by(orderby)
     if user.is_authenticated:
         context = build_context(user)
-        context['products'] = videogames
+        context['products'] = consoles
     else:
-        context = {'products': videogames}
+        context = {'products': consoles}
     context['product_type_id'] = 3
     return render(request, 'product/index.html', context=context)
+
+
+def get_accessories_price_sorted_asc(request):
+    orderby = str('price')
+    return get_accessories_sorted(request, orderby)
 
 
 def get_accessories_price_sorted_desc(request):
-    user = request.user
-    videogames = Product.objects.filter(type_id=3).order_by('-price')
-    if user.is_authenticated:
-        context = build_context(user)
-        context['products'] = videogames
-    else:
-        context = {'products': videogames}
-    context['product_type_id'] = 3
-    return render(request, 'product/index.html', context=context)
+    orderby = str('-price')
+    return get_accessories_sorted(request, orderby)
 
 
 def get_accessories_sorted_by_name(request):
-    user = request.user
-    videogames = Product.objects.filter(type_id=3).order_by('name')
-    if user.is_authenticated:
-        context = build_context(user)
-        context['products'] = videogames
-    else:
-        context = {'products': videogames}
-    context['product_type_id'] = 3
-    return render(request, 'product/index.html', context=context)
+    orderby = str('name')
+    return get_accessories_sorted(request, orderby)
