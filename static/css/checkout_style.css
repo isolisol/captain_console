@@ -12,6 +12,31 @@
     height: 100%;
 }
 
+/* User Information page when checking out*/
+
+.checkout-user-info-container {
+    background-color: white;
+    width: 50%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: 2px solid #ff28f9;
+    border-radius: 5px;
+}
+
+.checkout-user-info-container h2{
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgrey;
+    width: 80%;
+    display: inline-block;
+}
+
+.checkout-user-info-container form {
+    width: 60%;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
 .review-info {
     font-family: normal;
     display: inline-block;
@@ -33,3 +58,10 @@
 .review-info-billing {
     padding-top: 30px;
 }
+
+.continue-payment {
+    margin-top: 30px;
+    margin-right: 20px;
+    float: right;
+}
+

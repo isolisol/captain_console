@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" class="classic-button update-btn" value="Continue to payment">
-    </form>
+    <div class="checkout-user-info-container">
+        <h2>Contact & Shipping Information</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+        </form>
+        <button type="submit" class="classic-button continue-payment">Continue to payment</button>
+    </div>
 {% endblock %}
