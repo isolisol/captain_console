@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django_countries.fields import CountryField
 
 
 # Create your models here.
@@ -16,9 +17,11 @@ class City(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    country = CountryField()
     address = models.CharField(max_length=255, null=True)
     house_number = models.CharField(max_length=255, null=True)
-    city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True)
+    city = models.CharField(max_length=255, null=True)
+    postal_code = models.CharField(max_length=10, null=True)
     image = models.CharField(max_length=999, null=True)
     phone_number = models.IntegerField(null=True)
 

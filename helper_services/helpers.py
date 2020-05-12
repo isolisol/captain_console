@@ -1,15 +1,15 @@
-from order.models import Cart
+from order.models import Cart, ContactInformation
 
 
 def build_context(user):
-    cart_items = Cart.objects.get(user_id=user.id, complete=False).productincart_set.all()
+    cart, created = Cart.objects.get_or_create(user_id=user.id, complete=False)
+    cart_items = cart.productincart_set.all()
     total_price = calculateTotalPrice(cart_items)
     return {'cart_items': cart_items, 'total_price': total_price}
 
 
 def calculateTotalPrice(cart_items):
     total_price = 0
-    item_prices = cart_items.values('product__price')
-    for price in item_prices:
-        total_price += price['product__price']
+    for item in cart_items:
+        total_price += item.product.price * item.quantity
     return total_price

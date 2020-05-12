@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from accessory.models import Product
-from datetime import date
+from django_countries.fields import CountryField
 
 
 class Cart(models.Model):
@@ -18,11 +18,30 @@ class ProductInCart(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
-class DeliveryMethod(models.Model):
-    name = models.CharField(max_length=255)
+
+class Payment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    cardholder_name = models.CharField(max_length=255)
+    # Billing address:
+    country = CountryField()
+    address = models.CharField(max_length=255)
+    house_number = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    postal_code = models.CharField(max_length=10)
+
+
+class ContactInformation(models.Model):
+    first_name = models.CharField(max_length=255, null=True)
+    last_name = models.CharField(max_length=255, null=True)
+    country = CountryField(null=True)
+    address = models.CharField(max_length=255, null=True)
+    house_number = models.CharField(max_length=255, null=True)
+    city = models.CharField(max_length=255, null=True)
+    postal_code = models.CharField(max_length=10, null=True)
 
 
 class Order(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.SET_NULL, null=True)
-    delivery_method = models.ForeignKey(DeliveryMethod, on_delete=models.CASCADE)
     date = models.DateField()
+    contact_info = models.ForeignKey(ContactInformation, on_delete=models.CASCADE)
+    payment = models.ForeignKey(Payment, on_delete=models.CASCADE, null=True)

@@ -1,3 +1,4 @@
+{% if user.is_authenticated %}
 <div class="dropdown">
     {% load static %}
     <img src="{% static "images/cart-button-clipart-4.jpg" %}" alt="cart" class="icon">
@@ -19,6 +20,7 @@
                                         <th></th>
                                     </tr>
                                 </thead>
+                                <!-- body for shopping cart -->
                                 {% for product in cart_items %}
                                     {% include 'order/single_cart_item_drop.html' with product=product %}
                                 {% endfor %}
@@ -51,9 +53,10 @@
 
 
         <div class="review-cart-buttons">
-            <a href="{% url 'checkout_index' %}" class="btn btn-outline-success header-button nav-btn-text" id="checkout-btn">Checkout</a>
+            <a href="{% url 'checkout' %}" class="btn btn-outline-success header-button nav-btn-text" id="checkout-btn">Checkout</a>
             <a href="{% url 'cart_details' %}" class="btn btn-outline-success header-button nav-btn-text" id="continue-shopping">View cart</a>
-        </div>
+        </div> <!-- end review-cart-buttons -->
         </div> <!--end shopping-cart -->
     </div> <!-- end dropdown-content -->
 </div> <!-- end dropdown -->
+{% endif %}

@@ -6,3 +6,8 @@
     text-align: left;
     justify-content: left;
 }
+
+#checkout-container {
+    background-color: white;
+    height: 100%;
+}
