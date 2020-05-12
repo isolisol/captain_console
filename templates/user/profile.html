@@ -47,6 +47,14 @@
                 </th>
             </tr>
             <tr>
+                <th>Postal code:</th>
+                <th>
+                    {% if profile.postal_code %}
+                        {{ profile.postal_code }}
+                    {% endif %}
+                </th>
+            </tr>
+            <tr>
                 <th>Phone number:</th>
                 <th>
                     {% if profile.phone_number %}
