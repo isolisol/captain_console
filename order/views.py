@@ -1,13 +1,12 @@
 from django.shortcuts import render
+from accessory.models import Product
 from order.models import Order, Cart
 from helper_services.helpers import build_context
 
 
-# Create your views here.
 def cart_dropdown(request):
     user = request.user
     cart_info = build_context(user)
-    #return render(request, 'order/cart_dropdown.html', context=cart_info)
     return render(request, 'base.html', context=cart_info)
 
 

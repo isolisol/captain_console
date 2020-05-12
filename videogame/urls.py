@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from order import views as o_views
 
 urlpatterns = [
     path('', views.index, name="videogame-index"),
@@ -12,5 +13,5 @@ urlpatterns = [
     path('nintendo_64_games', views.get_nintendo_64_games, name="nintendo_64_games"),
     path('gameboy_color_games', views.get_gameboy_color_games, name="gameboy_color_games"),
     path('gameboy_advance_games', views.get_gameboy_advance_games, name="gameboy_advance_games"),
-    path('xbox_games', views.get_videogames_by_xbox, name="xbox_games")
+    path('xbox_games', views.get_videogames_by_xbox, name="xbox_games"),
 ]
