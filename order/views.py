@@ -1,10 +1,18 @@
 from django.shortcuts import render, redirect, reverse
+from accessory.models import Product
 from .models import Order, Cart, ContactInformation, Payment
 from helper_services.helpers import build_context
 from django.contrib.auth.decorators import login_required
 from order.forms.contact_info_form import ContactInfoForm
 from order.forms.payment_form import PaymentForm
 from datetime import date
+
+
+def remove_from_cart(request, product_id):
+    cart = Cart.objects.get(user=request.user, complete=False)
+    cart.product.remove(Product.objects.get(id=product_id))
+    return redirect('cart_details')
+
 
 @login_required
 def cart_dropdown(request):

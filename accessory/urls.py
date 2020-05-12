@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from order import views as o_views
 
 urlpatterns = [
     path('', views.index, name="accessories-index"),
@@ -17,6 +18,7 @@ urlpatterns = [
     path('gameboy_advance_accessories', views.get_gameboy_advance_accessories, name="gameboy_advance_accessories"),
 
     path('add_to_cart/<int:product_id>', views.a_add_to_cart, name="a_add_to_cart"),
+    path('remove_from_cart/<int:product_id>', o_views.remove_from_cart, name="a_remove_from_cart"),
 
     path('sort_accessories_price_asc', views.get_accessories_price_sorted_asc, name='a_sort_price_asc'),
     path('sort_accessories_price_desc', views.get_accessories_price_sorted_desc, name='a_sort_price_desc'),
