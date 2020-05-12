@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="product-container">
-        <h1>Consoles</h1>
+
+        {% if product_type_id == 1 %}
+            <h1>{{ header_text }}</h1>
+            <h1>Consoles</h1>
+        {% endif %}
+
+        {% if product_type_id == 2 %}
+            <h1>Videogames</h1>
+        {% endif %}
+
+        {% if product_type_id == 3 %}
+            <h1>Accessories</h1>
+        {% endif %}
+
         {% include 'product/product_sidebar.html' with product_type_id=product_type_id %}
         <div class="product">
             {% for product in products %}

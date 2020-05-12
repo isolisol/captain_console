@@ -22,6 +22,7 @@ def index(request):
         context['products'] = Product.objects.filter(type_id=3).order_by('name')
     else:
         context = {'products': Product.objects.filter(type_id=3).order_by('name')}
+    context['product_type_id'] = 3
     return render(request, 'product/index.html', context=context)
 
 
@@ -45,6 +46,7 @@ def get_playstation_accessories(request):
         context['products'] = accessories
     else:
         context = {'products': accessories}
+    context['product_type_id'] = 3
     return render(request, 'product/index.html', context=context)
 
 
@@ -60,6 +62,7 @@ def get_nintendo_accessories(request):
         context['products'] = accessories
     else:
         context = {'products': accessories}
+    context['product_type_id'] = 3
     return render(request, 'product/index.html', context=context)
 
 
@@ -70,6 +73,7 @@ def get_xbox_accessories(request):
         context['products'] = Product.objects.filter(type_id=3, console_id=8)
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=8)}
+    context['product_type_id'] = 3
     return render(request, 'product/index.html', context=context)
 
 
@@ -80,6 +84,7 @@ def get_ps1_accessories(request):
         context['products'] = Product.objects.filter(type_id=3, console_id=6)
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=6)}
+    context['product_type_id'] = 3
     return render(request, 'product/index.html', context=context)
 
 
@@ -90,6 +95,7 @@ def get_ps2_accessories(request):
         context['products'] = Product.objects.filter(type_id=3, console_id=7)
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=7)}
+    context['product_type_id'] = 3
     return render(request, 'product/index.html', context=context)
 
 
@@ -100,6 +106,7 @@ def get_nintendo_nes_accessories(request):
         context['products'] = Product.objects.filter(type_id=3, console_id=2)
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=2)}
+    context['product_type_id'] = 3
     return render(request, 'product/index.html', context=context)
 
 
@@ -110,6 +117,7 @@ def get_nintendo_64_accessories(request):
         context['products'] = Product.objects.filter(type_id=3, console_id=3)
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=3)}
+    context['product_type_id'] = 3
     return render(request, 'product/index.html', context=context)
 
 
@@ -120,6 +128,7 @@ def get_gameboy_advance_accessories(request):
         context['products'] = Product.objects.filter(type_id=3, console_id=5)
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=5)}
+    context['product_type_id'] = 3
     return render(request, 'product/index.html', context=context)
 
 
@@ -130,6 +139,7 @@ def get_gameboy_color_accessories(request):
         context['products'] = Product.objects.filter(type_id=3, console_id=4)
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=4)}
+    context['product_type_id'] = 3
     return render(request, 'product/index.html', context=context)
 
 
@@ -140,4 +150,42 @@ def get_other_accessories(request):
         context['products'] = Product.objects.filter(type_id=3, console_id=None)
     else:
         context = {'products': Product.objects.filter(type_id=3, console_id=None)}
+    context['product_type_id'] = 3
+    return render(request, 'product/index.html', context=context)
+
+
+# Get videgames sorted by price
+def get_accessories_price_sorted_asc(request):
+    user = request.user
+    videogames = Product.objects.filter(type_id=3).order_by('price')
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 3
+    return render(request, 'product/index.html', context=context)
+
+
+def get_accessories_price_sorted_desc(request):
+    user = request.user
+    videogames = Product.objects.filter(type_id=3).order_by('-price')
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 3
+    return render(request, 'product/index.html', context=context)
+
+
+def get_accessories_sorted_by_name(request):
+    user = request.user
+    videogames = Product.objects.filter(type_id=3).order_by('name')
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 3
     return render(request, 'product/index.html', context=context)

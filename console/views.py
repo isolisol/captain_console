@@ -29,6 +29,7 @@ def index(request):
         context['products'] = consoles
     else:
         context = {'products': consoles}
+    context['product_type_id'] = 1
     return render(request, 'product/index.html', context=context)
 
 
@@ -53,6 +54,8 @@ def get_playstation_consoles(request):
         context['products'] = consoles
     else:
         context = {'products': consoles}
+    context['product_type_id'] = 1
+    context['header_text'] = 'Playstation'
     return render(request, 'product/index.html', context=context)
 
 
@@ -68,6 +71,7 @@ def get_nintendo_consoles(request):
         context['products'] = consoles
     else:
         context = {'products': consoles}
+    context['product_type_id'] = 1
     return render(request, 'product/index.html', context=context)
 
 
@@ -79,6 +83,7 @@ def get_xbox_consoles(request):
         context['products'] = consoles
     else:
         context = {'products': consoles}
+    context['product_type_id'] = 1
     return render(request, 'product/index.html', context=context)
 
 
@@ -90,6 +95,7 @@ def get_ps1_consoles(request):
         context['products'] = consoles
     else:
         context = {'products': consoles}
+    context['product_type_id'] = 1
     return render(request, 'product/index.html', context=context)
 
 
@@ -101,6 +107,7 @@ def get_ps2_consoles(request):
         context['products'] = consoles
     else:
         context = {'products': consoles}
+    context['product_type_id'] = 1
     return render(request, 'product/index.html', context=context)
 
 
@@ -112,6 +119,7 @@ def get_nintendo_nes_consoles(request):
         context['products'] = consoles
     else:
         context = {'products': consoles}
+    context['product_type_id'] = 1
     return render(request, 'product/index.html', context=context)
 
 
@@ -123,6 +131,7 @@ def get_nintendo_64_consoles(request):
         context['products'] = consoles
     else:
         context = {'products': consoles}
+    context['product_type_id'] = 1
     return render(request, 'product/index.html', context=context)
 
 
@@ -134,6 +143,7 @@ def get_gameboy_color_consoles(request):
         context['products'] = consoles
     else:
         context = {'products': consoles}
+    context['product_type_id'] = 1
     return render(request, 'product/index.html', context=context)
 
 
@@ -145,4 +155,42 @@ def get_gameboy_advance_consoles(request):
         context['products'] = consoles
     else:
         context = {'products': consoles}
+    context['product_type_id'] = 1
+    return render(request, 'product/index.html', context=context)
+
+
+# Get videgames sorted by price
+def get_consoles_price_sorted_asc(request):
+    user = request.user
+    videogames = Product.objects.filter(type_id=1).order_by('price')
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 1
+    return render(request, 'product/index.html', context=context)
+
+
+def get_consoles_price_sorted_desc(request):
+    user = request.user
+    videogames = Product.objects.filter(type_id=1).order_by('-price')
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 1
+    return render(request, 'product/index.html', context=context)
+
+
+def get_consoles_sorted_by_name(request):
+    user = request.user
+    videogames = Product.objects.filter(type_id=1).order_by('name')
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = videogames
+    else:
+        context = {'products': videogames}
+    context['product_type_id'] = 1
     return render(request, 'product/index.html', context=context)
