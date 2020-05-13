@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from accessory.models import Product
 from user.models import Profile, RecentlyViewed
@@ -6,6 +7,7 @@ from helper_services.helpers import build_context
 from datetime import date
 
 
+@login_required
 def a_add_to_cart(request, product_id):
     user = request.user
     product = get_object_or_404(Product, pk=product_id)
