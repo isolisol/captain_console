@@ -34,5 +34,5 @@ def about_us(request):
 
 def search_products(request):
     pass
-    #search_str = request.GET.get("search")
+    #search_str = request.GET.get('search')
 
