@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from accessory.models import Product
+from user.models import RecentlyViewed, Profile
 from helper_services.helpers import build_context
 from order.models import Cart, ProductInCart
 from django.contrib.auth.decorators import login_required
+from datetime import date
 
 
 @login_required
@@ -39,6 +41,9 @@ def get_console_by_id(request, id):
     user = request.user
     console = get_object_or_404(Product, pk=id)
     if user.is_authenticated:
+        user_profile = Profile.objects.get(user=user)
+        viewed_product = Product.objects.get(id=id)
+        RecentlyViewed.objects.create(profile=user_profile, product=viewed_product, date=date.today())
         context = build_context(user)
         context['product'] = console
     else:
