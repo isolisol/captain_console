@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="my-account-info-container">
-        <div class="info-field">
+        <div class="user-info-container">
+            <h2 class="user-profile-header contact-info">Contact Information</h2>
             <table id="info-table">
                 <tr>
                     <th>Username:</th>
@@ -64,23 +65,24 @@
                     </th>
                 </tr>
             </table> <!-- end info-table -->
-            <div id="edit-info-btn">
+            <div class="edit-info-btn">
             <a href="{% url 'editprofile' %}">
                 <input type="submit" class="classic-button" value="Edit information">
             </a>
             </div> <!-- end edit-info-btn -->
         </div> <!-- end info-field -->
-        <div id="profile-image-container">
+        <div class="profile-image-container">
+            <h2 class="user-profile-header image">User Image</h2>
             {% if profile.image %}
                 <img class="profile-img" src="{{ profile.image }}">
 
-                <div id="edit-photo-btn">
+                <div class="edit-photo-btn">
                     <a href="{% url 'editimage' %}">
                         <input type="submit" class="classic-button" value="Edit Photo">
                     </a>
                 </div> <!-- end edit-photo-btn -->
             {% else %}
-                <div id="edit-photo-btn">
+                <div class="edit-photo-btn">
                     <a href="{% url 'editimage' %}">
                         <input type="submit" class="classic-button" value="Add Photo">
                     </a>

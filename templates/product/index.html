@@ -13,9 +13,8 @@
                     <button type="button" id="search-btn-console" class="btn btn-default classic-button">Search</button>
                 </div>
             </div>
-        {% endif %}
 
-        {% if product_type_id == 2 %}
+        {% elif product_type_id == 2 %}
             <h1>{{ header_text }}Videogames</h1>
             {% if sort_text %}
                 <h2 id="sort_text">-{{ sort_text }}-</h2>
@@ -26,9 +25,8 @@
                     <button type="button" id="search-btn-videogame" class="btn btn-default classic-button">Search</button>
                 </div>
             </div>
-        {% endif %}
 
-        {% if product_type_id == 3 %}
+        {% elif product_type_id == 3 %}
             <h1>{{ header_text }}Accessories</h1>
             {% if sort_text %}
                 <h2 id="sort_text">-{{ sort_text }}-</h2>
@@ -39,9 +37,8 @@
                     <button type="button" id="search-btn-accessory" class="btn btn-default classic-button">Search</button>
                 </div>
             </div>
-        {% endif %}
 
-        {% if product_type_id == 'all' %}
+        {% elif product_type_id == 'all' %}
             <h1>{{ header_text }}All Available Products</h1>
             {% if sort_text %}
                 <h2 id="sort_text">-{{ sort_text }}-</h2>
@@ -71,8 +68,5 @@
             </div> <!-- end product -->
         {% endif %}
 
-        {% if sort_text %}
-            <h2 id="sort_text">-{{ sort_text }}-</h2>
-        {% endif %}
     </div> <!-- end product-container -->
 {% endblock %}

@@ -1,5 +1,23 @@
 .my-account-info-container {
-    width: 100%;
+    width: 90%;
+    border: 2px solid #ff29f8;
+    border-radius: 5px;
+    padding: 40px;
+    background-color: #000000ad;
+}
+
+.user-profile-header {
+    color: white;
+}
+
+.user-profile-header.contact-info {
+    margin-bottom: 30px;
+    margin-right: 100px;
+}
+
+.user-profile-header.image {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 tr {
@@ -8,35 +26,40 @@ tr {
     width: 40px;
 }
 
-#edit-info-btn {
-    margin-top: 20px;
+.edit-info-btn {
     font-family: 'Geo', sans-serif;
+    float: left;
+    margin-top: 60px;
 }
 
-#edit-photo-btn {
-    margin-top: 20px;
+.edit-photo-btn {
+    margin-right: 200px;
 }
 
 #info-table {
     width: 80%;
-    background-color: black;
+    background-color: #0000001c;
     color: white;
+    text-align: left;
 }
 
 .profile-img {
     height: 300px;
-    margin-top: 16px;
-    margin-bottom: 5px;
+    margin-bottom: 151px;
 }
 
-#profile-image-container {
+.profile-image-container {
+    float: right;
+    width: 40%;
+}
+
+.user-info-container {
     float: left;
-    text-align: left;
-    background-color: #000000ad;
-    padding: 30px;
-    border-top: 2px solid #ff29f8;
-    border-right: 2px solid #ff29f8;
-    border-bottom: 2px solid #ff29f8;
+    width: 60%;
+}
+
+.user-info-container table {
+    background-color: white;
 }
 
 
@@ -119,11 +142,6 @@ form.form-horizontal h1 {
     width: 60%;
     float: right;
     padding: 10px;
-}
-
-.edit-profile-buttons {
-    margin-top: 30px;
-    font-family: 'Geo', sans-serif;
 }
 
 .classic-button.update-btn {
