@@ -1,6 +1,5 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-
 from accessory.models import Product
 from helper_services.helpers import build_context
 
