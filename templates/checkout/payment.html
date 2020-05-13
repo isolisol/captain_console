@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit" class="classic-button update-btn">Review information</button>
-    </form>
+    <div class="checkout-user-info-container">
+        <a href="{% url 'checkout' %}" class="back-btn payment-site" id="back-to-checkout-btn">Back</a>
+        <h2>Payment Information</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}<br>
+            <button type="submit" class="classic-button">Review information</button>
+        </form>
+    </div>
 {% endblock %}

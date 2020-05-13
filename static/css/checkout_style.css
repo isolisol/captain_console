@@ -21,6 +21,7 @@
     padding-bottom: 30px;
     border: 2px solid #ff28f9;
     border-radius: 5px;
+    justify-content: center;
 }
 
 .checkout-user-info-container h2{
@@ -37,6 +38,11 @@
     margin-bottom: 20px;
 }
 
+.checkout-user-info-container button {
+    margin-top: 40px;
+}
+
+
 .review-info-container {
     border: 2px solid #ff29f8;
     background-color: white;
@@ -45,10 +51,15 @@
 
 .review-info {
     display: inline-grid;
+    margin-top: 80px;
 }
 
-.review-info p{
+.review-info th {
+    background-color: white;
     color: black;
+    border: solid 2px black;
+    font-family: normal;
+    font-weight: normal;
 }
 
 .review-info h2{
@@ -66,3 +77,10 @@
     float: right;
 }
 
+review-info-table {
+    color: black;
+}
+
+.back-btn.payment-site {
+    float: bottom;
+}
