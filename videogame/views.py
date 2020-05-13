@@ -225,6 +225,7 @@ def get_videogames_sorted(request, orderby, text):
     context['product_type_id'] = 2
     context['show_sort'] = True
     context['sort_text'] = 'Sorted by ' + text
+    context['header_text'] = 'All '
     return render(request, 'product/index.html', context=context)
 
 
@@ -244,21 +245,3 @@ def get_videogames_sorted_by_name(request):
     orderby = str('name')
     text = 'name'
     return get_videogames_sorted(request, orderby, text)
-
-
-# Get videogame category sorted by price and name
-
-#def get_vg_by_playstation_sorted_by_price_acs(request):
-#    user = request.user
-#    playstation1 = Product.objects.filter(type_id=2, console_id=6)
-#    playstation2 = Product.objects.filter(type_id=2, console_id=7)
-#    videogames = playstation1.union(playstation2).order_by('price')
-#    if user.is_authenticated:
-#        context = build_context(user)
-#        context['products'] = videogames
-#    else:
-#        context = {'products': videogames}
-#    context['product_type_id'] = 2
-#    context['header_text'] = str('Playstation ')
-#    context['orderby'] = str('playstation')
-#    return render(request, 'product/index.html', context=context)

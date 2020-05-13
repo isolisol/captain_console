@@ -196,6 +196,7 @@ def get_accessories_sorted(request, orderby, text):
     context['product_type_id'] = 3
     context['sort_text'] = 'Sorted by ' + text
     context['show_sort'] = True
+    context['header_text'] = 'All '
     return render(request, 'product/index.html', context=context)
 
 
