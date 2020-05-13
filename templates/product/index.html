@@ -1,26 +1,44 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="product-container">
-    <div class="input-group">
-        <input type="search" class="form-control" id="search-box" placeholder="Enter your search..." />
-        <div class="input-group-btn">
-            <button type="button" id="search-btn" class="btn btn-default classic-button">Search</button>
-        </div>
-    </div>
         {% if product_type_id == 1 %}
             <h1>{{ header_text }}Consoles</h1>
+            <div class="input-group">
+                <input type="search" class="form-control" id="search-box-console" placeholder="Enter your search..." />
+                <div class="input-group-btn">
+                    <button type="button" id="search-btn-console" class="btn btn-default classic-button">Search</button>
+                </div>
+            </div>
         {% endif %}
 
         {% if product_type_id == 2 %}
             <h1>{{ header_text }}Videogames</h1>
+            <div class="input-group">
+                <input type="search" class="form-control" id="search-box-videogame" placeholder="Enter your search..." />
+                <div class="input-group-btn">
+                    <button type="button" id="search-btn-videogame" class="btn btn-default classic-button">Search</button>
+                </div>
+            </div>
         {% endif %}
 
         {% if product_type_id == 3 %}
             <h1>{{ header_text }}Accessories</h1>
+            <div class="input-group">
+                <input type="search" class="form-control" id="search-box-accessory" placeholder="Enter your search..." />
+                <div class="input-group-btn">
+                    <button type="button" id="search-btn-accessory" class="btn btn-default classic-button">Search</button>
+                </div>
+            </div>
         {% endif %}
 
         {% if product_type_id == 'all' %}
             <h1>{{ header_text }}All Available Products</h1>
+            <div class="input-group">
+                <input type="search" class="form-control" id="search-box-all" placeholder="Enter your search..." />
+                <div class="input-group-btn">
+                    <button type="button" id="search-btn-all" class="btn btn-default classic-button">Search</button>
+                </div>
+            </div>
         {% endif %}
 
         {% if sort_text %}

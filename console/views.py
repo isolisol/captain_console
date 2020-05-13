@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from accessory.models import Product
 from user.models import RecentlyViewed, Profile
@@ -31,6 +32,16 @@ def index(request):
         context['products'] = consoles
     else:
         context = {'products': consoles}
+    if 'search_filter' in request.GET:
+        search_filter = request.GET['search_filter']
+        context['products'] = [{
+            'id': x.id,
+            'name': x.name,
+            'description': x.description,
+            'price': x.price,
+            'image': x.image
+        } for x in Product.objects.filter(type_id=1 ,name__icontains=search_filter)]
+        return JsonResponse({'data': context['products']})
     context['product_type_id'] = 1
     context['show_sort'] = True
     context['header_text'] = 'All '

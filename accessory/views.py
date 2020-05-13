@@ -35,7 +35,7 @@ def index(request):
             'description': x.description,
             'price': x.price,
             'image': x.image
-        } for x in Product.objects.filter(name__icontains=search_filter)]
+        } for x in Product.objects.filter(type_id=3, name__icontains=search_filter)]
         return JsonResponse({'data': context['products']})
     context['product_type_id'] = 3
     context['show_sort'] = True
