@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="product-container">
-
+    <div class="input-group">
+        <input type="search" class="form-control" id="search-box" placeholder="Enter your search..." />
+        <div class="input-group-btn">
+            <button type="button" id="search-btn" class="btn btn-default classic-button">Search</button>
+        </div>
+    </div>
         {% if product_type_id == 1 %}
             <h1>{{ header_text }}Consoles</h1>
         {% endif %}
