@@ -1,8 +1,11 @@
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from accessory.models import Product
+from user.models import RecentlyViewed, Profile
 from helper_services.helpers import build_context
 from order.models import Cart, ProductInCart
 from django.contrib.auth.decorators import login_required
+from datetime import date
 
 
 @login_required
@@ -29,7 +32,19 @@ def index(request):
         context['products'] = consoles
     else:
         context = {'products': consoles}
+    if 'search_filter' in request.GET:
+        search_filter = request.GET['search_filter']
+        context['products'] = [{
+            'id': x.id,
+            'name': x.name,
+            'description': x.description,
+            'price': x.price,
+            'image': x.image
+        } for x in Product.objects.filter(type_id=1 ,name__icontains=search_filter)]
+        return JsonResponse({'data': context['products']})
     context['product_type_id'] = 1
+    context['show_sort'] = True
+    context['header_text'] = 'All '
     return render(request, 'product/index.html', context=context)
 
 
@@ -37,6 +52,9 @@ def get_console_by_id(request, id):
     user = request.user
     console = get_object_or_404(Product, pk=id)
     if user.is_authenticated:
+        user_profile = Profile.objects.get(user=user)
+        viewed_product = Product.objects.get(id=id)
+        RecentlyViewed.objects.create(profile=user_profile, product=viewed_product, date=date.today())
         context = build_context(user)
         context['product'] = console
     else:
@@ -168,7 +186,7 @@ def get_gameboy_advance_consoles(request):
 
 
 # Get videgames sorted by price
-def get_consoles_sorted(request, orderby):
+def get_consoles_sorted(request, orderby, text):
     user = request.user
     consoles = Product.objects.filter(type_id=1).order_by(orderby)
     if user.is_authenticated:
@@ -177,19 +195,25 @@ def get_consoles_sorted(request, orderby):
     else:
         context = {'products': consoles}
     context['product_type_id'] = 1
+    context['show_sort'] = True
+    context['sort_text'] = 'Sorted by ' + text
+    context['header_text'] = 'All '
     return render(request, 'product/index.html', context=context)
 
 
 def get_consoles_price_sorted_asc(request):
     orderby = str('price')
-    return get_consoles_sorted(request, orderby)
+    text = 'price low to high'
+    return get_consoles_sorted(request, orderby, text)
 
 
 def get_consoles_price_sorted_desc(request):
     orderby = str('-price')
-    return get_consoles_sorted(request, orderby)
+    text = 'price high to low'
+    return get_consoles_sorted(request, orderby, text)
 
 
 def get_consoles_sorted_by_name(request):
     orderby = str('name')
-    return get_consoles_sorted(request, orderby)
+    text = 'name'
+    return get_consoles_sorted(request, orderby, text)

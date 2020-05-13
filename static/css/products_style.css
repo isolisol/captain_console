@@ -7,6 +7,14 @@
     float: right;
 }
 
+.product.without-sort {
+    width: 100%;
+}
+
+.product.without-sort h1 {
+    border-bottom: none;
+}
+
 .product-container {
     border-bottom: 2px solid #ff29f8;
     width: 100%;
@@ -15,12 +23,11 @@
 
 .product-container h1 {
     padding: 10px;
-    border-bottom: 2px solid #ff29f8;
     text-align: center;
     color: white;
     font-size: 50px;
+    border-bottom: 2px solid #ff29f8;
 }
-
 
 .brand h1 {
     padding: 10px;
@@ -152,4 +159,25 @@
     color: white;
 }
 
+#sort_text {
+    color: white;
+    border-bottom: 2px solid #ff29f8;
+    padding: 3px;
+    margin-bottom: 10px;
+}
 
+
+.recently-viewed {
+    border: 2px solid #ff29f8;
+    padding: 20px;
+    color: white;
+    background-color: black;
+    margin-top: 100px;
+    justify-content: center;
+}
+
+.recently-viewed h1 {
+    border-bottom: lightgray 2px solid;
+    width: 80%;
+    margin: auto;
+}

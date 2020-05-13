@@ -1,9 +1,14 @@
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from accessory.models import Product
+from user.models import RecentlyViewed, Profile
 from order.models import Cart, ProductInCart
 from helper_services.helpers import build_context
+from datetime import date
 
 
+@login_required()
 def v_add_to_cart(request, product_id):
     user = request.user
     product = get_object_or_404(Product, pk=product_id)
@@ -22,7 +27,19 @@ def index(request):
         context['products'] = Product.objects.filter(type_id=2).order_by('name')
     else:
         context = {'products': Product.objects.filter(type_id=2).order_by('name')}
+    if 'search_filter' in request.GET:
+        search_filter = request.GET['search_filter']
+        context['products'] = [{
+            'id': x.id,
+            'name': x.name,
+            'description': x.description,
+            'price': x.price,
+            'image': x.image
+        } for x in Product.objects.filter(type_id=2, name__icontains=search_filter)]
+        return JsonResponse({'data': context['products']})
     context['product_type_id'] = 2
+    context['show_sort'] = True
+    context['header_text'] = 'All '
     return render(request, 'product/index.html', context=context)
 
 
@@ -31,6 +48,9 @@ def get_videogame_by_id(request, id):
     user = request.user
     videogame = get_object_or_404(Product, pk=id)
     if user.is_authenticated:
+        user_profile = Profile.objects.get(user=user)
+        viewed_product = Product.objects.get(id=id)
+        RecentlyViewed.objects.create(profile=user_profile, product=viewed_product, date=date.today())
         context = build_context(user)
         context['product'] = videogame
     else:
@@ -143,6 +163,7 @@ def get_videogames_by_genreid(request, genreid, header_text):
         context = {'products': videogames}
     context['product_type_id'] = 2
     context['header_text'] = header_text
+    context['show_sort'] = True
     return render(request, 'product/index.html', context=context)
 
 
@@ -193,7 +214,7 @@ def get_fighting_videogames(request):
 
 
 # Get all videgames sorted by price and name
-def get_videogames_sorted(request, orderby):
+def get_videogames_sorted(request, orderby, text):
     user = request.user
     videogames = Product.objects.filter(type_id=2).order_by(orderby)
     if user.is_authenticated:
@@ -202,41 +223,25 @@ def get_videogames_sorted(request, orderby):
     else:
         context = {'products': videogames}
     context['product_type_id'] = 2
+    context['show_sort'] = True
+    context['sort_text'] = 'Sorted by ' + text
+    context['header_text'] = 'All '
     return render(request, 'product/index.html', context=context)
 
 
 def get_videogames_price_sorted_asc(request):
     orderby = str('price')
-    return get_videogames_sorted(request, orderby)
-
-
-def get_ps2_videogames_price_sorted(request):
-    pass
+    text = 'price low to high'
+    return get_videogames_sorted(request, orderby, text)
 
 
 def get_videogames_price_sorted_desc(request):
     orderby = str('-price')
-    return get_videogames_sorted(request, orderby)
+    text = 'price high to low'
+    return get_videogames_sorted(request, orderby, text)
 
 
 def get_videogames_sorted_by_name(request):
     orderby = str('name')
-    return get_videogames_sorted(request, orderby)
-
-
-# Get videogame category sorted by price and name
-
-#def get_vg_by_playstation_sorted_by_price_acs(request):
-#    user = request.user
-#    playstation1 = Product.objects.filter(type_id=2, console_id=6)
-#    playstation2 = Product.objects.filter(type_id=2, console_id=7)
-#    videogames = playstation1.union(playstation2).order_by('price')
-#    if user.is_authenticated:
-#        context = build_context(user)
-#        context['products'] = videogames
-#    else:
-#        context = {'products': videogames}
-#    context['product_type_id'] = 2
-#    context['header_text'] = str('Playstation ')
-#    context['orderby'] = str('playstation')
-#    return render(request, 'product/index.html', context=context)
+    text = 'name'
+    return get_videogames_sorted(request, orderby, text)

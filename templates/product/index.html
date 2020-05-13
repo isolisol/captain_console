@@ -4,21 +4,69 @@
 
         {% if product_type_id == 1 %}
             <h1>{{ header_text }}Consoles</h1>
-        {% endif %}
+            {% if sort_text %}
+                <h2 id="sort_text">-{{ sort_text }}-</h2>
+            {% endif %}
+            <div class="input-group">
+                <input type="search" class="form-control" id="search-box-console" placeholder="Search consoles..." />
+                <div class="input-group-btn">
+                    <button type="button" id="search-btn-console" class="btn btn-default classic-button">Search</button>
+                </div>
+            </div>
 
-        {% if product_type_id == 2 %}
+        {% elif product_type_id == 2 %}
             <h1>{{ header_text }}Videogames</h1>
-        {% endif %}
+            {% if sort_text %}
+                <h2 id="sort_text">-{{ sort_text }}-</h2>
+            {% endif %}
+            <div class="input-group">
+                <input type="search" class="form-control" id="search-box-videogame" placeholder="Search videogames..." />
+                <div class="input-group-btn">
+                    <button type="button" id="search-btn-videogame" class="btn btn-default classic-button">Search</button>
+                </div>
+            </div>
 
-        {% if product_type_id == 3 %}
+        {% elif product_type_id == 3 %}
             <h1>{{ header_text }}Accessories</h1>
+            {% if sort_text %}
+                <h2 id="sort_text">-{{ sort_text }}-</h2>
+            {% endif %}
+            <div class="input-group">
+                <input type="search" class="form-control" id="search-box-accessory" placeholder="Search accessories..." />
+                <div class="input-group-btn">
+                    <button type="button" id="search-btn-accessory" class="btn btn-default classic-button">Search</button>
+                </div>
+            </div>
+
+        {% elif product_type_id == 'all' %}
+            <h1>{{ header_text }}All Available Products</h1>
+            {% if sort_text %}
+                <h2 id="sort_text">-{{ sort_text }}-</h2>
+            {% endif %}
+            <div class="input-group">
+                <input type="search" class="form-control" id="search-box-all" placeholder="Search product..." />
+                <div class="input-group-btn">
+                    <button type="button" id="search-btn-all" class="btn btn-default classic-button">Search</button>
+                </div>
+            </div>
         {% endif %}
 
-        {% include 'product/product_sidebar.html' with product_type_id=product_type_id %}
-        <div class="product">
-            {% for product in products %}
-                {% include 'product/single_product.html' with product=product %}
-            {% endfor %}
-        </div> <!-- end product -->
+
+        {% if show_sort %}
+            {% include 'product/product_sidebar.html' with product_type_id=product_type_id %}
+            <div class="product">
+                {% for product in products %}
+                    {% include 'product/single_product.html' with product=product %}
+                {% endfor %}
+            </div> <!-- end product -->
+
+        {% else %}
+            <div class="product without-sort">
+                {% for product in products %}
+                    {% include 'product/single_product.html' with product=product %}
+                {% endfor %}
+            </div> <!-- end product -->
+        {% endif %}
+
     </div> <!-- end product-container -->
 {% endblock %}
