@@ -197,6 +197,7 @@ def get_consoles_sorted(request, orderby, text):
     context['product_type_id'] = 1
     context['show_sort'] = True
     context['sort_text'] = 'Sorted by ' + text
+    context['header_text'] = 'All '
     return render(request, 'product/index.html', context=context)
 
 

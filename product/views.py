@@ -1,6 +1,5 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-
 from accessory.models import Product
 from user.models import RecentlyViewed
 from helper_services.helpers import build_context
@@ -39,6 +38,7 @@ def get_all_products_sorted(request, orderby, text):
         context = {'products': consoles}
     context['product_type_id'] = 'all'
     context['sort_text'] = 'Sorted by ' + text
+    context['show_sort'] = True
     return render(request, 'product/index.html', context=context)
 
 def get_all_products_price_sorted_asc(request):
