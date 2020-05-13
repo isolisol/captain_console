@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="review-info-container">
-        <button class="classic-button back-btn" type="button" >Back</button>
+        <a href="{% url 'payment' %}" class="classic-button back-btn">Back</a>
             <div class="info-field">
                 <div class="review-info">
                     <h2>Contact & Shipping Information</h2>
@@ -51,8 +51,8 @@
                 </div>
             </div>
         <div class="review-info-btn-container">
-            <input type="submit" class="classic-button update-btn" value="Submit Order">
-            <button class="classic-button back-btn" type="button">Cancel Order</button>
+            <a href="{% url 'place_order' %}" class="classic-button update-btn">Place Order</a>
+            <a href="{% url 'cancel_order' %}" class="classic-button back-btn" type="button">Cancel Order</a>
         </div>
     </div>
 {% endblock %}

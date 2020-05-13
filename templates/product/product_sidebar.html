@@ -54,6 +54,12 @@
             </label>
 
             <label class="container sortby">
+                <a href="{% url 'racing_videogames' %}">
+                    <li>Racing</li>
+                </a>
+            </label>
+
+            <label class="container sortby">
                 <a href="{% url 'roleplaying_videogames' %}">
                     <li>Role-playing</li>
                 </a>
@@ -70,11 +76,10 @@
                     <li>Tactical shooter</li>
                 </a>
             </label><br>
-        {% endif %}
 
 
         <!-- if product type is consoles -->
-        {% if product_type_id == 1 %}
+        {% elif product_type_id == 1 %}
             <label class="container sortby">
                 <a href="{% url 'c_sort_price_desc' %}">
                     Price (High-Low)
@@ -92,10 +97,9 @@
                     Name
                 </a>
             </label>
-        {% endif %}
 
         <!-- if product type is accessories -->
-        {% if product_type_id == 3 %}
+        {% elif product_type_id == 3 %}
             <label class="container sortby">
                 <a href="{% url 'a_sort_price_desc' %}">Price (High-Low)
                 </a>

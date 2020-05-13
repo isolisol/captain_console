@@ -1,4 +1,4 @@
-from order.models import Cart, ContactInformation
+from order.models import Cart, ContactInformation, Order
 
 
 def build_context(user):
@@ -13,3 +13,12 @@ def calculateTotalPrice(cart_items):
     for item in cart_items:
         total_price += item.product.price * item.quantity
     return total_price
+
+
+def get_next_order_no():
+    order = Order.objects.values('order_number').order_by('-order_number').first()
+    order_no = order['order_number']
+    if order_no is None:
+        return 1000
+    else:
+        return order_no + 1
