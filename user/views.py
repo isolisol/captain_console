@@ -67,3 +67,5 @@ def edit_photo(request):
         return render(request, 'user/edit_image.html', {
             'form': ProfileImageForm(instance=profile)
         })
+
+
