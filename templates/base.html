@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{% static 'css/header_style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/container_style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/footer-style.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/location_hours_style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/products_style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/profile_style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/checkout_style.css' %}" />
@@ -25,19 +24,24 @@
 </head>
 <body>
     <div class="main-frame">
+
         <div id="header">
             {% include 'header.html' with cart_info=cart_info%}
             {% include 'navigation.html' %}
         </div> <!-- end header -->
+
         <div class="container">
             {% block content %}
 
             {% endblock %}
         </div> <!-- end container -->
+
         <div id="footer">
             {% include 'footer.html' %}
         </div> <!-- end footer -->
+
     </div> <!-- end main-frame -->
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
             crossorigin="anonymous"></script>

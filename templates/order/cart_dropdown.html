@@ -3,6 +3,8 @@
     {% load static %}
     <img src="{% static "images/cart-button-clipart-4.jpg" %}" alt="cart" class="icon">
     <div class="dropdown-content cart">
+
+        <!-- Only display cart if it has products -->
         {% if cart_items %}
             <div class="shopping-cart">
                 <div class="container mb-4">
@@ -52,12 +54,12 @@
                     </div> <!-- end row -->
                 </div> <!-- end container mb-4 -->
 
-
-            <div class="review-cart-buttons">
-                <a href="{% url 'checkout' %}" class="btn btn-outline-success header-button nav-btn-text" id="checkout-btn">Checkout</a>
-                <a href="{% url 'cart_details' %}" class="btn btn-outline-success header-button nav-btn-text" id="continue-shopping">View cart</a>
-            </div> <!-- end review-cart-buttons -->
+                <div class="review-cart-buttons">
+                    <a href="{% url 'checkout' %}" class="btn btn-outline-success header-button nav-btn-text" id="checkout-btn">Checkout</a>
+                    <a href="{% url 'cart_details' %}" class="btn btn-outline-success header-button nav-btn-text" id="continue-shopping">View cart</a>
+                </div> <!-- end review-cart-buttons -->
             </div> <!--end shopping-cart -->
+
         {% else %}
             <h3 id="cart-empty-dopdown">Cart Empty!</h3>
         {% endif %}
