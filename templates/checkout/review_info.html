@@ -51,8 +51,8 @@
                 </div>
             </div>
         <div class="review-info-btn-container">
-            <input type="submit" class="classic-button update-btn" value="Submit Order">
-            <button class="classic-button back-btn" type="button">Cancel Order</button>
+            <a href="{% url 'place_order' %}" class="classic-button update-btn">Place Order</a>
+            <a href="{% url 'cancel_order' %}" class="classic-button back-btn" type="button">Cancel Order</a>
         </div>
     </div>
 {% endblock %}

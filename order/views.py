@@ -52,8 +52,11 @@ def checkout(request):
         form = ContactInfoForm(data=request.POST)
         if form.is_valid():
             contact_information = form.save()
+            request.session['contact_info'] = contact_information.id
             cart = Cart.objects.get(user_id=user.id)
+            request.session['cart'] = cart.id
             order = Order.objects.create(cart_id=cart.id, date=date.today(), contact_info_id=contact_information.id)
+            request.session['order'] = order.id
             return redirect(reverse('payment', args=[order.id]))
     else:
         return render(request, 'checkout/index.html', context)
@@ -69,7 +72,8 @@ def payment(request, order_id):
             new_payment = form.save(commit=False)
             new_payment.user = user
             new_payment.save()
-            order = Order.objects.get(id=order_id)
+            request.session['payment'] = new_payment.id
+            order = Order.objects.get(id=order_id) #=request.session['order_id'])
             order.payment = new_payment
             order.save()
             return redirect(reverse('review', args=[order_id]))
@@ -86,3 +90,13 @@ def review(request, order_id):
     context['contact_info'] = contact_info
     context['payment_info'] = payment_info
     return render(request, 'checkout/review_info.html', context)
+
+
+def cancel_order(request):
+    # Eyðum öllum línum
+    pass
+
+
+def place_order(request):
+    # Staðfesta pöntun
+    pass
