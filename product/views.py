@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from accessory.models import Product
+from user.models import RecentlyViewed
 from helper_services.helpers import build_context
 
 
@@ -45,3 +46,7 @@ def get_all_products_sorted_by_name(request):
     orderby = str('name')
     text = 'name'
     return get_all_products_sorted(request, orderby, text)
+
+
+def get_recently_viewed_items(request):
+    pass

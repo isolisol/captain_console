@@ -167,3 +167,17 @@
 }
 
 
+.recently-viewed {
+    border: 2px solid #ff29f8;
+    padding: 20px;
+    color: white;
+    background-color: black;
+    margin-top: 100px;
+    justify-content: center;
+}
+
+.recently-viewed h1 {
+    border-bottom: lightgray 2px solid;
+    width: 80%;
+    margin: auto;
+}

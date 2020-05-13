@@ -1,23 +1,35 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="product-details">
-        <img src="{{ product.image }}" class="product-img"/>
-        <div class="product-details-info">
-            <h1>{{ product.name }}</h1><br>
-            <p id="product-description">{{ product.description }}</p>
-            {% if product.type_id == 2 %}
-                <p id="product-age-limit">Age limit: {{ product.age_limit }}+</p>
-            {% endif %}
-            <p id="product-price">{{ product.price }}$</p><br>
-            {% if product.type_id == 1 %}
-                <a href="{% url 'c_add_to_cart' product.id %}" class="btn btn-outline-success header-button nav-btn-text" id="add-to-cart-btn" >Add to Cart</a>
-            {% endif %}
-            {% if product.type_id == 2 %}
-                <a href="{% url 'v_add_to_cart' product.id %}" class="btn btn-outline-success header-button nav-btn-text" id="add-to-cart-btn" >Add to Cart</a>
-            {% endif %}
-            {% if product.type_id == 3 %}
-                <a href="{% url 'a_add_to_cart' product.id %}" class="btn btn-outline-success header-button nav-btn-text" id="add-to-cart-btn" >Add to Cart</a>
-            {% endif %}
-        </div> <!-- end product-details-info -->
-    </div> <!-- end product-details -->
+    <div class="product-details-container">
+        <div class="product-details">
+            <img src="{{ product.image }}" class="product-img"/>
+            <div class="product-details-info">
+                <h1>{{ product.name }}</h1><br>
+                <p id="product-description">{{ product.description }}</p>
+                {% if product.type_id == 2 %}
+                    <p id="product-age-limit">Age limit: {{ product.age_limit }}+</p>
+                {% endif %}
+                <p id="product-price">{{ product.price }}$</p><br>
+                {% if product.type_id == 1 %}
+                    <a href="{% url 'c_add_to_cart' product.id %}" class="btn btn-outline-success header-button nav-btn-text" id="add-to-cart-btn" >Add to Cart</a>
+                {% endif %}
+                {% if product.type_id == 2 %}
+                    <a href="{% url 'v_add_to_cart' product.id %}" class="btn btn-outline-success header-button nav-btn-text" id="add-to-cart-btn" >Add to Cart</a>
+                {% endif %}
+                {% if product.type_id == 3 %}
+                    <a href="{% url 'a_add_to_cart' product.id %}" class="btn btn-outline-success header-button nav-btn-text" id="add-to-cart-btn" >Add to Cart</a>
+                {% endif %}
+            </div> <!-- end product-details-info -->
+        </div> <!-- end product-details -->
+
+        <div class="recently-viewed">
+            <h1>Recently Viewed Items</h1>
+            <div>
+                {% for product in products %}
+                    {% include 'product/single_product.html' with product=product %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
