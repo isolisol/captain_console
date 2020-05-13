@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django_countries.fields import CountryField
+from accessory.models import Product
 
 
 # Create your models here.
@@ -24,5 +25,10 @@ class Profile(models.Model):
     postal_code = models.CharField(max_length=10, null=True)
     image = models.CharField(max_length=999, null=True)
     phone_number = models.IntegerField(null=True)
+    product = models.ManyToManyField(Product, through='RecentlyViewed')
 
 
+class RecentlyViewed(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    date = models.DateField()

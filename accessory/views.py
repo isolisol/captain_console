@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from accessory.models import Product
+from user.models import Profile, RecentlyViewed
 from order.models import Cart, ProductInCart
 from helper_services.helpers import build_context
+from datetime import date
 
 
 def a_add_to_cart(request, product_id):
@@ -29,6 +31,9 @@ def index(request):
 def get_accessory_by_id(request,id):
     user = request.user
     if user.is_authenticated:
+        user_profile = Profile.objects.get(user=user)
+        viewed_product = Product.objects.get(id=id)
+        RecentlyViewed.objects.create(profile=user_profile, product=viewed_product, date=date.today())
         context = build_context(user)
         context['product'] = get_object_or_404(Product, pk=id)
     else:
