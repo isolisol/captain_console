@@ -22,6 +22,9 @@ class ProductInCart(models.Model):
 class Payment(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     cardholder_name = models.CharField(max_length=255)
+    card_number = models.CharField(max_length=16)
+    exp_date = models.CharField(max_length=5)
+    cvv = models.CharField(max_length=4)
     # Billing address:
     country = CountryField()
     address = models.CharField(max_length=255)
