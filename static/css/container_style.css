@@ -9,7 +9,7 @@
     padding: 30px;
 }
 
-#image-left {
+.homepage-img-container {
     margin: 30px;
     justify-content: center;
     text-align: center;
@@ -19,43 +19,12 @@
     border: 2px solid #ff29f8;
 }
 
-#image-middle {
-    margin: 30px;
-    justify-content: center;
-    text-align: center;
-    display: inline-block;
-    width:33%;
-    background-color: #0000009c;
-    border: 2px solid #ff29f8;
-}
-
-#image-right {
-    margin: 30px;
-    justify-content: center;
-    text-align: center;
-    display: inline-block;
-    width:33%;
-    background-color: #0000009c;
-    border: 2px solid #ff29f8;
-}
-
-#image-right p {
+.homepage-img-container p {
     color: white;
     text-decoration: none;
     font-size: 19px;
 }
 
-#image-middle p {
-    color: white;
-    text-decoration: none;
-    font-size: 19px;
-}
-
-#image-left p {
-    color: white;
-    text-decoration: none;
-    font-size: 19px;
-}
 
 
 /* Location of store and opening hours page */

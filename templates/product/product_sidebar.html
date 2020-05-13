@@ -1,9 +1,10 @@
 <div class="sidebar">
     <div class="checkbox-container">
-        <h3>Sort By</h3>
+
 
         <!-- if product type is videogames -->
-        {% if product_type_id == 2 %}
+        {% if product_type_id == 2 and show_sort%}
+            <h3>Sort By</h3>
             <label class="container sortby">
                 <a href="{% url 'v_sort_price_desc' %}">
                     <li>Price (High-Low)</li>
@@ -79,41 +80,64 @@
 
 
         <!-- if product type is consoles -->
-        {% elif product_type_id == 1 %}
+        {% elif product_type_id == 1 and show_sort%}
+            <h3>Sort By</h3>
             <label class="container sortby">
                 <a href="{% url 'c_sort_price_desc' %}">
-                    Price (High-Low)
+                    <li>Price (High-Low)</li>
                 </a>
             </label>
 
             <label class="container sortby">
                 <a href="{% url 'c_sort_price_asc' %}">
-                    Price (Low-High)
+                    <li>Price (Low-High)</li>
                 </a>
             </label>
 
             <label class="container sortby">
                 <a href="{% url 'c_sort_by_name' %}">
-                    Name
+                    <li>Name</li>
                 </a>
             </label>
 
         <!-- if product type is accessories -->
-        {% elif product_type_id == 3 %}
+        {% elif product_type_id == 3 and show_sort%}
+            <h3>Sort By</h3>
             <label class="container sortby">
-                <a href="{% url 'a_sort_price_desc' %}">Price (High-Low)
+                <a href="{% url 'a_sort_price_desc' %}">
+                    <li>Price (High-Low)</li>
                 </a>
             </label>
 
             <label class="container sortby">
                 <a href="{% url 'a_sort_price_asc' %}">
-                    Price (Low-High)
+                    <li>Price (Low-High)</li>
                 </a>
             </label>
 
             <label class="container sortby">
                 <a href="{% url 'a_sort_by_name' %}">
-                    Name
+                    <li>Name</li>
+                </a>
+            </label>
+
+        {% elif product_type_id == 'all' %}
+            <h3>Sort By</h3>
+            <label class="container sortby">
+                <a href="{% url 'all_sort_price_desc' %}">
+                    <li>Price (High-Low)</li>
+                </a>
+            </label>
+
+            <label class="container sortby">
+                <a href="{% url 'all_sort_price_asc' %}">
+                    <li>Price (Low-High)</li>
+                </a>
+            </label>
+
+            <label class="container sortby">
+                <a href="{% url 'all_sort_by_name' %}">
+                    <li>Name</li>
                 </a>
             </label>
         {% endif %}

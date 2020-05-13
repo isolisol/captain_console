@@ -23,6 +23,8 @@ def index(request):
     else:
         context = {'products': Product.objects.filter(type_id=2).order_by('name')}
     context['product_type_id'] = 2
+    context['show_sort'] = True
+    context['header_text'] = 'All '
     return render(request, 'product/index.html', context=context)
 
 
@@ -143,6 +145,7 @@ def get_videogames_by_genreid(request, genreid, header_text):
         context = {'products': videogames}
     context['product_type_id'] = 2
     context['header_text'] = header_text
+    context['show_sort'] = True
     return render(request, 'product/index.html', context=context)
 
 
@@ -193,7 +196,7 @@ def get_fighting_videogames(request):
 
 
 # Get all videgames sorted by price and name
-def get_videogames_sorted(request, orderby):
+def get_videogames_sorted(request, orderby, text):
     user = request.user
     videogames = Product.objects.filter(type_id=2).order_by(orderby)
     if user.is_authenticated:
@@ -202,26 +205,27 @@ def get_videogames_sorted(request, orderby):
     else:
         context = {'products': videogames}
     context['product_type_id'] = 2
+    context['show_sort'] = True
+    context['sort_text'] = 'Sorted by ' + text
     return render(request, 'product/index.html', context=context)
 
 
 def get_videogames_price_sorted_asc(request):
     orderby = str('price')
-    return get_videogames_sorted(request, orderby)
-
-
-def get_ps2_videogames_price_sorted(request):
-    pass
+    text = 'price low to high'
+    return get_videogames_sorted(request, orderby, text)
 
 
 def get_videogames_price_sorted_desc(request):
     orderby = str('-price')
-    return get_videogames_sorted(request, orderby)
+    text = 'price high to low'
+    return get_videogames_sorted(request, orderby, text)
 
 
 def get_videogames_sorted_by_name(request):
     orderby = str('name')
-    return get_videogames_sorted(request, orderby)
+    text = 'name'
+    return get_videogames_sorted(request, orderby, text)
 
 
 # Get videogame category sorted by price and name
