@@ -1,3 +1,7 @@
+.my-account-info-container {
+    width: 100%;
+}
+
 tr {
     border-bottom: solid 1px;
     height: 40px;

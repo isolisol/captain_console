@@ -1,92 +1,93 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="info-field">
-        <table id="info-table">
-            <tr>
-                <th>Username:</th>
-                <th>{{ user.username }}</th>
-            </tr>
-            <tr>
-                <th>First name:</th>
-                <th>{{ user.first_name }}</th>
-            </tr>
-            <tr>
-                <th>Last name:</th>
-                <th>{{ user.last_name }}</th>
-            </tr>
-            <tr>
-                <th>Email address:</th>
-                <th>{{ user.email }}</th>
-            </tr>
-            <tr>
-                <th>Country:</th>
-                <th>{{ profile.country.name }}</th>
-            </tr>
-            <tr>
-                <th>Address:</th>
-                <th>
-                    {% if profile.address %}
-                        {{ profile.address }}
-                    {% endif %}
-                </th>
-            </tr>
-            <tr>
-                <th>House number:</th>
-                <th>
-                    {% if profile.house_number %}
-                        {{ profile.house_number }}
-                    {% endif %}
-                </th>
-            </tr>
-            <tr>
-                <th>City:</th>
-                <th>
-                    {% if profile.city %}
-                        {{ profile.city }}
-                    {% endif %}
-                </th>
-            </tr>
-            <tr>
-                <th>Postal code:</th>
-                <th>
-                    {% if profile.postal_code %}
-                        {{ profile.postal_code }}
-                    {% endif %}
-                </th>
-            </tr>
-            <tr>
-                <th>Phone number:</th>
-                <th>
-                    {% if profile.phone_number %}
-                        {{ profile.phone_number }}
-                    {% endif %}
-                </th>
-            </tr>
-        </table> <!-- end info-table -->
-        <div id="edit-info-btn">
-        <a href="{% url 'editprofile' %}">
-            <input type="submit" class="classic-button" value="Edit information">
-        </a>
-        </div> <!-- end edit-info-btn -->
-    </div> <!-- end info-field -->
-    <div id="profile-image-container">
-        {% if profile.image %}
-            <img class="profile-img" src="{{ profile.image }}">
+    <div class="my-account-info-container">
+        <div class="info-field">
+            <table id="info-table">
+                <tr>
+                    <th>Username:</th>
+                    <th>{{ user.username }}</th>
+                </tr>
+                <tr>
+                    <th>First name:</th>
+                    <th>{{ user.first_name }}</th>
+                </tr>
+                <tr>
+                    <th>Last name:</th>
+                    <th>{{ user.last_name }}</th>
+                </tr>
+                <tr>
+                    <th>Email address:</th>
+                    <th>{{ user.email }}</th>
+                </tr>
+                <tr>
+                    <th>Country:</th>
+                    <th>{{ profile.country.name }}</th>
+                </tr>
+                <tr>
+                    <th>Address:</th>
+                    <th>
+                        {% if profile.address %}
+                            {{ profile.address }}
+                        {% endif %}
+                    </th>
+                </tr>
+                <tr>
+                    <th>House number:</th>
+                    <th>
+                        {% if profile.house_number %}
+                            {{ profile.house_number }}
+                        {% endif %}
+                    </th>
+                </tr>
+                <tr>
+                    <th>City:</th>
+                    <th>
+                        {% if profile.city %}
+                            {{ profile.city }}
+                        {% endif %}
+                    </th>
+                </tr>
+                <tr>
+                    <th>Postal code:</th>
+                    <th>
+                        {% if profile.postal_code %}
+                            {{ profile.postal_code }}
+                        {% endif %}
+                    </th>
+                </tr>
+                <tr>
+                    <th>Phone number:</th>
+                    <th>
+                        {% if profile.phone_number %}
+                            {{ profile.phone_number }}
+                        {% endif %}
+                    </th>
+                </tr>
+            </table> <!-- end info-table -->
+            <div id="edit-info-btn">
+            <a href="{% url 'editprofile' %}">
+                <input type="submit" class="classic-button" value="Edit information">
+            </a>
+            </div> <!-- end edit-info-btn -->
+        </div> <!-- end info-field -->
+        <div id="profile-image-container">
+            {% if profile.image %}
+                <img class="profile-img" src="{{ profile.image }}">
 
-            <div id="edit-photo-btn">
-                <a href="{% url 'editimage' %}">
-                    <input type="submit" class="classic-button" value="Edit Photo">
-                </a>
-            </div> <!-- end edit-photo-btn -->
-        {% else %}
-            <div id="edit-photo-btn">
-                <a href="{% url 'editimage' %}">
-                    <input type="submit" class="classic-button" value="Add Photo">
-                </a>
-            </div> <!-- end edit-photo-btn -->
-        {% endif %}
-    </div> <!-- end profile-image-container -->
-
+                <div id="edit-photo-btn">
+                    <a href="{% url 'editimage' %}">
+                        <input type="submit" class="classic-button" value="Edit Photo">
+                    </a>
+                </div> <!-- end edit-photo-btn -->
+            {% else %}
+                <div id="edit-photo-btn">
+                    <a href="{% url 'editimage' %}">
+                        <input type="submit" class="classic-button" value="Add Photo">
+                    </a>
+                </div> <!-- end edit-photo-btn -->
+            {% endif %}
+        </div> <!-- end profile-image-container -->
+    </div>
 
 
 {% endblock %}
