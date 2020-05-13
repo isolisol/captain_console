@@ -38,6 +38,8 @@ def index(request):
         } for x in Product.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': context['products']})
     context['product_type_id'] = 3
+    context['show_sort'] = True
+    context['header_text'] = 'All '
     return render(request, 'product/index.html', context=context)
 
 
@@ -183,7 +185,7 @@ def get_other_accessories(request):
 
 
 # Get videgames sorted by price
-def get_accessories_sorted(request, orderby):
+def get_accessories_sorted(request, orderby, text):
     user = request.user
     consoles = Product.objects.filter(type_id=3).order_by(orderby)
     if user.is_authenticated:
@@ -192,19 +194,24 @@ def get_accessories_sorted(request, orderby):
     else:
         context = {'products': consoles}
     context['product_type_id'] = 3
+    context['sort_text'] = 'Sorted by ' + text
+    context['show_sort'] = True
     return render(request, 'product/index.html', context=context)
 
 
 def get_accessories_price_sorted_asc(request):
     orderby = str('price')
-    return get_accessories_sorted(request, orderby)
+    text = 'price low to high'
+    return get_accessories_sorted(request, orderby, text)
 
 
 def get_accessories_price_sorted_desc(request):
     orderby = str('-price')
-    return get_accessories_sorted(request, orderby)
+    text = 'price high to low'
+    return get_accessories_sorted(request, orderby, text)
 
 
 def get_accessories_sorted_by_name(request):
     orderby = str('name')
-    return get_accessories_sorted(request, orderby)
+    text = 'name'
+    return get_accessories_sorted(request, orderby, text)

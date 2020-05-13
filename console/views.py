@@ -32,6 +32,8 @@ def index(request):
     else:
         context = {'products': consoles}
     context['product_type_id'] = 1
+    context['show_sort'] = True
+    context['header_text'] = 'All '
     return render(request, 'product/index.html', context=context)
 
 
@@ -173,7 +175,7 @@ def get_gameboy_advance_consoles(request):
 
 
 # Get videgames sorted by price
-def get_consoles_sorted(request, orderby):
+def get_consoles_sorted(request, orderby, text):
     user = request.user
     consoles = Product.objects.filter(type_id=1).order_by(orderby)
     if user.is_authenticated:
@@ -182,19 +184,24 @@ def get_consoles_sorted(request, orderby):
     else:
         context = {'products': consoles}
     context['product_type_id'] = 1
+    context['show_sort'] = True
+    context['sort_text'] = 'Sorted by ' + text
     return render(request, 'product/index.html', context=context)
 
 
 def get_consoles_price_sorted_asc(request):
     orderby = str('price')
-    return get_consoles_sorted(request, orderby)
+    text = 'price low to high'
+    return get_consoles_sorted(request, orderby, text)
 
 
 def get_consoles_price_sorted_desc(request):
     orderby = str('-price')
-    return get_consoles_sorted(request, orderby)
+    text = 'price high to low'
+    return get_consoles_sorted(request, orderby, text)
 
 
 def get_consoles_sorted_by_name(request):
     orderby = str('name')
-    return get_consoles_sorted(request, orderby)
+    text = 'name'
+    return get_consoles_sorted(request, orderby, text)

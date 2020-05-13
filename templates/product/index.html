@@ -19,11 +19,29 @@
             <h1>{{ header_text }}Accessories</h1>
         {% endif %}
 
-        {% include 'product/product_sidebar.html' with product_type_id=product_type_id %}
-        <div class="product">
-            {% for product in products %}
-                {% include 'product/single_product.html' with product=product %}
-            {% endfor %}
-        </div> <!-- end product -->
+        {% if product_type_id == 'all' %}
+            <h1>{{ header_text }}All Available Products</h1>
+        {% endif %}
+
+        {% if sort_text %}
+            <h2 id="sort_text">-{{ sort_text }}-</h2>
+        {% endif %}
+
+        {% if show_sort %}
+            {% include 'product/product_sidebar.html' with product_type_id=product_type_id %}
+            <div class="product">
+                {% for product in products %}
+                    {% include 'product/single_product.html' with product=product %}
+                {% endfor %}
+            </div> <!-- end product -->
+
+        {% else %}
+            <div class="product without-sort">
+                {% for product in products %}
+                    {% include 'product/single_product.html' with product=product %}
+                {% endfor %}
+            </div> <!-- end product -->
+        {% endif %}
+
     </div> <!-- end product-container -->
 {% endblock %}
