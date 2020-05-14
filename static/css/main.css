@@ -79,6 +79,11 @@ button:focus {
     border: 1px solid #ff29f8;
 }
 
+.errorlist {
+    color: white;
+    list-style: none;
+}
+
 
 
 
