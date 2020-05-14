@@ -68,9 +68,13 @@
     padding: 5px;
     border: solid 1px #ff29f8;
     background-color: white;
+    opacity: 1;
+    transition: 0.3s;
 }
 
-
+.single-product:hover {
+    opacity: 0.9
+}
 .single-product p {
     margin: 10px;
     color: black;
