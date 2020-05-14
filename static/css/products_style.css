@@ -11,6 +11,10 @@
     width: 100%;
 }
 
+#search-text {
+    color: white;
+}
+
 .product.without-sort h1 {
     border-bottom: none;
 }

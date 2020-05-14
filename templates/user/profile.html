@@ -76,11 +76,16 @@
             {% if profile.image %}
                 <img class="profile-img" src="{{ profile.image }}">
 
-                <div class="edit-photo-btn">
+                <div class="edit-photo-btn" id="edit-img">
                     <a href="{% url 'editimage' %}">
                         <input type="submit" class="classic-button" value="Edit Photo">
                     </a>
                 </div> <!-- end edit-photo-btn -->
+                <div class="edit-photo-btn" id="delete-img">
+                    <a href="{% url 'delete_img' %}">
+                        <input type="submit" class="classic-button" value="Remove Photo">
+                    </a>
+                </div>
             {% else %}
                 <div class="edit-photo-btn">
                     <a href="{% url 'editimage' %}">
