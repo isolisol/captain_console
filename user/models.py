@@ -31,4 +31,4 @@ class Profile(models.Model):
 class RecentlyViewed(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    date = models.DateField()
+    date = models.DateTimeField(null=True)

@@ -4,8 +4,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from accessory.models import Product
 from user.models import Profile, RecentlyViewed
 from order.models import Cart, ProductInCart
-from helper_services.helpers import build_context
-from datetime import date
+from helper_services.helpers import build_context, get_recently_viewed
+import datetime
 
 
 @login_required
@@ -50,9 +50,14 @@ def get_accessory_by_id(request,id):
     if user.is_authenticated:
         user_profile = Profile.objects.get(user=user)
         viewed_product = Product.objects.get(id=id)
-        RecentlyViewed.objects.create(profile=user_profile, product=viewed_product, date=date.today())
+        recently_viewed, created = RecentlyViewed.objects.get_or_create(profile=user_profile, product=viewed_product,
+                                                                        date=datetime.datetime.today())
+        if not created:
+            recently_viewed.date = datetime.datetime.now()
+            recently_viewed.save()
         context = build_context(user)
         context['product'] = get_object_or_404(Product, pk=id)
+        context['recently_viewed'] = get_recently_viewed(user)
     else:
         context = {'product': get_object_or_404(Product, pk=id)}
     return render(request, 'product/product_details.html', context=context)
