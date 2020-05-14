@@ -9,5 +9,6 @@ urlpatterns = [
     path('profile', views.profile, name='profile'),
     path('editprofile', views.edit_profile, name='editprofile'),
     path('editprofileimg', views.edit_photo, name='editimage'),
-    path('past_orders', views.past_orders, name='past_orders')
+    path('past_orders', views.past_orders, name='past_orders'),
+    path('past_orders/<int:order_id>', views.past_order, name="past_order")
 ]

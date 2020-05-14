@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from accessory.models import Product
 from .models import Order, Cart, ContactInformation, Payment
-from helper_services.helpers import build_context, get_next_order_no
+from helper_services.helpers import build_context, get_next_order_no, calculateTotalPrice
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from order.forms.contact_info_form import ContactInfoForm
@@ -65,12 +65,15 @@ def place_order(request):
     context = build_context(user)
     date_now = date.today()
     order_num = get_next_order_no()
+    cart = Cart.objects.get(id=request.session['cart_id'])
+    total_price = calculateTotalPrice(cart.productincart_set.all())
     order = Order.objects.create(
         date=date_now,
         cart_id=request.session['cart_id'],
         contact_info_id=request.session['contact_info_id'],
         payment_id=request.session['payment_id'],
-        order_number=order_num
+        order_number=order_num,
+        total_price=total_price
     )
     order.save()
     request.session['order_id'] = order.id
@@ -87,6 +90,15 @@ def cancel_order(request):
         if not key.startswith('_'):
             del request.session[key]
     return redirect('cart_details')
+
+
+def review_back(request):
+    ContactInformation.objects.get(id=request.session['contact_info_id']).delete()
+    Payment.objects.get(id=request.session['payment_id']).delete()
+    for key in list(request.session.keys()):
+        if not key.startswith('_'):
+            del request.session[key]
+    return redirect('checkout')
 
 
 def confirmation(request):

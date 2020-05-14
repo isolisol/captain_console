@@ -20,6 +20,5 @@ def get_next_order_no():
     if order is None:
         return 1000
     else:
-        return order.order_number + 1
-        #order_no = order['order_number']
-        #return order_no + 1
+        order_no = order['order_number']
+        return order_no + 1

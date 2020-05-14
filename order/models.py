@@ -49,3 +49,4 @@ class Order(models.Model):
     contact_info = models.ForeignKey(ContactInformation, on_delete=models.CASCADE)
     payment = models.ForeignKey(Payment, on_delete=models.CASCADE, null=True)
     order_number = models.IntegerField(null=True)
+    total_price = models.FloatField(null=True)

@@ -7,6 +7,11 @@
     justify-content: left;
 }
 
+.conformation-site {
+    color: white;
+}
+
+
 #checkout-container {
     background-color: white;
     height: 100%;
@@ -96,4 +101,5 @@
 .review-info-btn-container {
     margin-top: 50px;
 }
+
 

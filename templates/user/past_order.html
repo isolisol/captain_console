@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Order #{{ order.order_number }}</h1>
+    <h2>Date: {{ order.date }}</h2>
+    {% for product in cart_items %}
+        {% include 'user/single_order_item.html' with product=product %}
+    {% endfor %}
+    <p>Total price: {{ order.total_price }}</p>
+{% endblock %}

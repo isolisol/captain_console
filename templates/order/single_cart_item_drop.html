@@ -1,11 +1,31 @@
 <!-- Body for dropdown cart -->
 <tbody>
     <tr>
-        <td><img class="cart-product-img" src="{{ product.product.image }}"/></td>
-        <td>{{ product.product.name }}</td>
+        <td>
+            {% if product.product.type_id == 1 %}
+                <a href="/consoles/{{ product.product.id }}">
+            {% elif product.product.type_id == 2 %}
+                <a href="/videogames/{{ product.product.id }}">
+            {% elif product.product.type_id == 3 %}
+                <a href="/accessories/{{ product.product.id }}">
+            {% endif %}
+            <img class="cart-product-img" src="{{ product.product.image }}"/>
+            </a>
+        </td>
+        <td>
+            {% if product.product.type_id == 1 %}
+                <a href="/consoles/{{ product.product.id }}">
+            {% elif product.product.type_id == 2 %}
+                <a href="/videogames/{{ product.product.id }}">
+            {% elif product.product.type_id == 3 %}
+                <a href="/accessories/{{ product.product.id }}">
+            {% endif %}
+            {{ product.product.name }}
+            </a>
+        </td>
         <td>
             <div class="qty mt-5">
-                <input type="number" class="count" name="qty" value="{{ product.quantity }}">
+                <label class="qty">{{ product.quantity }}</label>
             </div>
         </td>
         <td class="text-right">{{ product.product.price }}</td>

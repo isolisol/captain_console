@@ -25,20 +25,18 @@ def past_orders(request):
     user = request.user
     context = build_context(user)
     completed_carts = tuple(Cart.objects.filter(user=user, complete=True).values_list('id'))
-    orders = Order.objects.filter(cart_id__in=completed_carts)
-    orders_dict = {}
-    counter = 1
-    for order in orders:
-        cart = order.cart
-        total_price = calculateTotalPrice(cart.productincart_set.all())
-        orders_dict['order'+ str(counter)] = {'order': order, 'total_price': total_price}
-        counter += 1
-    context['orders_dict'] = orders_dict
+    context['orders'] = Order.objects.filter(cart_id__in=completed_carts)
     return render(request, 'user/past_orders.html', context)
 
 
 def past_order(request, order_id):
-    pass
+    user = request.user
+    context = build_context(user)
+    order = Order.objects.get(id=order_id)
+    context['order'] = order
+    cart = order.cart
+    context['cart_items'] = cart.productincart_set.all()
+    return render(request, 'user/past_order.html', context)
 
 
 def profile(request):

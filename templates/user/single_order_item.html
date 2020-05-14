@@ -1,0 +1,15 @@
+<div class="single-order-product">
+    {% if product.product.type_id == 1 %}
+        <a href="/consoles/{{ product.product.id }}">
+    {% endif %}
+    {% if product.product.type_id == 2 %}
+        <a href="/videogames/{{ product.product.id }}">
+    {% endif %}
+    {% if product.product.type_id == 3 %}
+        <a href="/accessories/{{ product.product.id }}">
+    {% endif %}
+        <img src="{{ product.product.image }}">
+        <h2>{{ product.product.name }}</h2>
+        <h3>{{ product.product.price }}</h3>
+    </a>
+</div>
