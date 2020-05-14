@@ -144,61 +144,6 @@
     height: 20px;
 }
 
-/* Cart button on header and checkout button in cart */
-
-#shopping-cart-dropdown {
-  left: 0;
-}
-
-.shopping-cart-items {
-    padding: 0;
-}
-
-#checkout-btn {
-    padding: 5px;
-    width: 100px;
-    text-align: center;
-    float: right;
-    color: white;
-}
-
-#view-cart-btn {
-    padding: 5px;
-    width: 100px;
-    margin-left: 10px;
-    text-align: center;
-    float: left;
-    color: white;
-}
-
-
-.clearfix li {
-    float: right;
-    list-style: none;
-    text-align: left;
-}
-
-.clearfix {
-    width: 399px!important;
-    border-bottom: 1px solid lightgray;
-}
-
-.clearfix img {
-    float: left;
-}
-
-.shopping-cart-total {
-    width: 400px;
-    text-align: right;
-    padding-right: 20px;
-    font-weight: bold;
-    margin: 0;
-    font-size: large;
-}
-
-.lighter-text {
-    margin: 0;
-}
 
 
 /* About Us button on header */

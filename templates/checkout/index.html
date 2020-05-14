@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
     <div class="checkout-user-info-container">
         <a href="{% url 'cart_details' %}" class="back-btn payment-site" id="back-to-checkout-btn">< Back</a>
-        <h2>Contact & Shipping Information</h2>
+        <div class="contact-header">
+            <img src="{% static "images/contact-info.png" %}" alt="logo"/>
+            <h2>Contact & Shipping Information</h2>
+        </div>
         <form method="post">
             {% csrf_token %}
             {{ contact_info_form }}<br>
-            <h2>Payment information</h2>
+            <div class="payment-header">
+                <img src="{% static "images/payment.png" %}" alt="logo"/>
+                <h2>Payment information</h2>
+            </div>
             {{ payment_form }}
             <button type="submit" class="classic-button">Review info</button>
         </form> <!-- end post -->

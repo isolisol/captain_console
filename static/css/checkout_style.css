@@ -27,15 +27,15 @@
     border: 2px solid #ff28f9;
     border-radius: 5px;
     justify-content: center;
+    text-align: center;
 }
 
 .checkout-user-info-container h2{
     margin-bottom: 30px;
-    margin-top: 30px;
-    margin-right: 40px;
+    margin-top: 20px;
     padding-bottom: 5px;
     border-bottom: 1px solid lightgrey;
-    width: 80%;
+    width: 90%;
     display: inline-block;
 }
 
@@ -73,7 +73,7 @@
 
 .review-info h2{
     color: black;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding-left: 60px;
     padding-right: 60px;
 }
@@ -102,4 +102,12 @@
     margin-top: 50px;
 }
 
+.payment-header {
+    margin-top: 30px;
+    text-align: center;
+}
 
+.contact-header {
+    margin-top: 30px;
+    text-align: center;
+}
