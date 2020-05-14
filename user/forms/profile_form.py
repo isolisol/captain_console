@@ -18,6 +18,7 @@ class ProfileForm(ModelForm):
     class Meta:
         model = Profile
         exclude = ['id', 'user', 'image']
+        fields = ['address', 'house_number', 'city', 'postal_code', 'phone_number', 'country']
         widgets = {
             'address': widgets.TextInput(attrs={'class': 'form-control'}),
             'house_number': widgets.TextInput(attrs={'class': 'form-control'}),

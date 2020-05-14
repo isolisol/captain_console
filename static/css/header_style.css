@@ -1,5 +1,9 @@
 /* Header */
 
+.hamburger{
+    display: none;
+}
+
 #head-logo-wrap {
     height: 140px;
 }
@@ -218,6 +222,38 @@
 
 #sort-test:hover {
     padding: 0;
+}
+
+@media (max-width: 1000px){
+    .navbar {
+        display: none;
+    }
+    #right-header button{
+        display: none;
+    }
+    .sidebar {
+        display: none;
+    }
+    .product-container {
+        display: inline-grid;
+    }
+    .homepage-img {
+        display: none;
+    }
+    .icon {
+        display: none;
+    }
+    #captain-console {
+        display: none;
+    }
+    .hamburger {
+        display: contents;
+        margin-right: 20px;
+    }
+    .dropdown-content {
+        margin-top: 60px;
+        right: 0
+    }
 }
 
 
