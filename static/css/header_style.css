@@ -237,9 +237,6 @@
     .product-container {
         display: inline-grid;
     }
-    .homepage-img-container {
-        width: 20%;
-    }
     .homepage-img {
         display: none;
     }
@@ -249,22 +246,13 @@
     #captain-console {
         display: none;
     }
-    .container {
-        border-top: #ff29f8 1px solid;
-        padding-top: 20px;
-    }
-
-    #logo-image {
-        vertical-align: center;
-        width: 180px;
-        height: 80px;
-    }
     .hamburger {
         display: contents;
+        margin-right: 20px;
     }
     .dropdown-content {
         margin-top: 60px;
-        right: 0;
+        right: 0
     }
 }
 
