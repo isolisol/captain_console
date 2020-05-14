@@ -76,7 +76,7 @@
     border: #ff29f8 2px solid;
     background-color: black;
     border-radius: 5px;
-    padding: 20px;
+    padding: 40px;
 }
 
 .product-details-info {
@@ -104,7 +104,8 @@
     font-size: 18px;
     justify-content: center;
     float: left;
-    padding: 30px;;
+    padding: 30px;
+    background-color: white;
 }
 
 .product-img.homepage {

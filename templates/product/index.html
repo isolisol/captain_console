@@ -2,6 +2,7 @@
 {% block content %}
     <div class="product-container">
 
+        <!-- if consoles product -->
         {% if product_type_id == 1 %}
             <h1>{{ header_text }}Consoles</h1>
             {% if sort_text %}
@@ -11,9 +12,10 @@
                 <input type="search" class="form-control" id="search-box-console" placeholder="Search consoles..." />
                 <div class="input-group-btn">
                     <button type="button" id="search-btn-console" class="btn btn-default classic-button">Search</button>
-                </div>
-            </div>
+                </div> <!-- end input-group-btn -->
+            </div> <!-- end input-group -->
 
+        <!-- if videogames products -->
         {% elif product_type_id == 2 %}
             <h1>{{ header_text }}Videogames</h1>
             {% if sort_text %}
@@ -23,9 +25,10 @@
                 <input type="search" class="form-control" id="search-box-videogame" placeholder="Search videogames..." />
                 <div class="input-group-btn">
                     <button type="button" id="search-btn-videogame" class="btn btn-default classic-button">Search</button>
-                </div>
-            </div>
+                </div> <!-- end input-group-btn -->
+            </div> <!-- end input-group -->
 
+        <!-- if accessories products -->
         {% elif product_type_id == 3 %}
             <h1>{{ header_text }}Accessories</h1>
             {% if sort_text %}
@@ -35,9 +38,10 @@
                 <input type="search" class="form-control" id="search-box-accessory" placeholder="Search accessories..." />
                 <div class="input-group-btn">
                     <button type="button" id="search-btn-accessory" class="btn btn-default classic-button">Search</button>
-                </div>
-            </div>
+                </div> <!-- end  input-group-btn -->
+            </div> <!-- end input-group -->
 
+        <!-- if all products -->
         {% elif product_type_id == 'all' %}
             <h1>{{ header_text }}All Available Products</h1>
             {% if sort_text %}
@@ -47,8 +51,8 @@
                 <input type="search" class="form-control" id="search-box-all" placeholder="Search product..." />
                 <div class="input-group-btn">
                     <button type="button" id="search-btn-all" class="btn btn-default classic-button">Search</button>
-                </div>
-            </div>
+                </div> <!-- end input-group-btn -->
+            </div> <!-- end input-group -->
         {% endif %}
 
 
