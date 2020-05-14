@@ -31,7 +31,7 @@
 
         <div class="recently-viewed">
             <h2>Recently Viewed Items</h2>
-            <div>
+            <div class="recently-viewed-container">
                 {% for product in recently_viewed %}
                     {% include 'product/recently_viewed_products.html' with product=product.product %}
                 {% endfor %}
