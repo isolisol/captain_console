@@ -170,10 +170,34 @@
     width: 300px;
     margin-left: 230px;
     color: white;
-
 }
 
 .contact-header {
     margin-top: 30px;
     text-align: center;
+}
+
+.review-info.cart img {
+    width: 100px;
+    height: 100px;
+}
+
+.review-info.cart table {
+    margin-top: 40px;
+}
+
+.review-info.cart {
+    width: 35%;
+    padding: 0;
+    margin-left: 65px;
+}
+
+.review-info.billing {
+    width: 100%;
+    padding: 0;
+}
+
+.review-info.contact {
+    width: 50%;
+    padding: 0;
 }
