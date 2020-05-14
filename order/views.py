@@ -3,10 +3,10 @@ from accessory.models import Product
 from .models import Order, Cart, ContactInformation, Payment
 from helper_services.helpers import build_context, get_next_order_no, calculateTotalPrice
 from django.contrib.auth.decorators import login_required
-from django.db import transaction
 from order.forms.contact_info_form import ContactInfoForm
 from order.forms.payment_form import PaymentForm
 from datetime import date
+from order.models import BestSellers
 
 
 def remove_from_cart(request, product_id):
@@ -80,6 +80,13 @@ def place_order(request):
     cart = Cart.objects.get(id=request.session['cart_id'])
     cart.complete = True
     cart.save()
+    for product in cart.productincart_set.all():
+        seller, created = BestSellers.objects.get_or_create(product=product.product)
+        if not created:
+            seller.sold_how_often += product.quantity
+        else:
+            seller.sold_how_often = product.quantity
+        seller.save()
     return redirect('confirmation')
 
 
