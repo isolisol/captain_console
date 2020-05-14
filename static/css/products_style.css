@@ -192,3 +192,12 @@
     width: 80%;
     margin: auto;
 }
+
+.recently-viewed-products {
+    height: 300px;
+    width: 150px;
+    margin-right: 90px;
+    margin-left: 20px;
+    margin-top: 50px;
+    display: inline-flex;
+}
