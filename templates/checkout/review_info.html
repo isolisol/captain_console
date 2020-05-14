@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="review-info-container">
-        <a href="{% url 'payment' %}" class="classic-button back-btn">Back</a>
-            <div class="info-field">
+        <a href="{% url 'payment' %}" class="back-btn payment-site" id="back-to-checkout-btn">< Back</a>
+            <div class="info-field" id="review-info-field">
                 <div class="review-info">
                     <h2>Contact & Shipping Information</h2>
                     <table id="review-info-table">
                         <tr>
-                            <th>First name:</th>
+                            <th class="text-bold">First name:</th>
                             <th>{{ contact_info.first_name }}</th>
                         </tr>
                         <tr>

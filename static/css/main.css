@@ -51,6 +51,8 @@ button:focus {
 .classic-button:hover {
     background-color: #ff29f8;
     border: 2px solid black;
+    color: white;
+    text-decoration: none;
 }
 
 

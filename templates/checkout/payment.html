@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="checkout-user-info-container">
-        <a href="{% url 'checkout' %}" class="back-btn payment-site" id="back-to-checkout-btn">Back</a>
+        <a href="{% url 'checkout' %}" class="back-btn payment-site" id="back-to-checkout-btn">< Back</a>
         <h2>Payment Information</h2>
         <form method="post">
             {% csrf_token %}

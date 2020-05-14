@@ -21,15 +21,15 @@
     text-align: center;
 }
 
-#continue-shopping {
-    width: 100px;
-    margin-left: 10px;
-}
-
 #cart-empty-dopdown {
     margin: 0;
     padding: 10px;
     border-bottom: 1px solid lightgray;
     width: 50%;
     margin-left: 130px;
+}
+
+.fa-trash:before {
+    content: "\f1f8";
+    color: black;
 }
