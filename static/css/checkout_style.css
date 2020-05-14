@@ -77,7 +77,6 @@
     color: black;
     border: solid 2px gray;
     font-family: normal;
-    font-weight: normal;
     text-align: left;
 }
 
@@ -112,25 +111,34 @@
     margin-top: 50px;
 }
 
-.past-orders {
-    background-color: #00000075;
-}
-
 .past-orders h1 {
     border-bottom: 2px solid #ff29f8;
     width: 50%;
+    margin-bottom: 30px;
     display: inline-block;
 }
 
 .past-orders-container {
     border: 2px solid #ff29f8;
     border-radius: 5px;
-    padding: 50px;
+    padding: 30px;
     margin-top: 40px;
+    background-color: #000000b0;
+}
+
+.single-product.my-orders:hover {
+    opacity: 1
+}
+
+.single-product.my-orders {
+    background-color: white;
+    opacity: 0.6;
+    transition: 0.3s;
 }
 
 .single-product.my-orders {
     height: 150px;
+    font-family: normal;
 }
 
 .single-product.my-orders h4 {
@@ -162,6 +170,7 @@
     width: 300px;
     margin-left: 230px;
     color: white;
+
 }
 
 .contact-header {
