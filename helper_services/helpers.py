@@ -1,4 +1,5 @@
 from order.models import Cart, ContactInformation, Order
+from user.models import Profile
 
 
 def build_context(user):
@@ -22,3 +23,9 @@ def get_next_order_no():
     else:
         order_no = order['order_number']
         return order_no + 1
+
+
+def get_recently_viewed(user):
+    profile = Profile.objects.get(user=user)
+    recently_viewed= profile.recentlyviewed_set.order_by('-date')[1:5]    #product.distinct().order_by('')
+    return recently_viewed
