@@ -36,43 +36,44 @@
                             <th>{{ contact_info.postal_code }}</th>
                         </tr>
                     </table> <!-- end info-table -->
-                </div> <!-- end review-info -->
-                <div class="review-info billing">
-                    <h2>Billing Information</h2>
-                    <table id="review-info-table">
-                        <tr>
-                            <th>Cardholder name:</th>
-                            <th>{{ payment.cardholder_name }}</th>
-                        </tr>
-                        <tr>
-                            <th>Billing address:</th>
-                            <th>{{ payment.address }} {{ payment.house_number }}, {{ payment.postal_code }} {{ payment.city }}</th>
-                        </tr>
-                    </table> <!-- end info-table -->
+                    <div class="review-info billing">
+                        <h2>Billing Information</h2>
+                        <table id="review-info-table">
+                            <tr>
+                                <th>Cardholder name:</th>
+                                <th>{{ payment.cardholder_name }}</th>
+                            </tr>
+                            <tr>
+                                <th>Billing address:</th>
+                                <th>{{ payment.address }} {{ payment.house_number }}, {{ payment.postal_code }} {{ payment.city }}</th>
+                            </tr>
+                        </table> <!-- end info-table -->
+                    </div> <!-- end review-info -->
+                </div> <!-- end info-field -->
+                    <div class="review-info cart">
+                        <h2>Review order</h2>
+                        <table>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                            </tr>
+                        {% for item in cart_items %}
+                            <tr>
+                                <th><img src="{{ item.product.image }}"></th>
+                                <th><p>{{ item.product.name }}</p></th>
+                                <th><p>{{ item.product.price }}$</p></th>
+                            </tr>
+                        {% endfor %}
+                            <td></td>
+                            <td>Total price:</td>
+                            <td>{{ total_price }}$</td>
+                        </table>
+                    </div>
                 </div> <!-- end review-info -->
 
-                <div class="review-info cart">
-                    <h2>Review order</h2>
-                    <table>
-                        <tr>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                        </tr>
-                    {% for item in cart_items %}
-                        <tr>
-                            <th><img src="{{ item.product.image }}"></th>
-                            <th><p>{{ item.product.name }}</p></th>
-                            <th><p>{{ item.product.price }}$</p></th>
-                        </tr>
-                    {% endfor %}
-                        <td></td>
-                        <td>Total price:</td>
-                        <td>{{ total_price }}$</td>
-                    </table>
-                </div>
 
-            </div> <!-- end info-field -->
+
         <div class="review-info-btn-container">
             <a href="{% url 'place_order' %}" class="classic-button update-btn">Place Order</a>
             <a href="{% url 'cancel_order' %}" class="classic-button back-btn" type="button">Cancel Order</a>

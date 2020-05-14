@@ -68,9 +68,13 @@
     padding: 5px;
     border: solid 1px #ff29f8;
     background-color: white;
+    opacity: 1;
+    transition: 0.3s;
 }
 
-
+.single-product:hover {
+    opacity: 0.9
+}
 .single-product p {
     margin: 10px;
     color: black;
@@ -187,15 +191,19 @@
     justify-content: center;
 }
 
-.recently-viewed h1 {
-    border-bottom: lightgray 2px solid;
-    width: 80%;
+.recently-viewed h2 {
+    border-bottom:2px solid #ff29f8;
+    width: 50%;
     margin: auto;
 }
 
+.recently-viewed-container {
+    display: inline-block;
+}
+
 .recently-viewed-products {
-    margin-right: 40px;
-    margin-left: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
     margin-top: 50px;
     display: inline-flex;
 }
@@ -208,9 +216,12 @@
 
 #recently-viewed-product-name {
     margin: 0;
+    width: 100px;
+    color: white;
 }
 
 #recently-viewed-product-price {
     margin: 0;
+    color: white;
 }
 
