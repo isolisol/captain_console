@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-{% load static %}
-    <h1>Past orders</h1>
-    {% for order in orders %}
-        <a href="/past_orders/{{ order.id }}">
-            <div class="single-product">
-                <h4>Order number: #{{ order.order_number }}</h4>
-                <p>Date: {{ order.date }}</p>
-                <p>Total price: {{ order.total_price }}</p>
-            </div>
-        </a>
-    {% endfor %}
+    <div class="past-orders">
+        <h1>Past orders</h1>
+        <div class="past-orders-container">
+            {% for order in orders %}
+                <a href="/past_orders/{{ order.id }}">
+                    <div class="single-product my-orders">
+                        <h4>Order number: #{{ order.order_number }}</h4>
+                        <p>Date: {{ order.date }}</p>
+                        <p>Total price: {{ order.total_price }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
