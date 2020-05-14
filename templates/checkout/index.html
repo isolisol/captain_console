@@ -4,8 +4,8 @@
         <h2>Contact & Shipping Information</h2>
         <form method="post">
             {% csrf_token %}
-            {{ form }}<br>
-            <button type="submit" class="classic-button">Continue to payment</button>
-        </form>
+            {{ form }}
+            <button type="submit" class="classic-button continue-payment">Continue to payment</button>
+        </form> <!-- end post -->
     </div>
 {% endblock %}

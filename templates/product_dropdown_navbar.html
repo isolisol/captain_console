@@ -6,9 +6,7 @@
 <div class="dropdown">
     <button class="btn btn-outline-success header-button" type="button">
         <a href="{% url "videogame-index" %}">
-            <div class="nav-btn-text">
-                Video Games
-            </div>
+            <div class="nav-btn-text">Video Games</div>
         </a>
     </button>
     <div class="dropdown-content">
@@ -45,7 +43,9 @@
 <div class="dropdown">
     <button class="btn btn-outline-success header-button" type="button">
         <a href="{% url "consoles-index" %}">
-        <div class="nav-btn-text">Game Consoles</div></a></button>
+            <div class="nav-btn-text">Game Consoles</div>
+        </a>
+    </button>
             <div class="dropdown-content">
                 <li>
                 <a href="{% url 'playstation_consoles' %}" class="dropdown-nav-title">PlayStation</a>
@@ -80,42 +80,35 @@
 <div class="dropdown">
     <button class="btn btn-outline-success header-button" type="button">
         <a href="{% url "accessories-index" %}">
-        <div class="nav-btn-text">Accessories</div></a></button>
+        <div class="nav-btn-text">Accessories</div>
+        </a>
+    </button>
             <div class="dropdown-content">
-                <li>
-                <a href="{% url 'playstation_accessories' %}" class="dropdown-nav-title">PlayStation</a>
-                </li>
-                <li>
-                <a href="{% url 'ps1_accessories' %}" class="sub-title">PlayStation 1</a>
-                </li>
-                <li>
-                <a href="{% url 'ps2_accessories' %}" class="sub-title">PlayStation 2</a>
-                </li>
-                <li>
-                <a href="{% url 'nintendo_accessories' %}" class="dropdown-nav-title">Nintendo</a>
-                </li>
-                <li>
-                <a href="{% url 'nintendo_nes_accessories' %}" class="sub-title">Nintendo NES</a>
-                </li>
-                <li>
-                <a href="{% url 'nintendo_64_accessories' %}" class="sub-title">Nintendo 64</a>
-                </li>
-                <li>
-                <a href="{% url 'gameboy_color_accessories' %}" class="sub-title">Gameboy Color</a>
-                </li>
-                <li>
-                <a href="{% url 'gameboy_advance_accessories' %}" class="sub-title">Gameboy Advance</a>
-                </li>
-                <li>
-                <a href="{% url 'xbox_accessories' %}" class="dropdown-nav-title">Xbox</a>
-                </li>
-                <li>
-                <a href="{% url 'other_accessories' %}" class="dropdown-nav-title" style="border: none;">Other</a>
-                </li>
+                <li><a href="{% url 'playstation_accessories' %}" class="dropdown-nav-title">PlayStation</a></li>
+
+                <li><a href="{% url 'ps1_accessories' %}" class="sub-title">PlayStation 1</a></li>
+
+                <li><a href="{% url 'ps2_accessories' %}" class="sub-title">PlayStation 2</a></li>
+
+                <li><a href="{% url 'nintendo_accessories' %}" class="dropdown-nav-title">Nintendo</a></li>
+
+                <li><a href="{% url 'nintendo_nes_accessories' %}" class="sub-title">Nintendo NES</a></li>
+
+                <li><a href="{% url 'nintendo_64_accessories' %}" class="sub-title">Nintendo 64</a></li>
+
+                <li><a href="{% url 'gameboy_color_accessories' %}" class="sub-title">Gameboy Color</a></li>
+
+                <li><a href="{% url 'gameboy_advance_accessories' %}" class="sub-title">Gameboy Advance</a></li>
+
+                <li><a href="{% url 'xbox_accessories' %}" class="dropdown-nav-title">Xbox</a></li>
+
+                <li><a href="{% url 'other_accessories' %}" class="dropdown-nav-title" style="border: none;">Other</a></li>
             </div> <!-- end dropdown-content-->
 </div> <!-- end dropdown-->
 
 
 <button class="btn btn-outline-success header-button" type="button">
-<a href="{% url "brand-index" %}">
-<div class="nav-btn-text">Brands</div></a></button>
+    <a href="{% url "brand-index" %}">
+    <div class="nav-btn-text">Brands</div>
+    </a>
+</button>

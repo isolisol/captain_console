@@ -35,7 +35,7 @@
                             <th>{{ contact_info.postal_code }}</th>
                         </tr>
                     </table> <!-- end info-table -->
-                </div>
+                </div> <!-- end review-info -->
                 <div class="review-info">
                     <h2>Billing Information</h2>
                     <table id="review-info-table">
@@ -47,12 +47,12 @@
                             <th>Billing address:</th>
                             <th>{{ payment_info.address }} {{ payment_info.house_number }}, {{ payment_info.postal_code }} {{ payment_info.city }}</th>
                         </tr>
-                    </table>
-                </div>
-            </div>
+                    </table> <!-- end info-table -->
+                </div> <!-- end review-info -->
+            </div> <!-- end info-field -->
         <div class="review-info-btn-container">
             <a href="{% url 'place_order' %}" class="classic-button update-btn">Place Order</a>
             <a href="{% url 'cancel_order' %}" class="classic-button back-btn" type="button">Cancel Order</a>
-        </div>
-    </div>
+        </div> <!-- end review-info-btn-container -->
+    </div> <!-- end review-info-container -->
 {% endblock %}
