@@ -8,9 +8,25 @@
     </div> <!-- end left-header -->
 
     <div id="right-header">
-        <button class="classic-button"><a id="about-us" href={% url 'aboutus' %}>About Us</a></button>
+        <div class="dropdown hamburger">
+            <img class="hamburger-icon" src="{% static "images/hamburger.png" %}"/>
+            <div class="dropdown-content">
+                <a href="{% url 'all-products-index' %}" class="hamburger-dropdown">All Products</a>
+                <a href="{% url 'aboutus' %}" class="hamburger-dropdown">About Us</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'profile' %}" class="hamburger-dropdown">My Account</a>
+                    <a href="{% url 'past_orders' %}" class="hamburger-dropdown">My Orders</a>
+                    <a href="{% url 'logout' %}" class="hamburger-dropdown">Log Out</a>
+                    <a href="{% url 'cart_details' %}" class="hamburger-dropdown">View Cart</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="hamburger-dropdown">Log In</a>
+                    <a href="{% url 'register' %}" class="hamburger-dropdown">Sign Up</a>
+                {% endif %}
+            </div> <!-- end dropdown-content -->
+        </div> <!-- end dropdown -->
+        <button class="classic-button right-header-icons-hide"><a id="about-us" href={% url 'aboutus' %}>About Us</a></button>
         {% if user.is_authenticated %}
-            <div class="dropdown">
+            <div class="dropdown right-header-icons-hide">
                 <img class="icon" src="{% static "images/nyprofile.png" %}"/>
                 <div class="dropdown-content">
                     <a href="{% url 'profile' %}" class="dropdown-nav-title">My Account</a>
@@ -20,7 +36,7 @@
             </div> <!-- end dropdown -->
 
         {% else %}
-            <div class="dropdown">
+            <div class="dropdown right-header-icons-hide">
                 <button class="classic-button">My Account</button>
                 <div class="dropdown-content">
                     <a href="{% url 'login' %}" class="dropdown-nav-title">Log In</a>
