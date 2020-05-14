@@ -87,3 +87,9 @@ def edit_photo(request):
         })
 
 
+def delete_profile_img(request):
+    user = request.user
+    profile = user.profile
+    profile.image = None
+    profile.save()
+    return redirect('profile')
