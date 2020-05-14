@@ -37,6 +37,8 @@ def index(request):
             'image': x.image
         } for x in Product.objects.filter(type_id=3, name__icontains=search_filter)]
         return JsonResponse({'data': context['products']})
+    if 'sort_by' in request.GET:
+        pass
     context['product_type_id'] = 3
     context['show_sort'] = True
     context['header_text'] = 'All '

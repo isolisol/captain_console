@@ -87,7 +87,7 @@ def cancel_order(request):
     Payment.objects.get(id=payment_id).delete()
     ContactInformation.objects.get(id=contact_info_id).delete()
     for key in list(request.session.keys()):
-        if not key.startswith("_"):
+        if not key.startswith('_'):
             del request.session[key]
     return redirect('cart_details')
 
@@ -103,7 +103,7 @@ def place_order(request):
     order.save()
     new_cart = Cart.objects.create(user=request.user, complete=False)
     for key in list(request.session.keys()):
-        if not key.startswith("_") and key != 'order':
+        if not key.startswith('_') and key != 'order':
             del request.session[key]
     return redirect('confirmation')
 

@@ -6,19 +6,26 @@
             <div class="product-details-info">
                 <h1>{{ product.name }}</h1><br>
                 <p id="product-description">{{ product.description }}</p>
+
                 {% if product.type_id == 2 %}
                     <p id="product-age-limit">Age limit: {{ product.age_limit }}+</p>
                 {% endif %}
+
                 <p id="product-price">{{ product.price }}$</p><br>
+
+                <!-- if consoles -->
                 {% if product.type_id == 1 %}
                     <a href="{% url 'c_add_to_cart' product.id %}" class="btn btn-outline-success header-button nav-btn-text" id="add-to-cart-btn" >Add to Cart</a>
-                {% endif %}
-                {% if product.type_id == 2 %}
+
+                <!-- if videogames -->
+                {% elif product.type_id == 2 %}
                     <a href="{% url 'v_add_to_cart' product.id %}" class="btn btn-outline-success header-button nav-btn-text" id="add-to-cart-btn" >Add to Cart</a>
-                {% endif %}
-                {% if product.type_id == 3 %}
+
+                <!-- if accessories -->
+                {% elif product.type_id == 3 %}
                     <a href="{% url 'a_add_to_cart' product.id %}" class="btn btn-outline-success header-button nav-btn-text" id="add-to-cart-btn" >Add to Cart</a>
                 {% endif %}
+
             </div> <!-- end product-details-info -->
         </div> <!-- end product-details -->
 

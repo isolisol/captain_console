@@ -4,24 +4,15 @@
 
         <!-- if product type is videogames -->
         {% if product_type_id == 2 and show_sort%}
+
             <h3>Sort By</h3>
-            <label class="container sortby">
-                <a href="{% url 'v_sort_price_desc' %}">
-                    <li>Price (High-Low)</li>
-                </a>
-            </label>
+            <input type="radio" id="sort_by_price" name="sort_by" value="sort_h_to_l">Price (High-Low)
+            <input type="radio" id="sort_by_price" name="sort_by" value="sort_l_to_h">Price (Low-High)
+            <input type="radio" id="sort_by_name"  name="sort_by" value="sort_name">Name
+            <div class="input-group-btn">
+                <button type="button" id="search-btn-console" class="btn btn-default classic-button">Submit</button>
+            </div>
 
-            <label class="container sortby">
-                <a href="{% url 'v_sort_price_asc' %}">
-                    <li>Price (Low-High)</li>
-                </a>
-            </label>
-
-            <label class="container sortby">
-                <a href="{% url 'v_sort_by_name' %}">
-                    <li>Name</li>
-                </a>
-            </label>
 
             <h3>Genre</h3>
             <label class="container sortby">
