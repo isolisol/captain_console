@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="review-info-container">
-        <a href="{% url 'payment' %}" class="back-btn payment-site" id="back-to-checkout-btn">< Back</a>
+        <a href="#" class="back-btn payment-site" id="back-to-checkout-btn">< Back</a>
             <div class="info-field" id="review-info-field">
                 <div class="review-info">
                     <h2>Contact & Shipping Information</h2>
@@ -41,11 +41,11 @@
                     <table id="review-info-table">
                         <tr>
                             <th>Cardholder name:</th>
-                            <th>{{ payment_info.cardholder_name }}</th>
+                            <th>{{ payment.cardholder_name }}</th>
                         </tr>
                         <tr>
                             <th>Billing address:</th>
-                            <th>{{ payment_info.address }} {{ payment_info.house_number }}, {{ payment_info.postal_code }} {{ payment_info.city }}</th>
+                            <th>{{ payment.address }} {{ payment.house_number }}, {{ payment.postal_code }} {{ payment.city }}</th>
                         </tr>
                     </table> <!-- end info-table -->
                 </div> <!-- end review-info -->

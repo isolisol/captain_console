@@ -17,8 +17,9 @@ def calculateTotalPrice(cart_items):
 
 def get_next_order_no():
     order = Order.objects.values('order_number').order_by('-order_number').first()
-    order_no = order['order_number']
-    if order_no is None:
+    if order is None:
         return 1000
     else:
-        return order_no + 1
+        return order.order_number + 1
+        #order_no = order['order_number']
+        #return order_no + 1

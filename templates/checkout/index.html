@@ -5,8 +5,10 @@
         <h2>Contact & Shipping Information</h2>
         <form method="post">
             {% csrf_token %}
-            {{ form }}<br>
-            <button type="submit" class="classic-button">Continue to payment</button>
+            {{ contact_info_form }}<br>
+            <h2>Payment information</h2>
+            {{ payment_form }}
+            <button type="submit" class="classic-button">Review info</button>
         </form> <!-- end post -->
     </div>
 {% endblock %}
