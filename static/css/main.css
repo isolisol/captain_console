@@ -81,7 +81,49 @@ button:focus {
 
 
 
+@media (max-width: 1000px){
+    .navbar {
+        display: none;
+    }
+    #right-header button{
+        display: none;
+    }
+    .sidebar {
+        display: none;
+    }
+    .product-container {
+        display: inline-grid;
+    }
+    .homepage-img-container {
+        width: 20%;
+    }
+    .homepage-img {
+        display: none;
+    }
+    .icon {
+        display: none;
+    }
+    #captain-console {
+        display: none;
+    }
+    .container {
+        border-top: #ff29f8 1px solid;
+        padding-top: 20px;
+    }
 
+    #logo-image {
+        vertical-align: center;
+        width: 180px;
+        height: 80px;
+    }
+    .hamburger {
+        display: contents;
+    }
+    .dropdown-content {
+        margin-top: 60px;
+        right: 0;
+    }
+}
 
 
 
