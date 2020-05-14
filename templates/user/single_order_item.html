@@ -1,15 +1,31 @@
-<div class="single-order-product">
+
     {% if product.product.type_id == 1 %}
-        <a href="/consoles/{{ product.product.id }}">
+        <tr>
+            <th><a href="/consoles/{{ product.product.id }}">
+                <img class="cart-product-img" src="{{ product.product.image }}"></a></th>
+            <th><a href="/consoles/{{ product.product.id }}">
+                {{ product.product.name }}></a></th>
+
+    {% elif product.product.type_id == 2 %}
+        <tr>
+            <th><a href="/videogames/{{ product.product.id }}">
+                <img class="cart-product-img" src="{{ product.product.image }}"></a></th>
+            <th><a href="/videogames/{{ product.product.id }}">
+                {{ product.product.name }}></a></th>
+
+    {% elif product.product.type_id == 3 %}
+        <tr>
+            <th><a href="/accessories/{{ product.product.id }}">
+                <img class="cart-product-img" src="{{ product.product.image }}"></a></th>
+            <th><a href="/accessories/{{ product.product.id }}">
+                {{ product.product.name }}></a></th>
+
     {% endif %}
-    {% if product.product.type_id == 2 %}
-        <a href="/videogames/{{ product.product.id }}">
-    {% endif %}
-    {% if product.product.type_id == 3 %}
-        <a href="/accessories/{{ product.product.id }}">
-    {% endif %}
-        <img src="{{ product.product.image }}">
-        <h2>{{ product.product.name }}</h2>
-        <h3>{{ product.product.price }}</h3>
+            <th>{{ product.quantity }}</th>
+            <th>{{ product.product.price }}</th>
+        </tr>
     </a>
-</div>
+
+
+
+
