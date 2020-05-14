@@ -194,10 +194,23 @@
 }
 
 .recently-viewed-products {
-    height: 300px;
-    width: 150px;
-    margin-right: 90px;
+    margin-right: 40px;
     margin-left: 20px;
     margin-top: 50px;
     display: inline-flex;
 }
+
+#recently-viewed-product-img {
+    width: 100px;
+    height: 100px;
+    padding: 0;
+}
+
+#recently-viewed-product-name {
+    margin: 0;
+}
+
+#recently-viewed-product-price {
+    margin: 0;
+}
+

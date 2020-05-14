@@ -9,8 +9,8 @@
         <a href="/accessories/{{ product.id }}">
     {% endif %}
 
-            <img class="product-img" src="{{ product.image }}">
-            <p class="product-name">{{ product.name }}</p>
-            <p class="product-price">{{ product.price }}$</p>
+            <img class="product-img" id="recently-viewed-product-img" src="{{ product.image }}">
+            <p class="product-name" id="recently-viewed-product-name">{{ product.name }}</p>
+            <p class="product-price" id="recently-viewed-product-price">{{ product.price }}$</p>
         </a>
 </div> <!-- end single-details -->
