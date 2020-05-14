@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
     <div class="review-info-container">
         <a href="{% url 'review_back' %}" class="back-btn payment-site" id="back-to-checkout-btn">< Back</a>
             <div class="info-field" id="review-info-field">
-                <div class="review-info">
+                <div class="review-info contact">
                     <h2>Contact & Shipping Information</h2>
                     <table id="review-info-table">
                         <tr>
@@ -36,7 +37,7 @@
                         </tr>
                     </table> <!-- end info-table -->
                 </div> <!-- end review-info -->
-                <div class="review-info">
+                <div class="review-info billing">
                     <h2>Billing Information</h2>
                     <table id="review-info-table">
                         <tr>
@@ -49,6 +50,28 @@
                         </tr>
                     </table> <!-- end info-table -->
                 </div> <!-- end review-info -->
+
+                <div class="review-info cart">
+                    <h2>Review order</h2>
+                    <table>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                        </tr>
+                    {% for item in cart_items %}
+                        <tr>
+                            <th><img src="{{ item.product.image }}"></th>
+                            <th><p>{{ item.product.name }}</p></th>
+                            <th><p>{{ item.product.price }}$</p></th>
+                        </tr>
+                    {% endfor %}
+                        <td></td>
+                        <td>Total price:</td>
+                        <td>{{ total_price }}$</td>
+                    </table>
+                </div>
+
             </div> <!-- end info-field -->
         <div class="review-info-btn-container">
             <a href="{% url 'place_order' %}" class="classic-button update-btn">Place Order</a>

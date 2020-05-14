@@ -32,8 +32,13 @@ tr {
     margin-top: 60px;
 }
 
-.edit-photo-btn {
-    margin-right: 200px;
+#delete-img {
+    float: right;
+    display: inline-block;
+}
+
+#edit-img {
+    float: left;
 }
 
 #info-table {
