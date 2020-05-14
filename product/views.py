@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from accessory.models import Product
+from order.models import BestSellers
 from user.models import RecentlyViewed
 from helper_services.helpers import build_context
 
@@ -25,6 +26,15 @@ def index(request):
     context['product_type_id'] = 'all'
     context['show_sort'] = True
     return render(request, 'product/index.html', context=context)
+
+
+def get_best_sellers(request):
+    user = request.user
+    context = build_context(user)
+    best_sellers = BestSellers.objects.all().order_by('-sold_how_often')
+    context['products'] = best_sellers
+    context['show_best_sell'] = True
+    return render(request, 'product/index.html', context)
 
 
 # Get all products sorted by price

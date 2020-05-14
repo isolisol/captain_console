@@ -50,3 +50,8 @@ class Order(models.Model):
     payment = models.ForeignKey(Payment, on_delete=models.CASCADE, null=True)
     order_number = models.IntegerField(null=True)
     total_price = models.FloatField(null=True)
+
+
+class BestSellers(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    sold_how_often = models.IntegerField(null=True)

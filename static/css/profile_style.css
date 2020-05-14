@@ -83,6 +83,11 @@ tr {
     display: none;
 }
 
+.helptext.custom {
+    color: white;
+}
+
+
 .form.form-horizontal {
     text-align: left;
     border-radius: 5px;

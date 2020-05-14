@@ -27,6 +27,11 @@
                 {% endif %}
 
             </div> <!-- end product-details-info -->
+            <div class="product-images">
+                {% for image in product.productimage_set.all %}
+                    <img src="{{ image.image }}">
+                {% endfor %}
+            </div>
         </div> <!-- end product-details -->
 
         <div class="recently-viewed">

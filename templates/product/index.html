@@ -53,6 +53,8 @@
             {% if sort_text %}
                     <h2 id="sort_text">-{{ sort_text }}-</h2>
             {% endif %}
+        {% elif show_best_sell %}
+            <h1>Best selling products!</h1>
         {% endif %}
 
 
@@ -66,9 +68,15 @@
 
         {% else %}
             <div class="product without-sort">
-                {% for product in products %}
-                    {% include 'product/single_product.html' with product=product %}
-                {% endfor %}
+                {% if show_best_sell %}
+                    {% for seller in products %}
+                        {% include 'product/single_product.html' with product=seller.product %}
+                    {% endfor %}
+                {% else %}
+                    {% for product in products %}
+                        {% include 'product/single_product.html' with product=product %}
+                    {% endfor %}
+                {% endif %}
             </div> <!-- end product -->
         {% endif %}
 

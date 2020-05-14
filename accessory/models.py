@@ -17,3 +17,8 @@ class Product(models.Model):
     release_date = models.DateField()
     age_limit = models.IntegerField(default=3)
     console = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    image = models.CharField(max_length=999)
