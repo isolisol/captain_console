@@ -23,3 +23,11 @@ $(document).ready(function() {
        })
     });
 });
+
+$(document).ready(function() {
+    var $radios = $('input[type="radio"]');
+    $radios.change(function(){
+        var $filtered = $radios.filter(':checked');
+        console.log($filtered.val());
+    });
+});

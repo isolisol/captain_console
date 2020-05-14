@@ -31,8 +31,8 @@ def cart_details(request):
 @login_required()
 def past_orders(request):
     user = request.user
-    completed_carts = user.cart_set.filter(complete=True)
-    return render(request, 'order/past_orders.html', context=completed_carts)
+    context = {'completed_carts':user.cart_set.filter(complete=True)}
+    return render(request, 'order/past_orders.html', context=context)
 
 
 def checkout(request):
