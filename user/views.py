@@ -1,9 +1,9 @@
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+from order.models import Order, Cart
 from django.shortcuts import render, redirect
 from user.models import Profile
 from user.forms.profile_form import ProfileForm, UserForm, ProfileImageForm
-from helper_services.helpers import build_context
+from helper_services.helpers import build_context, calculateTotalPrice
 
 
 # Create your views here.
@@ -19,6 +19,26 @@ def register(request):
     return render(request, 'user/register.html', {
         'form': UserCreationForm()
     })
+
+
+def past_orders(request):
+    user = request.user
+    context = build_context(user)
+    completed_carts = tuple(Cart.objects.filter(user=user, complete=True).values_list('id'))
+    orders = Order.objects.filter(cart_id__in=completed_carts)
+    orders_dict = {}
+    counter = 1
+    for order in orders:
+        cart = order.cart
+        total_price = calculateTotalPrice(cart.productincart_set.all())
+        orders_dict['order'+ str(counter)] = {'order': order, 'total_price': total_price}
+        counter += 1
+    context['orders_dict'] = orders_dict
+    return render(request, 'user/past_orders.html', context)
+
+
+def past_order(request, order_id):
+    pass
 
 
 def profile(request):
