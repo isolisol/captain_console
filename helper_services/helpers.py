@@ -27,5 +27,5 @@ def get_next_order_no():
 
 def get_recently_viewed(user):
     profile = Profile.objects.get(user=user)
-    recently_viewed= profile.recentlyviewed_set.order_by('-date')[1:5]    #product.distinct().order_by('')
+    recently_viewed= profile.recentlyviewed_set.order_by('-date')[1:6]    #product.distinct().order_by('')
     return recently_viewed
