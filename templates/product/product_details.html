@@ -25,22 +25,13 @@
                 {% elif product.type_id == 3 %}
                     <a href="{% url 'a_add_to_cart' product.id %}" class="btn btn-outline-success header-button nav-btn-text" id="add-to-cart-btn" >Add to Cart</a>
                 {% endif %}
-                <div class="product-images">
-                <div class="column">
-                    <img src="{{ product.image }}" class="extra-product-images" onclick="swapImage(this);">
-                </div>
-                {% for image in product.productimage_set.all %}
-                    <div class="column">
-                        <img src="{{ image.image }}" class="extra-product-images" onclick="swapImage(this);">
-                    </div>
-
             </div> <!-- end product-details-info -->
-            <div>
-                {% for image in product.productimage_set.all %}
-                    <img src="{{ image.image }}" class="extra-product-images">
-                {% endfor %}
+            <div class="show-all-images">
+            <img src="{{ product.image }}" class="extra-product-images" onclick="swapImage(this);">
+            {% for image in product.productimage_set.all %}
+                <img src="{{ image.image }}" class="extra-product-images" onclick="swapImage(this);">
+            {% endfor %}
             </div>
-            </div> <!-- end product-details-info -->
         </div> <!-- end product-details -->
 
         <div class="recently-viewed">
@@ -51,6 +42,6 @@
                 {% endfor %}
             </div>
         </div>
-    </div>
+    </div> <!-- end product-details-container -->
 
 {% endblock %}
