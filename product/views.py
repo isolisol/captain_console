@@ -33,10 +33,13 @@ def index(request):
 
 def get_best_sellers(request):
     user = request.user
-    context = build_context(user)
     best_sellers = BestSellers.objects.all().order_by('-sold_how_often')
-    context['products'] = best_sellers
-    context['show_best_sell'] = True
+    if user.is_authenticated:
+        context = build_context(user)
+        context['products'] = best_sellers
+        context['show_best_sell'] = True
+    else:
+        context = {'products': best_sellers, 'show_best_sell': True}
     return render(request, 'product/index.html', context)
 
 
