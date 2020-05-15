@@ -112,8 +112,12 @@
     width: 220px;
     font-size: 18px;
     justify-content: center;
-    float: left;
     background-color: white;
+    padding: 20px;
+}
+
+.product-img.details {
+    float: left;
 }
 
 .extra-product-img {

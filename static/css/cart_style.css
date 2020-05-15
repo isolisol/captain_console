@@ -91,13 +91,17 @@
 
 /* Review cart page */
 
+.mt-5, .my-5 {
+    margin-top: 0!important;
+}
+
 .cart-details {
     border-radius: 5px;
     padding: 20px;
     color: black;
     border: 1px solid #ff29f8;
     background-color: white;
-    width: 500px;
+    width: 50%;
 }
 
 #continue-shopping {
@@ -114,4 +118,9 @@
     width: 40%;
     text-align: center;
     margin-top: 20px;
+}
+
+.cart-details a {
+    color: black;
+    text-decoration: none;
 }
