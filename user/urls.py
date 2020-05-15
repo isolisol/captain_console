@@ -13,5 +13,6 @@ urlpatterns = [
     path('past_orders/<int:order_id>', views.past_order, name="past_order"),
     path('delete_image', views.delete_profile_img, name="delete_img"),
     path('search_history', views.see_search_history, name="search_history"),
-    path('delete_search_history', views.delete_search_history, name="delete_searches")
+    path('delete_search_history', views.delete_search_history, name="delete_searches"),
+    path('delete_single_search/<int:search_id>', views.delete_single_search, name="delete_search")
 ]

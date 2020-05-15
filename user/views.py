@@ -42,6 +42,10 @@ def delete_search_history(request):
     return redirect('search_history')
 
 
+def delete_single_search(request, search_id):
+    return redirect('search_history')
+
+
 def past_order(request, order_id):
     user = request.user
     context = build_context(user)
