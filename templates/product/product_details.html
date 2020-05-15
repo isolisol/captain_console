@@ -2,7 +2,7 @@
 {% block content %}
     <div class="product-details-container">
         <div class="product-details">
-            <img src="{{ product.image }}" class="product-img"/>
+            <img id="main-img" src="{{ product.image }}" class="product-img"/>
             <div class="product-details-info">
                 <h1>{{ product.name }}</h1><br>
                 <p id="product-description">{{ product.description }}</p>
@@ -25,13 +25,14 @@
                 {% elif product.type_id == 3 %}
                     <a href="{% url 'a_add_to_cart' product.id %}" class="btn btn-outline-success header-button nav-btn-text" id="add-to-cart-btn" >Add to Cart</a>
                 {% endif %}
-
-            </div> <!-- end product-details-info -->
-            <div class="product-images">
+                <div class="product-images">
                 {% for image in product.productimage_set.all %}
-                    <img src="{{ image.image }}">
+                    <div class="column">
+                        <img src="{{ image.image }}" onclick="swapImage(this);">
+                    </div>
                 {% endfor %}
             </div>
+            </div> <!-- end product-details-info -->
         </div> <!-- end product-details -->
 
         <div class="recently-viewed">
