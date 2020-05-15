@@ -47,6 +47,18 @@
                                 <th>Billing address:</th>
                                 <th>{{ payment.address }} {{ payment.house_number }}, {{ payment.postal_code }} {{ payment.city }}</th>
                             </tr>
+                            <tr>
+                                <th>Card number:</th>
+                                <th>{{ payment.card_number }} </th>
+                            </tr>
+                            <tr>
+                                <th>Expiration date:</th>
+                                <th>{{ payment.exp_date }} </th>
+                            </tr>
+                            <tr>
+                                <th>CVV number:</th>
+                                <th>{{ payment.cvv }} </th>
+                            </tr>
                         </table> <!-- end info-table -->
                     </div> <!-- end review-info -->
                 </div> <!-- end info-field -->

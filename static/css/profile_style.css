@@ -192,3 +192,7 @@ form.form-horizontal h1 {
     width: 80%;
     padding: 10px;
 }
+
+#searches {
+    display: inline-block;
+}

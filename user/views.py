@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from order.models import Order, Cart
 from django.shortcuts import render, redirect
-from user.models import Profile
+from user.models import Profile, Search
 from user.forms.profile_form import ProfileForm, UserForm, ProfileImageForm
 from helper_services.helpers import build_context, calculateTotalPrice
 
@@ -27,6 +27,19 @@ def past_orders(request):
     completed_carts = tuple(Cart.objects.filter(user=user, complete=True).values_list('id'))
     context['orders'] = Order.objects.filter(cart_id__in=completed_carts)
     return render(request, 'user/past_orders.html', context)
+
+
+def see_search_history(request):
+    user = request.user
+    context = build_context(user)
+    context['searches'] = Search.objects.filter(profile=user.profile)
+    return render(request, 'user/search_history.html', context)
+
+
+def delete_search_history(request):
+    user = request.user
+    Profile.objects.get(id=user.profile.id).search_set.all().delete()
+    return redirect('search_history')
 
 
 def past_order(request, order_id):

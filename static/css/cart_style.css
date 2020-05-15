@@ -115,3 +115,7 @@
     text-align: center;
     margin-top: 20px;
 }
+
+.subtotal td{
+    border-top: 1px solid black;
+}

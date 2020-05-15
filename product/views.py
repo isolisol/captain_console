@@ -2,8 +2,9 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from accessory.models import Product
 from order.models import BestSellers
-from user.models import RecentlyViewed
+from user.models import RecentlyViewed, Search
 from helper_services.helpers import build_context
+import datetime
 
 
 def index(request):
@@ -15,6 +16,8 @@ def index(request):
         context = {'products': Product.objects.all().order_by('name')}
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
+        if user.is_authenticated:
+            user_searches = Search.objects.create(profile=user.profile, search_text=search_filter, date=datetime.datetime.now())
         context['products'] = [{
             'id': x.id,
             'name': x.name,

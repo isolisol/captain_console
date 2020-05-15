@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Search history</h2>
+    <div id="searches">
+        {% for search in searches %}
+            <p>{{ search.search_text }}</p>
+            <p>{{ search.date }}</p>
+        {% endfor %}
+    <a href="{% url 'delete_searches' %}" class="classic-button">Delete searches</a>
+    </div>
+{% endblock %}
