@@ -99,9 +99,9 @@ button:focus {
         display: inline-grid;
     }
     .homepage-img-container {
-        width: 20%;
+        width: 30%;
     }
-    .homepage-img {
+    .homepage-img.hide {
         display: none;
     }
     .icon {
@@ -138,6 +138,7 @@ button:focus {
         border-bottom: 1px solid lightgray;
         padding-left: 10px;
     }
+
 }
 
 

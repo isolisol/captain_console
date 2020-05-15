@@ -61,6 +61,7 @@ tr {
 .user-info-container {
     float: left;
     width: 60%;
+    font-family: normal;
 }
 
 .user-info-container table {
