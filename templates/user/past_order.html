@@ -5,13 +5,19 @@
         <div class="past-order-container">
             <div class="past-order-info">
                 <h2>Date: {{ order.date }}</h2><br>
-                <h2>Total price: {{ order.total_price }}</h2>
             </div>
-            <div class="past-order-product">
+                <table class="past-order-table">
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
                 {% for product in cart_items %}
                     {% include 'user/single_order_item.html' with product=product %}<br>
                 {% endfor %}
-            </div>
+                </table>
+            <h2 class="past-order-info">Total price: {{ order.total_price }}</h2>
         </div>
     </div>
 {% endblock %}
