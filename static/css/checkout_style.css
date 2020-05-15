@@ -28,8 +28,6 @@
     height: 100%;
 }
 
-/* User Information page when checking out*/
-
 .checkout-user-info-container {
     background-color: white;
     width: 50%;
@@ -41,7 +39,7 @@
     text-align: center;
 }
 
-.checkout-user-info-container h2{
+.checkout-user-info-container h2 {
     margin-bottom: 30px;
     margin-top: 20px;
     padding-bottom: 5px;
@@ -114,10 +112,10 @@
     margin-top: 50px;
 }
 
-.review-info.cart {
+.review-info.cart table {
     font-family: normal;
+    margin-top: 0!important;
 }
-
 
 .past-orders h1 {
     border-bottom: 2px solid #ff29f8;

@@ -33,13 +33,13 @@
 
 /* Location of store and opening hours page */
 
-.hours-location-container{
+.hours-location-container {
     height: 700px;
     width: 100%;
     margin-bottom: 100px;
 }
 
-.hours-location-container h1{
+.hours-location-container h1 {
     padding-bottom: 70px;
     font-size: 50px;
 }
@@ -58,7 +58,7 @@
     font-size: large;
 }
 
-.opening-hours-right h4{
+.opening-hours-right h4 {
     color: #ff29f8;
     font-size: 30px;
 }
@@ -77,7 +77,7 @@
     font-size: large;
 }
 
-.opening-hours-left h4{
+.opening-hours-left h4 {
     color: #ff29f8;
     font-size: 30px;
 }
