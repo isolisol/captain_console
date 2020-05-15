@@ -84,6 +84,13 @@ button:focus {
     list-style: none;
 }
 
+.error-style {
+    height: 300px;
+}
+
+.error-style h1{
+    margin-top: 100px;
+}
 
 @media (max-width: 1000px){
     .navbar {

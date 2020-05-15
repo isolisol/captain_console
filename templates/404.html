@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>404 error hæ</h1>
+{% load static %}
+    <div class="error-style">
+        <h1><img src="{% static "images/error.png" %}"/>404 - Sorry this page is not available</h1>
+    </div>
 {% endblock %}
