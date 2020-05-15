@@ -26,6 +26,9 @@
                     <a href="{% url 'a_add_to_cart' product.id %}" class="btn btn-outline-success header-button nav-btn-text" id="add-to-cart-btn" >Add to Cart</a>
                 {% endif %}
                 <div class="product-images">
+                <div class="column">
+                    <img src="{{ product.image }}" onclick="swapImage(this);">
+                </div>
                 {% for image in product.productimage_set.all %}
                     <div class="column">
                         <img src="{{ image.image }}" onclick="swapImage(this);">
