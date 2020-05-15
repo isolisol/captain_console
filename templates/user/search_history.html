@@ -14,7 +14,12 @@
                         <tr>
                             <th>' ' {{ search.search_text }} ' '</th>
                             <th>{{ search.date }}</th>
-                            <th><a href="/delete_single_search/{{ search.id }}">Remove</a></th>
+                            <th><button class="btn btn-sm btn-danger">
+                                    <a href="/delete_single_search/{{ search.id }}">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                </button>
+                            </th>
                         </tr>
                     {% endfor %}
                 {% else %}
