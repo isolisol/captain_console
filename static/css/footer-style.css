@@ -72,3 +72,17 @@
     width: 6%;
     margin: auto;
 }
+
+.footer-icon img {
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+}
+
+.footer-icon {
+    display: inline-block;
+}
+
+.footer-icon.email {
+    margin-top: 15px;
+}
