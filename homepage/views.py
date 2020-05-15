@@ -33,8 +33,18 @@ def about_us(request):
 
 
 def handler404(request, exception):
-    return render(request, '404.html')
+    user = request.user
+    if user.is_authenticated:
+        context = build_context(user)
+    else:
+        context = None
+    return render(request, '404.html', context)
 
 
 def handler500(request):
-    return render(request, '500.html')
+    user = request.user
+    if user.is_authenticated:
+        context = build_context(user)
+    else:
+        context = None
+    return render(request, '500.html', context)
