@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    <a href="{% url 'past_orders' %}"><button class="classic-button">Back</button></a>
     <div class="past-order">
         <h1>Order #{{ order.order_number }}</h1>
         <div class="past-order-container">
+            <a href="{% url 'past_orders' %}"><button class="back-btn order-review-site"> < Back </button></a>
             <div class="past-order-info">
                 <h2>Date: {{ order.date }}</h2><br>
             </div>
@@ -18,7 +18,7 @@
                     {% include 'user/single_order_item.html' with product=product %}<br>
                 {% endfor %}
                 </table>
-            <h2 class="past-order-info">Total price: {{ order.total_price }}</h2>
+            <h2 class="past-order-info">Total price: ${{ order.total_price }}</h2>
         </div>
     </div>
 {% endblock %}
