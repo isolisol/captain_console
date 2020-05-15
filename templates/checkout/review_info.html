@@ -56,18 +56,21 @@
                             <tr>
                                 <th>Image</th>
                                 <th>Name</th>
+                                <th>Quantity</th>
                                 <th>Price</th>
                             </tr>
                         {% for item in cart_items %}
                             <tr>
                                 <th><img src="{{ item.product.image }}"></th>
                                 <th><p>{{ item.product.name }}</p></th>
+                                <th><p id="text-center">{{ item.quantity }}</p></th>
                                 <th><p>{{ item.product.price }}$</p></th>
                             </tr>
                         {% endfor %}
-                            <td></td>
-                            <td>Total price:</td>
-                            <td>{{ total_price }}$</td>
+                            <th></th>
+                            <th></th>
+                            <th>Total price:</th>
+                            <th>{{ total_price }}$</th>
                         </table>
                     </div>
                 </div> <!-- end review-info -->
