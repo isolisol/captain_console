@@ -16,7 +16,7 @@ def index(request):
         context = {'products': Product.objects.all().order_by('name')}
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
-        if user.is_authenticated:
+        if user.is_authenticated and len(search_filter) > 0:
             user_searches = Search.objects.create(profile=user.profile, search_text=search_filter, date=datetime.datetime.now())
         context['products'] = [{
             'id': x.id,

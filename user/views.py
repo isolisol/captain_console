@@ -43,6 +43,7 @@ def delete_search_history(request):
 
 
 def delete_single_search(request, search_id):
+    Search.objects.get(id=search_id).delete()
     return redirect('search_history')
 
 

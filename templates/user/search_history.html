@@ -14,7 +14,7 @@
                         <tr>
                             <th>' ' {{ search.search_text }} ' '</th>
                             <th>{{ search.date }}</th>
-                            <th>Remove</th>
+                            <th><a href="/delete_single_search/{{ search.id }}">Remove</a></th>
                         </tr>
                     {% endfor %}
                 {% else %}
