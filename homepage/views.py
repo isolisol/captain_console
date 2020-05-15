@@ -47,4 +47,4 @@ def handler500(request):
         context = build_context(user)
     else:
         context = None
-    return render(request, '500.html')
+    return render(request, '500.html', context)
