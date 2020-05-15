@@ -95,6 +95,7 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
     border: 1px solid #ff29f8;
+    right: 0;
 }
 
 
@@ -197,7 +198,7 @@
     }
     .dropdown-content {
         margin-top: 60px;
-        right: 0
+        right: 0;
     }
 }
 
