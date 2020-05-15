@@ -232,9 +232,11 @@
     float: left;
     padding: 2px;
     background-color: white;
+    margin-right: 10px;
 }
 
 .show-all-images {
     width: 220px;
+    display: flex;
 }
 
