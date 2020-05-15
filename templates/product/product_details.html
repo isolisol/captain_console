@@ -26,12 +26,12 @@
                     <a href="{% url 'a_add_to_cart' product.id %}" class="btn btn-outline-success header-button nav-btn-text" id="add-to-cart-btn" >Add to Cart</a>
                 {% endif %}
 
+                <div class="product-images">
+                    {% for image in product.productimage_set.all %}
+                        <img src="{{ image.image }}" class="extra-product-img">
+                    {% endfor %}
+                </div>
             </div> <!-- end product-details-info -->
-            <div class="product-images">
-                {% for image in product.productimage_set.all %}
-                    <img src="{{ image.image }}">
-                {% endfor %}
-            </div>
         </div> <!-- end product-details -->
 
         <div class="recently-viewed">

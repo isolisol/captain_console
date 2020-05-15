@@ -112,8 +112,17 @@
     font-size: 18px;
     justify-content: center;
     float: left;
-    padding: 30px;
     background-color: white;
+}
+
+.extra-product-img {
+    height: 220px;
+    width: 220px;
+    font-size: 18px;
+    justify-content: center;
+    float: left;
+    background-color: white;
+    display: inline-block;
 }
 
 .product-img.homepage {
