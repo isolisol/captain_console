@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     path('', include('homepage.urls')),
     path('admin/', admin.site.urls),
@@ -28,3 +29,6 @@ urlpatterns = [
     path('shoppingcart/', include('order.urls')),
     path('products/', include('product.urls'))
 ]
+
+handler404 = 'homepage.views.handler404'
+handler500 = 'homepage.views.handler500'

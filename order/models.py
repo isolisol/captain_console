@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from accessory.models import Product
 from django_countries.fields import CountryField
+from helper_services.validators import validate_exp_date, validate_card_number_input, validate_number_input
 
 
 class Cart(models.Model):
@@ -22,9 +23,9 @@ class ProductInCart(models.Model):
 class Payment(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     cardholder_name = models.CharField(max_length=255)
-    card_number = models.CharField(max_length=16)
-    exp_date = models.CharField(max_length=5)
-    cvv = models.CharField(max_length=4)
+    card_number = models.CharField(max_length=16, validators=[validate_card_number_input])
+    exp_date = models.CharField(max_length=5, validators=[validate_exp_date])
+    cvv = models.CharField(max_length=4, validators=[validate_number_input])
     # Billing address:
     country = CountryField()
     address = models.CharField(max_length=255)

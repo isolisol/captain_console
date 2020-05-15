@@ -32,7 +32,9 @@ def about_us(request):
     return render(request, 'homepage/about_us.html', context=context)
 
 
-def search_products(request):
-    pass
-    #search_str = request.GET.get('search')
+def handler404(request, exception):
+    return render(request, '404.html')
 
+
+def handler500(request):
+    return render(request, '500.html')

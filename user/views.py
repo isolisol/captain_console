@@ -83,6 +83,8 @@ def edit_profile(request):
             profile.save()
             user.save()
             return redirect('profile')
+        else:
+            return redirect('editprofile')
     else:
         return render(request, 'user/edit_profile.html', {
             'form1': ProfileForm(instance=profile),

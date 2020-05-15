@@ -234,3 +234,7 @@
 .past-order-table th {
     border-bottom: 2px solid black;
 }
+
+.error {
+    color: red;
+}

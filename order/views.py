@@ -3,6 +3,7 @@ from accessory.models import Product
 from .models import Order, Cart, ContactInformation, Payment
 from helper_services.helpers import build_context, get_next_order_no, calculateTotalPrice
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from order.forms.contact_info_form import ContactInfoForm
 from order.forms.payment_form import PaymentForm
 from datetime import date
@@ -46,6 +47,11 @@ def checkout(request):
             request.session['contact_info_id'] = contact_info.id
             request.session['payment_id'] = payment.id
             return redirect(reverse('review', args=[]))
+        else:
+            context['errors'] = payment_form.errors
+            context['contact_info_form'] = ContactInfoForm()
+            context['payment_form'] = PaymentForm()
+            return render(request, 'checkout/index.html', context)
     else:
         context['contact_info_form'] = ContactInfoForm()
         context['payment_form'] = PaymentForm()

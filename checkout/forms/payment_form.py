@@ -1,5 +1,5 @@
 from django.forms import ModelForm, widgets
-from checkout.models import Payment
+from order.models import Payment
 from django.contrib.auth.models import User
 
 
@@ -19,18 +19,3 @@ class PaymentForm(ModelForm):
             'expiration_date': widgets.TextInput(attrs={'class': 'form-control'}),
             'cvv': widgets.TextInput(attrs={'class': 'form-control'})
         }
-
-
-
-
-
-#class Payment(models.Model):
-#    user = models.ForeignKey(User, on_delete=models.SET_NULL)
-#    cardholder_first_name = models.CharField(max_length=255)
-#    cardholder_last_name = models.CharField(max_length=255)
-#    # Billing address:
-#    country = CountryField()
-#    address = models.CharField(max_length=255)
-#    house_number = models.CharField(max_length=255)
-#    city = models.CharField(max_length=255)
-#    postal_code = models.CharField(max_length=10)

@@ -14,6 +14,17 @@
                 <img src="{% static "images/payment.png" %}" alt="logo"/>
                 <h2>Payment information</h2>
             </div>
+            {% for error in errors %}
+                {% if error == 'card_number' %}
+                    <p class="error">* Card number has to be 16 digits.</p>
+                {% endif %}
+                {% if error == 'exp_date' %}
+                    <p class="error">* Expiration date has to be in from MM/YY.</p>
+                {% endif %}
+                {% if error == 'cvv' %}
+                    <p class="error">* CVV number has to be 3 or 4 digits.</p>
+                {% endif %}
+            {% endfor %}
             {{ payment_form }}
             <button type="submit" class="classic-button">Review info</button>
         </form> <!-- end post -->

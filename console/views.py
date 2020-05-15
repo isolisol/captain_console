@@ -56,11 +56,9 @@ def get_console_by_id(request, id):
     if user.is_authenticated:
         user_profile = Profile.objects.get(user=user)
         viewed_product = Product.objects.get(id=id)
-        recently_viewed, created = RecentlyViewed.objects.get_or_create(profile=user_profile, product=viewed_product,
-                                                                        date=datetime.datetime.today())
-        if not created:
-            recently_viewed.date = datetime.datetime.now()
-            recently_viewed.save()
+        recently_viewed, created = RecentlyViewed.objects.get_or_create(profile=user_profile, product=viewed_product)
+        recently_viewed.date = datetime.datetime.now()
+        recently_viewed.save()
         context = build_context(user)
         context['product'] = console
         context['recently_viewed'] = get_recently_viewed(user)
