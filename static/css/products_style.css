@@ -118,6 +118,7 @@
 
 .product-img.details {
     float: left;
+    margin-bottom: 10px;
 }
 
 .extra-product-img {
@@ -242,16 +243,15 @@
 .extra-product-images {
     width: 50px;
     height: 50px;
-    margin-top: -220px;
     float: left;
     padding: 2px;
     background-color: white;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .show-all-images {
     width: 220px;
-    display: flex;
 }
 
 .product-name {
