@@ -23,7 +23,8 @@ def index(request):
             'name': x.name,
             'description': x.description,
             'price': x.price,
-            'image': x.image
+            'image': x.image,
+            'type_id': x.type_id
         } for x in Product.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': context['products']})
     context['product_type_id'] = 'all'

@@ -51,11 +51,15 @@ def get_accessory_by_id(request,id):
     user = request.user
     if user.is_authenticated:
         user_profile = Profile.objects.get(user=user)
-        viewed_product = Product.objects.get(id=id)
+        context = build_context(user)
+        try:
+            viewed_product = Product.objects.get(id=id)
+        except:
+            context['message'] = 'Sorry, product not available'
+            return render(request, '404.html', context)
         recently_viewed, created = RecentlyViewed.objects.get_or_create(profile=user_profile, product=viewed_product)
         recently_viewed.date = datetime.datetime.now()
         recently_viewed.save()
-        context = build_context(user)
         context['product'] = get_object_or_404(Product, pk=id)
         context['recently_viewed'] = get_recently_viewed(user)
     else:
