@@ -3,22 +3,22 @@
         <tr>
             <th><a href="/consoles/{{ product.product.id }}">
                 <img class="cart-product-img" src="{{ product.product.image }}"></a></th>
-            <th><a href="/consoles/{{ product.product.id }}">
-                {{ product.product.name }}></a></th>
+            <th><a href="/consoles/{{ product.product.id }}" class="product-name">
+                {{ product.product.name }}</a></th>
 
     {% elif product.product.type_id == 2 %}
         <tr>
             <th><a href="/videogames/{{ product.product.id }}">
                 <img class="cart-product-img" src="{{ product.product.image }}"></a></th>
-            <th><a href="/videogames/{{ product.product.id }}">
-                {{ product.product.name }}></a></th>
+            <th><a href="/videogames/{{ product.product.id }}" class="product-name">
+                {{ product.product.name }}</a></th>
 
     {% elif product.product.type_id == 3 %}
         <tr>
             <th><a href="/accessories/{{ product.product.id }}">
                 <img class="cart-product-img" src="{{ product.product.image }}"></a></th>
-            <th><a href="/accessories/{{ product.product.id }}">
-                {{ product.product.name }}></a></th>
+            <th><a href="/accessories/{{ product.product.id }}" class="product-name">
+                {{ product.product.name }}</a></th>
 
     {% endif %}
             <th>{{ product.quantity }}</th>
