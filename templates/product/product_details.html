@@ -27,9 +27,9 @@
                 {% endif %}
 
             </div> <!-- end product-details-info -->
-            <div class="product-images">
+            <div>
                 {% for image in product.productimage_set.all %}
-                    <img src="{{ image.image }}">
+                    <img src="{{ image.image }}" class="extra-product-images">
                 {% endfor %}
             </div>
         </div> <!-- end product-details -->
