@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+    <a href="{% url 'past_orders' %}"><button class="classic-button">Back</button></a>
     <div class="past-order">
         <h1>Order #{{ order.order_number }}</h1>
         <div class="past-order-container">
