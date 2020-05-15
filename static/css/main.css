@@ -85,7 +85,6 @@ button:focus {
 }
 
 
-
 @media (max-width: 1000px){
     .navbar {
         display: none;
@@ -118,7 +117,7 @@ button:focus {
 
     #logo-image {
         vertical-align: center;
-        width: 180px;°
+        width: 180px;
         height: 80px;
     }
     .hamburger {

@@ -27,12 +27,17 @@
                 {% endif %}
                 <div class="product-images">
                 <div class="column">
-                    <img src="{{ product.image }}" onclick="swapImage(this);">
+                    <img src="{{ product.image }}" class="extra-product-images" onclick="swapImage(this);">
                 </div>
                 {% for image in product.productimage_set.all %}
                     <div class="column">
-                        <img src="{{ image.image }}" onclick="swapImage(this);">
+                        <img src="{{ image.image }}" class="extra-product-images" onclick="swapImage(this);">
                     </div>
+
+            </div> <!-- end product-details-info -->
+            <div>
+                {% for image in product.productimage_set.all %}
+                    <img src="{{ image.image }}" class="extra-product-images">
                 {% endfor %}
             </div>
             </div> <!-- end product-details-info -->
