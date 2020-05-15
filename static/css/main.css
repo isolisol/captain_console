@@ -98,11 +98,23 @@ button:focus {
     .product-container {
         display: inline-grid;
     }
-    .homepage-img-container {
-        width: 30%;
+    .homepage-img-container.hide {
+        display: none!important;
+    }
+    .homepage-img-container p {
+        padding: 30px;
+        font-size: 30px!important;
+        opacity: 1!important;
+        transition: 0.3s!important;
     }
     .homepage-img.hide {
         display: none;
+    }
+    .homepage-img {
+        display: none;
+    }
+    .homepage-img-container:hover {
+        opacity: 0.7!important;
     }
     .icon {
         display: none;
@@ -112,8 +124,8 @@ button:focus {
     }
     .container {
         padding-top: 20px;
+        border-top: 1px solid #ff29f8;
     }
-
     #logo-image {
         vertical-align: center;
         width: 180px;
@@ -132,18 +144,15 @@ button:focus {
         margin-top: 10px;
         width: 55px;
     }
-
     .dropdown-content a {
         font-size: large;
         border-bottom: 1px solid lightgray;
         padding-left: 10px;
     }
-
+    #middle-footer {
+        display: none;
+    }
 }
-
-
-
-
 
 
 
