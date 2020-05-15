@@ -20,16 +20,19 @@
                                             <th></th>
                                         </tr>
                                     </thead>
-                                    {% for product in cart_items %}
-                                        {% include 'order/single_cart_item.html' with product=product %}
-                                    {% endfor %}
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>Subtotal:</td>
-                                        <td>{{ total_price }}$</td>
-                                    </tr>
+                                    <!-- body for shopping cart -->
+                                    <tbody>
+                                        {% for product in cart_items %}
+                                            {% include 'order/single_cart_item.html' with product=product %}
+                                        {% endfor %}
+                                        <tr class="subtotal">
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Subtotal:</td>
+                                            <td>{{ total_price }}$</td>
+                                        </tr>
+                                    </tbody>
                                 </table> <!-- end table table-responsive -->
                             </div> <!-- end table-repsonsive -->
                         </div> <!-- end col-12 -->
@@ -37,14 +40,17 @@
                 </div> <!-- end container mb-4 -->
 
             <div class="review-cart-buttons">
-                <a href="{% url 'checkout' %}" class="btn btn-outline-success header-button nav-btn-text" id="checkout-btn">Checkout</a>
-                <a href="{% url 'homepage' %}" class="btn btn-outline-success header-button nav-btn-text" id="continue-shopping">Continue Shopping</a>
+                <a href="{% url 'checkout' %}" class="btn btn-outline-success header-button nav-btn-text"
+                   id="checkout-btn">Checkout</a>
+                <a href="{% url 'homepage' %}" class="btn btn-outline-success header-button nav-btn-text"
+                   id="continue-shopping">Continue Shopping</a>
             </div> <!-- end review-cart-buttons -->
 
         {% else %}
 
             <h1 id="cart-empty-dopdown">Cart is empty!</h1>
-            <a href="{% url 'homepage' %}" class="btn btn-outline-success header-button nav-btn-text" id="continue-shopping-details">Continue Shopping</a>
+            <a href="{% url 'homepage' %}" class="btn btn-outline-success header-button nav-btn-text"
+               id="continue-shopping-details">Continue Shopping</a>
         {% endif %}
     </div> <!-- end cart-details -->
 {% endblock %}

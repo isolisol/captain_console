@@ -1,40 +1,38 @@
 <!-- Body for dropdown cart -->
-<tbody>
-    <tr>
-        <td>
-            {% if product.product.type_id == 1 %}
-                <a href="/consoles/{{ product.product.id }}">
-            {% elif product.product.type_id == 2 %}
-                <a href="/videogames/{{ product.product.id }}">
-            {% elif product.product.type_id == 3 %}
-                <a href="/accessories/{{ product.product.id }}">
-            {% endif %}
-            <img class="cart-product-img" src="{{ product.product.image }}"/>
+<tr>
+    <td>
+        {% if product.product.type_id == 1 %}
+            <a href="/consoles/{{ product.product.id }}">
+        {% elif product.product.type_id == 2 %}
+            <a href="/videogames/{{ product.product.id }}">
+        {% elif product.product.type_id == 3 %}
+            <a href="/accessories/{{ product.product.id }}">
+        {% endif %}
+        <img class="cart-product-img" src="{{ product.product.image }}"/>
+        </a>
+    </td>
+    <td>
+        {% if product.product.type_id == 1 %}
+            <a href="/consoles/{{ product.product.id }}">
+        {% elif product.product.type_id == 2 %}
+            <a href="/videogames/{{ product.product.id }}">
+        {% elif product.product.type_id == 3 %}
+            <a href="/accessories/{{ product.product.id }}">
+        {% endif %}
+        {{ product.product.name }}
+        </a>
+    </td>
+    <td>
+        <div class="qty mt-5">
+            <label class="qty">{{ product.quantity }}</label>
+        </div>
+    </td>
+    <td class="text-right">{{ product.product.price }}</td>
+    <td class="text-right">
+        <button class="btn btn-sm btn-danger">
+            <a href="remove_from_cart/{{ product.product.id }}">
+                <i class="fa fa-trash"></i>
             </a>
-        </td>
-        <td>
-            {% if product.product.type_id == 1 %}
-                <a href="/consoles/{{ product.product.id }}">
-            {% elif product.product.type_id == 2 %}
-                <a href="/videogames/{{ product.product.id }}">
-            {% elif product.product.type_id == 3 %}
-                <a href="/accessories/{{ product.product.id }}">
-            {% endif %}
-            {{ product.product.name }}
-            </a>
-        </td>
-        <td>
-            <div class="qty mt-5">
-                <label class="qty">{{ product.quantity }}</label>
-            </div>
-        </td>
-        <td class="text-right">{{ product.product.price }}</td>
-        <td class="text-right">
-            <button class="btn btn-sm btn-danger">
-                <a href="remove_from_cart/{{ product.product.id }}">
-                    <i class="fa fa-trash"></i>
-                </a>
-            </button> <!-- btn btn-sm btn-danger -->
-        </td>
-    </tr>
-</tbody>
+        </button> <!-- btn btn-sm btn-danger -->
+    </td>
+</tr>

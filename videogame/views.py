@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from accessory.models import Product
-from user.models import RecentlyViewed, Profile
+from user.models import RecentlyViewed, Profile, Search
 from order.models import Cart, ProductInCart
 from helper_services.helpers import build_context, get_recently_viewed
 import datetime
@@ -29,6 +29,8 @@ def index(request):
         context = {'products': Product.objects.filter(type_id=2).order_by('name')}
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
+        if user.is_authenticated and len(search_filter) > 0:
+            user_searches = Search.objects.create(profile=user.profile, search_text=search_filter, date=datetime.datetime.now())
         context['products'] = [{
             'id': x.id,
             'name': x.name,

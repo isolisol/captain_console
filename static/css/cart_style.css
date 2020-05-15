@@ -120,6 +120,10 @@
     margin-top: 20px;
 }
 
+.subtotal td{
+    border-top: 1px solid black;
+}
+
 .cart-details a {
     color: black;
     text-decoration: none;
