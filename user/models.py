@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django_countries.fields import CountryField
 from accessory.models import Product
+from helper_services.validators import validate_number_input
 
 
 # Create your models here.
@@ -24,7 +25,7 @@ class Profile(models.Model):
     city = models.CharField(max_length=255, null=True)
     postal_code = models.CharField(max_length=10, null=True)
     image = models.CharField(max_length=999, null=True)
-    phone_number = models.IntegerField(null=True)
+    phone_number = models.IntegerField(null=True, validators=[validate_number_input])
     product = models.ManyToManyField(Product, through='RecentlyViewed')
 
 
