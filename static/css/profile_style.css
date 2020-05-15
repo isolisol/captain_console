@@ -193,6 +193,44 @@ form.form-horizontal h1 {
     padding: 10px;
 }
 
-#searches {
+.search-history-page {
+    color: white;
+}
+
+.search-history-page h1{
+    border-bottom: 2px solid #ff29f8;
+    width: 50%;
     display: inline-block;
 }
+
+.search-history-page-info {
+    border: 2px solid #ff29f8;
+    border-radius: 5px;
+    padding: 60px;
+    width: 800px;
+    background-color: white;
+    color: black;
+    margin-top: 50px;
+    padding-top: 20px;
+}
+
+.searches {
+    width: 100%;
+    text-align: left;
+}
+
+.search-table-header {
+    font-size: xx-large;
+}
+
+#delete-search-history-btn {
+    float: right;
+}
+
+#no-search-history {
+    color: gray;
+    font-size: large;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+

@@ -1,11 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Search history</h2>
-    <div id="searches">
-        {% for search in searches %}
-            <p>{{ search.search_text }}</p>
-            <p>{{ search.date }}</p>
-        {% endfor %}
-    <a href="{% url 'delete_searches' %}" class="classic-button">Delete searches</a>
+    <div class="search-history-page">
+        <h1>Search history</h1>
+        <div class="search-history-page-info">
+            <table class="searches">
+                <tr>
+                    <th class="search-table-header">Search</th>
+                    <th class="search-table-header">Date</th>
+                    <th></th>
+                </tr>
+                {% if searches %}
+                    {% for search in searches %}
+                        <tr>
+                            <th>' ' {{ search.search_text }} ' '</th>
+                            <th>{{ search.date }}</th>
+                            <th>Remove</th>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <th id="no-search-history">No Search History</th>
+                    <th></th>
+                {% endif %}
+            </table><br>
+            <a href="{% url 'delete_searches' %}" class="classic-button" id="delete-search-history-btn">Delete searches</a>
+        </div>
     </div>
 {% endblock %}
